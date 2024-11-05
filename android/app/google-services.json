@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "732082109116",
+    "project_id": "modie-936dc",
+    "storage_bucket": "modie-936dc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:732082109116:android:82d1c0840b6647219aeeb9",
+        "android_client_info": {
+          "package_name": "com.mycompany.modie"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2swnBlvJAYPgO011tcFW_yUKipKuDSq8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
