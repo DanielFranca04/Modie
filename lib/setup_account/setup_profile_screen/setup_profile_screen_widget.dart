@@ -326,6 +326,7 @@ class _SetupProfileScreenWidgetState extends State<SetupProfileScreenWidget> {
                             },
                           ),
                           autofocus: true,
+                          textInputAction: TextInputAction.next,
                           obscureText: false,
                           decoration: InputDecoration(
                             labelText: FFLocalizations.of(context).getText(
