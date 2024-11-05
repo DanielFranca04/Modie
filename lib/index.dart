@@ -44,3 +44,4 @@ export '/setup_account/notifications/notifications_widget.dart'
     show NotificationsWidget;
 export '/f_a_qs/f_a_qs_widget.dart' show FAQsWidget;
 export '/f_a_qs_copy/f_a_qs_copy_widget.dart' show FAQsCopyWidget;
+export '/load_page/load_page_widget.dart' show LoadPageWidget;

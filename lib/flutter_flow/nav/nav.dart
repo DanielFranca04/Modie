@@ -251,6 +251,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'FAQsCopy',
           path: '/fAQsCopy',
           builder: (context, params) => const FAQsCopyWidget(),
+        ),
+        FFRoute(
+          name: 'LoadPage',
+          path: '/loadPage',
+          builder: (context, params) => const LoadPageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

@@ -1,6 +1,5 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
-import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/custom_code/actions/index.dart' as actions;
@@ -456,6 +455,8 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                               highlightColor: Colors.transparent,
                               onTap: () async {
                                 await actions.appleSignin();
+
+                                context.goNamed('LoadPage');
                               },
                               child: Container(
                                 width: 163.0,
@@ -515,24 +516,9 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                                 if (user == null) {
                                   return;
                                 }
-                                _model.outputEmail =
-                                    await ProfileTable().queryRows(
-                                  queryFn: (q) => q.eq(
-                                    'email',
-                                    currentUserEmail,
-                                  ),
-                                );
-                                if (_model.outputEmail?.first.username ==
-                                        null ||
-                                    _model.outputEmail?.first.username == '') {
-                                  context.goNamedAuth(
-                                      'BirthDateScreen', context.mounted);
-                                } else {
-                                  context.goNamedAuth(
-                                      'LoginScreen', context.mounted);
-                                }
 
-                                safeSetState(() {});
+                                context.goNamedAuth(
+                                    'LoadPage', context.mounted);
                               },
                               child: Container(
                                 width: 163.0,

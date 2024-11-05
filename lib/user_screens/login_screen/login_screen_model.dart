@@ -1,5 +1,4 @@
 import '/backend/api_requests/api_calls.dart';
-import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'login_screen_widget.dart' show LoginScreenWidget;
 import 'package:flutter/material.dart';
@@ -18,8 +17,6 @@ class LoginScreenModel extends FlutterFlowModel<LoginScreenWidget> {
   late bool passwordTextFieldVisibility;
   String? Function(BuildContext, String?)?
       passwordTextFieldTextControllerValidator;
-  // Stores action output result for [Backend Call - Query Rows] action in GoogleButton widget.
-  List<ProfileRow>? outputEmail;
   // Stores action output result for [Backend Call - API (Login)] action in Container widget.
   ApiCallResponse? verifystatus;
   // Stores action output result for [Backend Call - API (ResendOTP)] action in Container widget.

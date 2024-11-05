@@ -1579,6 +1579,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
     },
   },
+  // LoadPage
+  {
+    'e1s5ehhr': {
+      'en': 'Home',
+      'it': '',
+    },
+  },
   // ReviewComp
   {
     'gfe7f338': {
