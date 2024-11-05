@@ -456,7 +456,16 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                               onTap: () async {
                                 await actions.appleSignin();
 
-                                context.goNamed('LoadPage');
+                                context.goNamed(
+                                  'LoadPage',
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: const TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType: PageTransitionType.fade,
+                                      duration: Duration(milliseconds: 0),
+                                    ),
+                                  },
+                                );
                               },
                               child: Container(
                                 width: 163.0,
@@ -518,7 +527,16 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                                 }
 
                                 context.goNamedAuth(
-                                    'LoadPage', context.mounted);
+                                  'LoadPage',
+                                  context.mounted,
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: const TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType: PageTransitionType.fade,
+                                      duration: Duration(milliseconds: 0),
+                                    ),
+                                  },
+                                );
                               },
                               child: Container(
                                 width: 163.0,

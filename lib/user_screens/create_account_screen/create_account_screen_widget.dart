@@ -585,7 +585,6 @@ class _CreateAccountScreenWidgetState extends State<CreateAccountScreenWidget> {
                                     fontFamily: 'Readex Pro',
                                     letterSpacing: 0.0,
                                   ),
-                          keyboardType: TextInputType.number,
                           validator: _model
                               .invitationCodeTextFieldTextControllerValidator
                               .asValidator(context),

@@ -32,11 +32,10 @@ class _LoadPageWidgetState extends State<LoadPageWidget> {
           currentUserEmail,
         ),
       );
-      if (_model.outputEmail?.first.username == null ||
-          _model.outputEmail?.first.username == '') {
+      if (_model.outputEmail?.first.dateOfBirth == null) {
         context.goNamed('BirthDateScreen');
       } else {
-        context.goNamed('LoginScreen');
+        context.goNamed('HomePage');
       }
     });
   }

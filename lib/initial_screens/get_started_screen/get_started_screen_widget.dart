@@ -26,7 +26,7 @@ class _GetStartedScreenWidgetState extends State<GetStartedScreenWidget> {
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       await requestPermission(notificationsPermission);
-      await requestPermission(notificationsPermission);
+      await requestPermission(locationPermission);
     });
   }
 

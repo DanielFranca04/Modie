@@ -184,7 +184,7 @@ class _BirthDateScreenWidgetState extends State<BirthDateScreenWidget> {
                           decoration: InputDecoration(
                             isDense: true,
                             labelText: FFLocalizations.of(context).getText(
-                              'r4yhne1d' /* Birthday (dd/mm/yyyy) */,
+                              'r4yhne1d' /* Birthday (DD MM YYYY) */,
                             ),
                             labelStyle: FlutterFlowTheme.of(context)
                                 .labelMedium

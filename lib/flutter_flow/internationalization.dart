@@ -354,7 +354,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           'Questi dati aiutano Modie a personalizzare i contenuti che vedi, garantendo al contempo la sicurezza della comunità Modie. I tuoi dati rimangono riservati e non saranno divulgati a terzi.',
     },
     'r4yhne1d': {
-      'en': 'Birthday (dd/mm/yyyy)',
+      'en': 'Birthday (DD MM YYYY)',
       'it': 'Compleanno (gg/mm/aaaa)',
     },
     '4sgs1j8w': {
