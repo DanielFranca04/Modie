@@ -1588,6 +1588,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Payments
   {
+    '1miu63s3': {
+      'en': 'MY PAYMENT METHOD',
+      'it': 'IL MIO INDIRIZZO DI SPEDIZIONE',
+    },
     'e51hg9uf': {
       'en': 'Home',
       'it': '',
@@ -1985,6 +1989,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en':
           'Hello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello World',
       'it': '',
+    },
+  },
+  // EmptyCard
+  {
+    '47b7lodo': {
+      'en': 'NO CARDS',
+      'it': 'NESSUN INDIRIZZO',
+    },
+    'zf9qsroe': {
+      'en': 'You can view and manage the cards you use for your orders here',
+      'it':
+          'Qui puoi visualizzare e gestire l\'indirizzo che utilizzi per i tuoi ordini',
     },
   },
   // Miscellaneous

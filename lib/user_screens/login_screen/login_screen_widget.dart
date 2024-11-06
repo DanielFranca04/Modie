@@ -2,7 +2,6 @@ import '/auth/supabase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'dart:async';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/gestures.dart';
@@ -455,14 +454,18 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
-                                unawaited(
-                                  () async {
-                                    _model.sign = await actions.appleSignin();
-                                  }(),
-                                );
-                                while (!loggedIn) {}
+                                _model.sign = await actions.appleSignin();
 
-                                context.goNamed('LoadPage');
+                                context.goNamed(
+                                  'LoadPage',
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: const TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType: PageTransitionType.fade,
+                                      duration: Duration(milliseconds: 0),
+                                    ),
+                                  },
+                                );
 
                                 safeSetState(() {});
                               },
