@@ -256,6 +256,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'LoadPage',
           path: '/loadPage',
           builder: (context, params) => const LoadPageWidget(),
+        ),
+        FFRoute(
+          name: 'Payments',
+          path: '/payments',
+          builder: (context, params) => const PaymentsWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

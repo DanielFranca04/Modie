@@ -1586,6 +1586,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
     },
   },
+  // Payments
+  {
+    'e51hg9uf': {
+      'en': 'Home',
+      'it': '',
+    },
+  },
   // ReviewComp
   {
     'gfe7f338': {

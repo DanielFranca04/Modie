@@ -184,6 +184,9 @@ class _SetupProfileScreenWidgetState extends State<SetupProfileScreenWidget> {
                                       await selectMediaWithSourceBottomSheet(
                                     context: context,
                                     allowPhoto: true,
+                                    backgroundColor: const Color(0xFFD6E1E2),
+                                    textColor: const Color(0xFF4F4F4F),
+                                    pickerFontFamily: 'Montserrat',
                                   );
                                   if (selectedMedia != null &&
                                       selectedMedia.every((m) =>

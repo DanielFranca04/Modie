@@ -48,6 +48,7 @@ Future<dynamic> appleSignin() async {
       'display_name': displayName,
     },
   );
+
   return response;
 }
 // Set your action name, define your arguments and return parameter,

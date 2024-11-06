@@ -17,6 +17,8 @@ class LoginScreenModel extends FlutterFlowModel<LoginScreenWidget> {
   late bool passwordTextFieldVisibility;
   String? Function(BuildContext, String?)?
       passwordTextFieldTextControllerValidator;
+  // Stores action output result for [Custom Action - appleSignin] action in AppleButton widget.
+  dynamic sign;
   // Stores action output result for [Backend Call - API (Login)] action in Container widget.
   ApiCallResponse? verifystatus;
   // Stores action output result for [Backend Call - API (ResendOTP)] action in Container widget.

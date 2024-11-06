@@ -12,3 +12,4 @@ export 'username_validator.dart' show usernameValidator;
 export 'get_lat.dart' show getLat;
 export 'get_lng.dart' show getLng;
 export 'apple_signin.dart' show appleSignin;
+export 'solicitar_permissao_tracking.dart' show solicitarPermissaoTracking;
