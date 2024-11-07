@@ -5,25 +5,25 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'payments_model.dart';
-export 'payments_model.dart';
+import 'my_payments_cards_model.dart';
+export 'my_payments_cards_model.dart';
 
-class PaymentsWidget extends StatefulWidget {
-  const PaymentsWidget({super.key});
+class MyPaymentsCardsWidget extends StatefulWidget {
+  const MyPaymentsCardsWidget({super.key});
 
   @override
-  State<PaymentsWidget> createState() => _PaymentsWidgetState();
+  State<MyPaymentsCardsWidget> createState() => _MyPaymentsCardsWidgetState();
 }
 
-class _PaymentsWidgetState extends State<PaymentsWidget> {
-  late PaymentsModel _model;
+class _MyPaymentsCardsWidgetState extends State<MyPaymentsCardsWidget> {
+  late MyPaymentsCardsModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => PaymentsModel());
+    _model = createModel(context, () => MyPaymentsCardsModel());
   }
 
   @override
@@ -39,7 +39,7 @@ class _PaymentsWidgetState extends State<PaymentsWidget> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: FlutterFlowTheme.of(context).m200,
         body: SafeArea(
           top: true,
           child: Column(
@@ -93,7 +93,7 @@ class _PaymentsWidgetState extends State<PaymentsWidget> {
               ),
               Container(
                 width: 100.0,
-                height: 40.0,
+                height: 10.0,
                 decoration: const BoxDecoration(),
               ),
               Expanded(
@@ -140,13 +140,6 @@ class _PaymentsWidgetState extends State<PaymentsWidget> {
                       },
                     );
                   },
-                ),
-              ),
-              Container(
-                width: double.infinity,
-                height: 1.0,
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).n950,
                 ),
               ),
               Container(

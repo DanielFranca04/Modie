@@ -7,6 +7,7 @@ class FFIcons {
   static const String _optionsFamily = 'Options';
   static const String _iconssFamily = 'Iconss';
   static const String _manuvarFamily = 'Manuvar';
+  static const String _trashFamily = 'Trash';
 
   // IconsUserInteraction
   static const IconData kmenu =
@@ -40,4 +41,7 @@ class FFIcons {
 
   // Manuvar
   static const IconData kmenuvar = IconData(0xe800, fontFamily: _manuvarFamily);
+
+  // Trash
+  static const IconData ktrash = IconData(0xe801, fontFamily: _trashFamily);
 }

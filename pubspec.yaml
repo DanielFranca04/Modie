@@ -214,6 +214,9 @@ flutter:
     - family: Manuvar
       fonts:
         - asset: assets/fonts/Manuvar.ttf
+    - family: Trash
+      fonts:
+        - asset: assets/fonts/Trash.ttf
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

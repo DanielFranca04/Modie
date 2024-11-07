@@ -602,10 +602,21 @@ class _AddAdressWidgetState extends State<AddAdressWidget> {
                                       .text.length);
                         });
                         safeSetState(() {
-                          _model.textFieldCityTextController?.text =
+                          _model.textFieldAddres1TextController?.text =
                               getJsonField(
                             (_model.apiResulthw?.jsonBody ?? ''),
                             r'''$..results[0].address_components[1].long_name''',
+                          ).toString();
+                          _model.textFieldAddres1TextController?.selection =
+                              TextSelection.collapsed(
+                                  offset: _model.textFieldAddres1TextController!
+                                      .text.length);
+                        });
+                        safeSetState(() {
+                          _model.textFieldCityTextController?.text =
+                              getJsonField(
+                            (_model.apiResulthw?.jsonBody ?? ''),
+                            r'''$..results[0].address_components[2].long_name''',
                           ).toString();
                           _model.textFieldCityTextController?.selection =
                               TextSelection.collapsed(

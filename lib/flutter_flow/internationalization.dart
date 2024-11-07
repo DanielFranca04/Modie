@@ -1545,26 +1545,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
     },
   },
-  // FAQs
-  {
-    '63gvizky': {
-      'en': 'FAQS',
-      'it': '',
-    },
-    'jqy95btn': {
-      'en': 'Home',
-      'it': '',
-    },
-  },
   // FAQsCopy
   {
     'curpy294': {
       'en': 'FAQS',
       'it': '',
-    },
-    'ytksb0vh': {
-      'en': 'How do I earn rewards points?',
-      'it': 'Come posso guadagnare punti premio?',
     },
     'oqhehfgo': {
       'en': 'Couldn’t find what you were looking for?',
@@ -1581,20 +1566,183 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // LoadPage
   {
-    'e1s5ehhr': {
+    'jqy95btn': {
       'en': 'Home',
       'it': '',
     },
   },
-  // Payments
+  // MyPaymentsCards
   {
     '1miu63s3': {
       'en': 'MY PAYMENT METHOD',
       'it': 'IL MIO INDIRIZZO DI SPEDIZIONE',
     },
-    'e51hg9uf': {
+    'e1s5ehhr': {
       'en': 'Home',
       'it': '',
+    },
+  },
+  // AddAdressEdit
+  {
+    'hgackt3h': {
+      'en': 'ADD NEW ADDRESS',
+      'it': 'AGGIUNGI NUOVO INDIRIZZO',
+    },
+    '98gwdu03': {
+      'en': 'First Name',
+      'it': 'Nome di battesimo',
+    },
+    'bj28woa1': {
+      'en': '',
+      'it': '',
+    },
+    '3i20gpub': {
+      'en': 'Surname',
+      'it': 'Cognome',
+    },
+    'h19d64xz': {
+      'en': '',
+      'it': '',
+    },
+    'tcjrdm9u': {
+      'en': 'Dialing Code',
+      'it': 'Prefisso telefonico',
+    },
+    '6zrf6bxd': {
+      'en': '',
+      'it': '',
+    },
+    's4o8o2al': {
+      'en': 'Phone',
+      'it': 'Telefono',
+    },
+    'atph5off': {
+      'en': '',
+      'it': '',
+    },
+    '7uxb45tn': {
+      'en': 'USE MY CURRENT LOCATION',
+      'it': 'USA LA MIA POSIZIONE ATTUALE',
+    },
+    '0eptc6l6': {
+      'en': 'Address Line 1',
+      'it': 'Indirizzo Linea 1',
+    },
+    'l4qfjhac': {
+      'en': '',
+      'it': '',
+    },
+    'zbowgell': {
+      'en': 'Address Line 2',
+      'it': 'Indirizzo riga 2',
+    },
+    'wan5o854': {
+      'en': '',
+      'it': '',
+    },
+    'l9nyceuc': {
+      'en': 'City / Town',
+      'it': 'Città / Paese',
+    },
+    'cntcwv1e': {
+      'en': '',
+      'it': '',
+    },
+    'dr59galw': {
+      'en': 'Postcode',
+      'it': 'Codice postale',
+    },
+    'qqskdv3d': {
+      'en': '',
+      'it': '',
+    },
+    '52ou7rfy': {
+      'en': 'Country',
+      'it': 'Paese',
+    },
+    'v2hv97wh': {
+      'en': '',
+      'it': '',
+    },
+    '76upn0xl': {
+      'en': 'SAVE ADDRESS',
+      'it': 'SALVA INDIRIZZO',
+    },
+    'dehvry8e': {
+      'en': 'Field is required',
+      'it': '',
+    },
+    'gvzbzesn': {
+      'en': 'Please choose an option from the dropdown',
+      'it': '',
+    },
+    'rpgbq5xn': {
+      'en': 'Field is required',
+      'it': '',
+    },
+    '1b2e72rx': {
+      'en': 'Please choose an option from the dropdown',
+      'it': '',
+    },
+    'nmkqh88d': {
+      'en': 'Field is required',
+      'it': '',
+    },
+    'znrcp0cp': {
+      'en': 'Please choose an option from the dropdown',
+      'it': '',
+    },
+    'mwy1k5kf': {
+      'en': 'Field is required',
+      'it': '',
+    },
+    'pwk9v7v7': {
+      'en': 'Please choose an option from the dropdown',
+      'it': '',
+    },
+    'dlz699vl': {
+      'en': 'Field is required',
+      'it': '',
+    },
+    'x1nf61tf': {
+      'en': 'Please choose an option from the dropdown',
+      'it': '',
+    },
+    'raceftvd': {
+      'en': 'Field is required',
+      'it': '',
+    },
+    '36ta0oqo': {
+      'en': 'Please choose an option from the dropdown',
+      'it': '',
+    },
+    'u0auv7do': {
+      'en': 'Field is required',
+      'it': '',
+    },
+    'dhb0ktd1': {
+      'en': 'Please choose an option from the dropdown',
+      'it': '',
+    },
+    'qmo61pnp': {
+      'en': 'Field is required',
+      'it': '',
+    },
+    'ysl4xa4a': {
+      'en': 'Please choose an option from the dropdown',
+      'it': '',
+    },
+    'cumwd0ir': {
+      'en': 'Field is required',
+      'it': '',
+    },
+    'vty0en0i': {
+      'en': 'Please choose an option from the dropdown',
+      'it': '',
+    },
+    '6xap495j': {
+      'en': 'Home',
+      'it': 'Casa',
     },
   },
   // ReviewComp
@@ -1985,9 +2133,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // FAQsComp
   {
-    '0w9aph6s': {
+    'r509y5u1': {
+      'en': 'How do I earn rewards points?',
+      'it': '',
+    },
+    'i1j4ogbk': {
+      'en': 'How do I earn rewards points?',
+      'it': '',
+    },
+    'zuqtota1': {
       'en':
-          'Hello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello World',
+          'Lorem ipsum dolor sit amet consectetur. Blandit sed amet id aliquam porta nisl pellentesque. Et vulputate facilisi vel cursus porttitor pretium. Non tortor nunc eget molestie gravida ipsum consectetur consectetur.',
       'it': '',
     },
   },

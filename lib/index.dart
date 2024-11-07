@@ -42,7 +42,9 @@ export '/setup_account/language_page/language_page_widget.dart'
     show LanguagePageWidget;
 export '/setup_account/notifications/notifications_widget.dart'
     show NotificationsWidget;
-export '/f_a_qs/f_a_qs_widget.dart' show FAQsWidget;
 export '/f_a_qs_copy/f_a_qs_copy_widget.dart' show FAQsCopyWidget;
 export '/load_page/load_page_widget.dart' show LoadPageWidget;
-export '/payments/payments_widget.dart' show PaymentsWidget;
+export '/my_payments_cards/my_payments_cards_widget.dart'
+    show MyPaymentsCardsWidget;
+export '/setup_account/add_adress_edit/add_adress_edit_widget.dart'
+    show AddAdressEditWidget;

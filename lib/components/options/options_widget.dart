@@ -186,7 +186,9 @@ class _OptionsWidgetState extends State<OptionsWidget>
                                 focusColor: Colors.transparent,
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
-                                onTap: () async {},
+                                onTap: () async {
+                                  context.goNamed('MyModie');
+                                },
                                 child: Text(
                                   FFLocalizations.of(context).getText(
                                     '127x5b00' /* MY MODIE */,

@@ -243,11 +243,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const NotificationsWidget(),
         ),
         FFRoute(
-          name: 'FAQs',
-          path: '/fAQs',
-          builder: (context, params) => const FAQsWidget(),
-        ),
-        FFRoute(
           name: 'FAQsCopy',
           path: '/fAQsCopy',
           builder: (context, params) => const FAQsCopyWidget(),
@@ -258,9 +253,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const LoadPageWidget(),
         ),
         FFRoute(
-          name: 'Payments',
-          path: '/payments',
-          builder: (context, params) => const PaymentsWidget(),
+          name: 'MyPaymentsCards',
+          path: '/myPaymentsCards',
+          builder: (context, params) => const MyPaymentsCardsWidget(),
+        ),
+        FFRoute(
+          name: 'AddAdressEdit',
+          path: '/addAdressEdit',
+          builder: (context, params) => AddAdressEditWidget(
+            addressid: params.getParam(
+              'addressid',
+              ParamType.int,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

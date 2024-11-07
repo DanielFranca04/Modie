@@ -100,11 +100,46 @@ class _AddressWidgetState extends State<AddressWidget> {
                         useGoogleFonts: false,
                       ),
                 ),
-                Container(
-                  width: 100.0,
-                  height: 30.0,
-                  decoration: const BoxDecoration(),
+                Expanded(
+                  child: Container(
+                    width: 100.0,
+                    height: 30.0,
+                    decoration: const BoxDecoration(),
+                  ),
                 ),
+                if (!widget.status!)
+                  Padding(
+                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 7.0, 0.0),
+                    child: FlutterFlowIconButton(
+                      borderColor: Colors.transparent,
+                      borderRadius: 8.0,
+                      buttonSize: 40.0,
+                      icon: Icon(
+                        FFIcons.ktrash,
+                        color: FlutterFlowTheme.of(context).n950,
+                        size: 24.0,
+                      ),
+                      onPressed: () async {
+                        await AddressTable().delete(
+                          matchingRows: (rows) => rows.eq(
+                            'address_id',
+                            widget.id,
+                          ),
+                        );
+
+                        context.pushNamed(
+                          'MyShippingAdress',
+                          extra: <String, dynamic>{
+                            kTransitionInfoKey: const TransitionInfo(
+                              hasTransition: true,
+                              transitionType: PageTransitionType.fade,
+                              duration: Duration(milliseconds: 0),
+                            ),
+                          },
+                        );
+                      },
+                    ),
+                  ),
                 FlutterFlowIconButton(
                   borderRadius: 8.0,
                   buttonSize: 40.0,
@@ -113,8 +148,16 @@ class _AddressWidgetState extends State<AddressWidget> {
                     color: FlutterFlowTheme.of(context).n950,
                     size: 24.0,
                   ),
-                  onPressed: () {
-                    print('IconButton pressed ...');
+                  onPressed: () async {
+                    context.pushNamed(
+                      'AddAdressEdit',
+                      queryParameters: {
+                        'addressid': serializeParam(
+                          widget.id,
+                          ParamType.int,
+                        ),
+                      }.withoutNulls,
+                    );
                   },
                 ),
               ],
