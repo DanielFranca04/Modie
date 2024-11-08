@@ -4,26 +4,39 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'f_a_qs_copy_model.dart';
-export 'f_a_qs_copy_model.dart';
+import 'package:provider/provider.dart';
+import 'f_a_qs_model.dart';
+export 'f_a_qs_model.dart';
 
-class FAQsCopyWidget extends StatefulWidget {
-  const FAQsCopyWidget({super.key});
+class FAQsWidget extends StatefulWidget {
+  const FAQsWidget({super.key});
 
   @override
-  State<FAQsCopyWidget> createState() => _FAQsCopyWidgetState();
+  State<FAQsWidget> createState() => _FAQsWidgetState();
 }
 
-class _FAQsCopyWidgetState extends State<FAQsCopyWidget> {
-  late FAQsCopyModel _model;
+class _FAQsWidgetState extends State<FAQsWidget> {
+  late FAQsModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => FAQsCopyModel());
+    _model = createModel(context, () => FAQsModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.faqoutput = await FaqsOptionsTable().queryRows(
+        queryFn: (q) => q,
+      );
+      while (FFAppState().faqs.length < _model.faqoutput!.length) {
+        FFAppState().addToFaqs(false);
+        safeSetState(() {});
+      }
+    });
   }
 
   @override
@@ -35,6 +48,8 @@ class _FAQsCopyWidgetState extends State<FAQsCopyWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
@@ -80,6 +95,10 @@ class _FAQsCopyWidgetState extends State<FAQsCopyWidget> {
                         ),
                         onPressed: () async {
                           context.safePop();
+                          await Future.delayed(
+                              const Duration(milliseconds: 100));
+                          FFAppState().faqs = [];
+                          safeSetState(() {});
                         },
                       ),
                       Text(
@@ -101,8 +120,10 @@ class _FAQsCopyWidgetState extends State<FAQsCopyWidget> {
                 Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                   child: FutureBuilder<List<FaqsRow>>(
-                    future: FaqsTable().queryRows(
-                      queryFn: (q) => q.order('id', ascending: true),
+                    future: FFAppState().faqsType(
+                      requestFn: () => FaqsTable().queryRows(
+                        queryFn: (q) => q.order('id', ascending: true),
+                      ),
                     ),
                     builder: (context, snapshot) {
                       // Customize what your widget looks like when it's loading.
@@ -158,13 +179,15 @@ class _FAQsCopyWidgetState extends State<FAQsCopyWidget> {
                                 ),
                               ),
                               FutureBuilder<List<FaqsOptionsRow>>(
-                                future: FaqsOptionsTable().queryRows(
-                                  queryFn: (q) => q
-                                      .eq(
-                                        'faq_id',
-                                        listViewFaqsRow.id,
-                                      )
-                                      .order('id', ascending: true),
+                                future: _model.faqsops(
+                                  requestFn: () => FaqsOptionsTable().queryRows(
+                                    queryFn: (q) => q
+                                        .eq(
+                                          'faq_id',
+                                          listViewFaqsRow.id,
+                                        )
+                                        .order('id', ascending: true),
+                                  ),
                                 ),
                                 builder: (context, snapshot) {
                                   // Customize what your widget looks like when it's loading.
@@ -199,10 +222,19 @@ class _FAQsCopyWidgetState extends State<FAQsCopyWidget> {
                                       final listViewFaqsOptionsRow =
                                           listViewFaqsOptionsRowList[
                                               listViewIndex];
-                                      return FAQsCompWidget(
-                                        key: Key(
-                                            'Keyor8_${listViewIndex}_of_${listViewFaqsOptionsRowList.length}'),
-                                        status: true,
+                                      return wrapWithModel(
+                                        model: _model.fAQsCompModels.getModel(
+                                          listViewIndex.toString(),
+                                          listViewIndex,
+                                        ),
+                                        updateCallback: () =>
+                                            safeSetState(() {}),
+                                        child: FAQsCompWidget(
+                                          key: Key(
+                                            'Keyor8_${listViewIndex.toString()}',
+                                          ),
+                                          id: listViewIndex,
+                                        ),
                                       );
                                     },
                                   );

@@ -243,9 +243,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const NotificationsWidget(),
         ),
         FFRoute(
-          name: 'FAQsCopy',
-          path: '/fAQsCopy',
-          builder: (context, params) => const FAQsCopyWidget(),
+          name: 'FAQs',
+          path: '/fAQs',
+          requireAuth: true,
+          builder: (context, params) => const FAQsWidget(),
         ),
         FFRoute(
           name: 'LoadPage',
@@ -266,6 +267,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.int,
             ),
           ),
+        ),
+        FFRoute(
+          name: 'ExploreProduct',
+          path: '/exploreProduct',
+          builder: (context, params) => const ExploreProductWidget(),
+        ),
+        FFRoute(
+          name: 'ExplorePage',
+          path: '/explorePage',
+          requireAuth: true,
+          builder: (context, params) => const ExplorePageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

@@ -42,9 +42,12 @@ export '/setup_account/language_page/language_page_widget.dart'
     show LanguagePageWidget;
 export '/setup_account/notifications/notifications_widget.dart'
     show NotificationsWidget;
-export '/f_a_qs_copy/f_a_qs_copy_widget.dart' show FAQsCopyWidget;
-export '/load_page/load_page_widget.dart' show LoadPageWidget;
-export '/my_payments_cards/my_payments_cards_widget.dart'
+export '/f_a_qs/f_a_qs_widget.dart' show FAQsWidget;
+export '/user_screens/load_page/load_page_widget.dart' show LoadPageWidget;
+export '/user_screens/my_payments_cards/my_payments_cards_widget.dart'
     show MyPaymentsCardsWidget;
 export '/setup_account/add_adress_edit/add_adress_edit_widget.dart'
     show AddAdressEditWidget;
+export '/explore_product/explore_product_widget.dart' show ExploreProductWidget;
+export '/user_screens/explore_page/explore_page_widget.dart'
+    show ExplorePageWidget;

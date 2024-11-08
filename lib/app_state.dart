@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'flutter_flow/request_manager.dart';
 import '/backend/schema/structs/index.dart';
+import 'backend/supabase/supabase.dart';
 
 class FFAppState extends ChangeNotifier {
   static FFAppState _instance = FFAppState._internal();
@@ -269,4 +271,60 @@ class FFAppState extends ChangeNotifier {
   set valcode(bool value) {
     _valcode = value;
   }
+
+  String _homeimg = '';
+  String get homeimg => _homeimg;
+  set homeimg(String value) {
+    _homeimg = value;
+  }
+
+  int _homeimgnum = 0;
+  int get homeimgnum => _homeimgnum;
+  set homeimgnum(int value) {
+    _homeimgnum = value;
+  }
+
+  List<bool> _faqs = [];
+  List<bool> get faqs => _faqs;
+  set faqs(List<bool> value) {
+    _faqs = value;
+  }
+
+  void addToFaqs(bool value) {
+    faqs.add(value);
+  }
+
+  void removeFromFaqs(bool value) {
+    faqs.remove(value);
+  }
+
+  void removeAtIndexFromFaqs(int index) {
+    faqs.removeAt(index);
+  }
+
+  void updateFaqsAtIndex(
+    int index,
+    bool Function(bool) updateFn,
+  ) {
+    faqs[index] = updateFn(_faqs[index]);
+  }
+
+  void insertAtIndexInFaqs(int index, bool value) {
+    faqs.insert(index, value);
+  }
+
+  final _faqsTypeManager = FutureRequestManager<List<FaqsRow>>();
+  Future<List<FaqsRow>> faqsType({
+    String? uniqueQueryKey,
+    bool? overrideCache,
+    required Future<List<FaqsRow>> Function() requestFn,
+  }) =>
+      _faqsTypeManager.performRequest(
+        uniqueQueryKey: uniqueQueryKey,
+        overrideCache: overrideCache,
+        requestFn: requestFn,
+      );
+  void clearFaqsTypeCache() => _faqsTypeManager.clear();
+  void clearFaqsTypeCacheKey(String? uniqueKey) =>
+      _faqsTypeManager.clearRequest(uniqueKey);
 }

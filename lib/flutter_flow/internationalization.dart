@@ -1540,12 +1540,48 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Notifications
   {
+    'xuv7dgfq': {
+      'en': 'NOTIFICATIONS',
+      'it': 'INVITARE',
+    },
+    'ogkrlhx0': {
+      'en': 'Manage your alerts',
+      'it': '',
+    },
+    'tt922l5f': {
+      'en': 'Order updates',
+      'it': '',
+    },
+    '9r2j74tb': {
+      'en': 'Promotions & sales',
+      'it': '',
+    },
+    's4eh38yd': {
+      'en': 'New brands',
+      'it': '',
+    },
+    '0q4q1ikv': {
+      'en': 'New product guides',
+      'it': '',
+    },
+    'iij8fr4m': {
+      'en': 'Approval of your review',
+      'it': '',
+    },
+    'xryd7aau': {
+      'en': 'Content download',
+      'it': '',
+    },
+    '3kp8um8z': {
+      'en': 'Pre-order alert',
+      'it': '',
+    },
     'f4pd5vrz': {
       'en': 'Home',
       'it': '',
     },
   },
-  // FAQsCopy
+  // FAQs
   {
     'curpy294': {
       'en': 'FAQS',
@@ -1741,6 +1777,179 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
     },
     '6xap495j': {
+      'en': 'Home',
+      'it': 'Casa',
+    },
+  },
+  // ExploreProduct
+  {
+    'd0kltzcu': {
+      'en': 'MODIE REVIEWS',
+      'it': 'AGGIUNGI NUOVO INDIRIZZO',
+    },
+    '6jf6smmv': {
+      'en': 'OVERALL SCORE',
+      'it': '',
+    },
+    'm1bth1hb': {
+      'en': '  (i)',
+      'it': '',
+    },
+    'r32hqohd': {
+      'en': 'DURABILITY',
+      'it': '',
+    },
+    'pg3s6jqk': {
+      'en': 'SIZE & FIT',
+      'it': '',
+    },
+    'j367vlg4': {
+      'en': 'VERSATILITY',
+      'it': '',
+    },
+    'ybgyl7s8': {
+      'en': 'FUNCTIONALITY',
+      'it': '',
+    },
+    'hf085vx9': {
+      'en': 'VALUE FOR MONEY',
+      'it': '',
+    },
+    'v2phwt2f': {
+      'en': 'A.L.C',
+      'it': '',
+    },
+    's9l6kp2n': {
+      'en': 'AXEL SATIN-CREPE BLAZER',
+      'it': '',
+    },
+    'imx9hdsb': {
+      'en': '\$120',
+      'it': '',
+    },
+    'e90plw5j': {
+      'en': 'COLOUR: ',
+      'it': '',
+    },
+    '5j9dd3hp': {
+      'en': 'WHITE',
+      'it': '',
+    },
+    'gundkt3s': {
+      'en': 'SIZE & FIT: ',
+      'it': '',
+    },
+    'xk090lf5': {
+      'en': 'S',
+      'it': '',
+    },
+    '3taxh3gh': {
+      'en': 'SIZE GUIDE',
+      'it': '',
+    },
+    'hytuxdj5': {
+      'en': 'S',
+      'it': '',
+    },
+    'dpalsv5p': {
+      'en': 'M',
+      'it': '',
+    },
+    '4jcwlvle': {
+      'en': 'L',
+      'it': '',
+    },
+    '8qbtx6ob': {
+      'en': 'XL',
+      'it': '',
+    },
+    't64sw9cv': {
+      'en': 'XXL',
+      'it': '',
+    },
+    'zgxycqcn': {
+      'en': 'XXXL',
+      'it': '',
+    },
+    '1hq4bs69': {
+      'en': 'PRODUCT DOSSIER',
+      'it': '',
+    },
+    'l5dofwze': {
+      'en': 'SPECIFICS',
+      'it': '',
+    },
+    'olqkl3zx': {
+      'en':
+          'Lorem ipsum dolor sit amet consectetur. Commodo turpis arcu porttitor in enim. Placerat in laoreet mi enim gravida ut. Fringilla nunc aliquam et tristique tellus parturient venenatis justo arcu. Amet risus facilisi at diam ipsum eu quis auctor tortor.',
+      'it': '',
+    },
+    '1toejhjv': {
+      'en': 'COMPOSITION',
+      'it': '',
+    },
+    'oqzx44qj': {
+      'en':
+          'Lorem ipsum dolor sit amet consectetur. Commodo turpis arcu porttitor in enim. Placerat in laoreet mi enim gravida ut. Fringilla nunc aliquam et tristique tellus parturient venenatis justo arcu. Amet risus facilisi at diam ipsum eu quis auctor tortor.',
+      'it': '',
+    },
+    '188kiosl': {
+      'en': 'CARE INSTRUCTIONS',
+      'it': '',
+    },
+    'wm68z27x': {
+      'en':
+          'Lorem ipsum dolor sit amet consectetur. Commodo turpis arcu porttitor in enim. Placerat in laoreet mi enim gravida ut. Fringilla nunc aliquam et tristique tellus parturient venenatis justo arcu. Amet risus facilisi at diam ipsum eu quis auctor tortor.',
+      'it': '',
+    },
+    'hk4nr93i': {
+      'en': 'ENVIRONMENTAL IMPACT',
+      'it': '',
+    },
+    'je44k3qb': {
+      'en': 'PRODUCT IN ACTION',
+      'it': '',
+    },
+    '0ypw57mp': {
+      'en': 'ADD TO THE CART',
+      'it': '',
+    },
+    'e51hg9uf': {
+      'en': 'Home',
+      'it': '',
+    },
+  },
+  // ExplorePage
+  {
+    'hw8xkiqd': {
+      'en': '01',
+      'it': '01',
+    },
+    'kece7zhw': {
+      'en': 'PRODUCT GUIDES',
+      'it': 'GUIDE AI PRODOTTI',
+    },
+    '0619l5p2': {
+      'en': '02',
+      'it': '01',
+    },
+    'e1eu9fay': {
+      'en': 'OUR ',
+      'it': 'GUIDE AI PRODOTTI',
+    },
+    'd4ol55og': {
+      'en': 'BRANDS',
+      'it': 'GUIDE AI PRODOTTI',
+    },
+    'iqq0icbp': {
+      'en': '03',
+      'it': '01',
+    },
+    '20zj5mes': {
+      'en': 'FAVOURITES',
+      'it': 'GUIDE AI PRODOTTI',
+    },
+    'sokql5vi': {
       'en': 'Home',
       'it': 'Casa',
     },
@@ -2134,11 +2343,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // FAQsComp
   {
     'r509y5u1': {
-      'en': 'How do I earn rewards points?',
+      'en':
+          'How can I purchase  a product that is made to order /made to measure? ',
       'it': '',
     },
     'i1j4ogbk': {
-      'en': 'How do I earn rewards points?',
+      'en':
+          'How can I purchase  a product that is made to order /made to measure? ',
       'it': '',
     },
     'zuqtota1': {

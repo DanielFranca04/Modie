@@ -1,13 +1,16 @@
+import '/backend/supabase/supabase.dart';
 import '/components/how_to_guide/how_to_guide_widget.dart';
 import '/components/navbar/navbar_widget.dart';
 import '/components/options/options_widget.dart';
 import '/components/review_comp_copy2/review_comp_copy2_widget.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'home_page_model.dart';
@@ -20,10 +23,13 @@ class HomePageWidget extends StatefulWidget {
   State<HomePageWidget> createState() => _HomePageWidgetState();
 }
 
-class _HomePageWidgetState extends State<HomePageWidget> {
+class _HomePageWidgetState extends State<HomePageWidget>
+    with TickerProviderStateMixin {
   late HomePageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void initState() {
@@ -34,7 +40,39 @@ class _HomePageWidgetState extends State<HomePageWidget> {
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       FFAppState().menu = false;
       safeSetState(() {});
+      _model.imgout = await OptionsTable().queryRows(
+        queryFn: (q) => q.order('id', ascending: true),
+      );
+      FFAppState().homeimg = _model.imgout!.first.image!;
+      safeSetState(() {});
+      if (animationsMap['imageOnActionTriggerAnimation'] != null) {
+        await animationsMap['imageOnActionTriggerAnimation']!
+            .controller
+            .forward(from: 0.0);
+      }
     });
+
+    animationsMap.addAll({
+      'imageOnActionTriggerAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onActionTrigger,
+        applyInitialState: true,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
+    });
+    setupAnimations(
+      animationsMap.values.where((anim) =>
+          anim.trigger == AnimationTrigger.onActionTrigger ||
+          !anim.applyInitialState),
+      this,
+    );
   }
 
   @override
@@ -180,13 +218,17 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 height: 536.0,
                                 child: Stack(
                                   children: [
-                                    ClipRRect(
-                                      borderRadius: BorderRadius.circular(0.0),
-                                      child: Image.asset(
-                                        'assets/images/Frame_48096396.png',
-                                        width: double.infinity,
-                                        height: 536.0,
-                                        fit: BoxFit.cover,
+                                    Align(
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(0.0),
+                                        child: Image.asset(
+                                          'assets/images/Frame_48096396.png',
+                                          width: double.infinity,
+                                          height: 536.0,
+                                          fit: BoxFit.cover,
+                                        ),
                                       ),
                                     ),
                                     Align(
@@ -266,6 +308,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                   .getText(
                                                 'g83z1ngm' /* 5  NEW-SEASON TRENDS WE LOVE */,
                                               ),
+                                              textAlign: TextAlign.start,
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyMedium
@@ -292,7 +335,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         ),
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              18.0, 15.0, 18.0, 0.0),
+                              18.0, 20.0, 18.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
@@ -359,12 +402,15 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   children: [
                                     ClipRRect(
                                       borderRadius: BorderRadius.circular(0.0),
-                                      child: Image.asset(
-                                        'assets/images/Frame_48096470.png',
+                                      child: Image.network(
+                                        FFAppState().homeimg,
                                         width: double.infinity,
                                         height: 590.0,
                                         fit: BoxFit.cover,
                                       ),
+                                    ).animateOnActionTrigger(
+                                      animationsMap[
+                                          'imageOnActionTriggerAnimation']!,
                                     ),
                                     Align(
                                       alignment:
@@ -434,8 +480,39 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               FlutterFlowTheme.of(context).n950,
                                           size: 14.0,
                                         ),
-                                        onPressed: () {
-                                          print('IconButton pressed ...');
+                                        onPressed: () async {
+                                          if (FFAppState().homeimgnum == 0) {
+                                            FFAppState().homeimgnum = 5;
+                                            FFAppState().homeimg = _model
+                                                .imgout![
+                                                    FFAppState().homeimgnum]
+                                                .image!;
+                                            safeSetState(() {});
+                                            if (animationsMap[
+                                                    'imageOnActionTriggerAnimation'] !=
+                                                null) {
+                                              animationsMap[
+                                                      'imageOnActionTriggerAnimation']!
+                                                  .controller
+                                                  .forward(from: 0.0);
+                                            }
+                                          } else {
+                                            FFAppState().homeimgnum =
+                                                FFAppState().homeimgnum + -1;
+                                            FFAppState().homeimg = _model
+                                                .imgout![
+                                                    FFAppState().homeimgnum]
+                                                .image!;
+                                            safeSetState(() {});
+                                            if (animationsMap[
+                                                    'imageOnActionTriggerAnimation'] !=
+                                                null) {
+                                              animationsMap[
+                                                      'imageOnActionTriggerAnimation']!
+                                                  .controller
+                                                  .forward(from: 0.0);
+                                            }
+                                          }
                                         },
                                       ),
                                     ),
@@ -452,8 +529,39 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               FlutterFlowTheme.of(context).n950,
                                           size: 14.0,
                                         ),
-                                        onPressed: () {
-                                          print('IconButton pressed ...');
+                                        onPressed: () async {
+                                          if (FFAppState().homeimgnum == 5) {
+                                            FFAppState().homeimgnum = 0;
+                                            FFAppState().homeimg = _model
+                                                .imgout![
+                                                    FFAppState().homeimgnum]
+                                                .image!;
+                                            safeSetState(() {});
+                                            if (animationsMap[
+                                                    'imageOnActionTriggerAnimation'] !=
+                                                null) {
+                                              animationsMap[
+                                                      'imageOnActionTriggerAnimation']!
+                                                  .controller
+                                                  .forward(from: 0.0);
+                                            }
+                                          } else {
+                                            FFAppState().homeimgnum =
+                                                FFAppState().homeimgnum + 1;
+                                            FFAppState().homeimg = _model
+                                                .imgout![
+                                                    FFAppState().homeimgnum]
+                                                .image!;
+                                            safeSetState(() {});
+                                            if (animationsMap[
+                                                    'imageOnActionTriggerAnimation'] !=
+                                                null) {
+                                              animationsMap[
+                                                      'imageOnActionTriggerAnimation']!
+                                                  .controller
+                                                  .forward(from: 0.0);
+                                            }
+                                          }
                                         },
                                       ),
                                     ),
@@ -463,81 +571,113 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             ],
                           ),
                         ),
-                        Container(
-                          width: double.infinity,
-                          height: 100.0,
-                          decoration: const BoxDecoration(),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    5.0, 5.0, 5.0, 5.0),
-                                child: Container(
-                                  width: 58.0,
-                                  height: 81.0,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context).m500,
-                                  ),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.all(1.0),
-                                        child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(0.0),
-                                          child: Image.asset(
-                                            'assets/images/Frame_48096470.png',
-                                            width: 58.0,
-                                            height: 79.0,
-                                            fit: BoxFit.cover,
-                                          ),
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 5.0, 0.0, 0.0),
+                          child: Container(
+                            width: double.infinity,
+                            height: 100.0,
+                            decoration: const BoxDecoration(),
+                            child: FutureBuilder<List<OptionsRow>>(
+                              future: OptionsTable().queryRows(
+                                queryFn: (q) => q.order('id', ascending: true),
+                                limit: 6,
+                              ),
+                              builder: (context, snapshot) {
+                                // Customize what your widget looks like when it's loading.
+                                if (!snapshot.hasData) {
+                                  return const Center(
+                                    child: SizedBox(
+                                      width: 50.0,
+                                      height: 50.0,
+                                      child: CircularProgressIndicator(
+                                        valueColor:
+                                            AlwaysStoppedAnimation<Color>(
+                                          Color(0xFFA20A05),
                                         ),
                                       ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              Opacity(
-                                opacity: 0.5,
-                                child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      5.0, 5.0, 5.0, 5.0),
-                                  child: Container(
-                                    width: 58.0,
-                                    height: 81.0,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context).m500,
                                     ),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.all(1.0),
-                                          child: ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(0.0),
-                                            child: Image.asset(
-                                              'assets/images/Frame_48096396.png',
-                                              width: 58.0,
-                                              height: 79.0,
-                                              fit: BoxFit.cover,
+                                  );
+                                }
+                                List<OptionsRow> rowOptionsRowList =
+                                    snapshot.data!;
+
+                                return Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: List.generate(
+                                      rowOptionsRowList.length, (rowIndex) {
+                                    final rowOptionsRow =
+                                        rowOptionsRowList[rowIndex];
+                                    return Opacity(
+                                      opacity: FFAppState().homeimg ==
+                                              rowOptionsRow.image
+                                          ? 1.0
+                                          : 0.5,
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 5.0, 10.0, 5.0),
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            FFAppState().homeimg =
+                                                rowOptionsRow.image!;
+                                            safeSetState(() {});
+                                            if (animationsMap[
+                                                    'imageOnActionTriggerAnimation'] !=
+                                                null) {
+                                              await animationsMap[
+                                                      'imageOnActionTriggerAnimation']!
+                                                  .controller
+                                                  .forward(from: 0.0);
+                                            }
+                                          },
+                                          child: Container(
+                                            width: 58.0,
+                                            height: 81.0,
+                                            decoration: BoxDecoration(
+                                              color: FFAppState().homeimg ==
+                                                      rowOptionsRow.image
+                                                  ? FlutterFlowTheme.of(context)
+                                                      .m500
+                                                  : Colors.transparent,
+                                            ),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Padding(
+                                                  padding: const EdgeInsets.all(1.0),
+                                                  child: ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            0.0),
+                                                    child: Image.network(
+                                                      rowOptionsRow.image!,
+                                                      width: 58.0,
+                                                      height: 79.0,
+                                                      fit: BoxFit.cover,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
                                             ),
                                           ),
                                         ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
+                                      ),
+                                    );
+                                  }),
+                                );
+                              },
+                            ),
                           ),
                         ),
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              18.0, 15.0, 18.0, 0.0),
+                              18.0, 20.0, 18.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
@@ -603,47 +743,58 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  Container(
-                                    width: 108.0,
-                                    height: 220.0,
-                                    decoration: const BoxDecoration(),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(0.0),
-                                          child: Image.asset(
-                                            'assets/images/woman-spa-2.png',
-                                            width: 108.0,
-                                            height: 164.0,
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  4.0, 12.0, 0.0, 0.0),
-                                          child: Text(
-                                            FFLocalizations.of(context).getText(
-                                              '1xnlgzx4' /* A.L.C. */,
+                                  InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.pushNamed('ExploreProduct');
+                                    },
+                                    child: Container(
+                                      width: 108.0,
+                                      height: 220.0,
+                                      decoration: const BoxDecoration(),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(0.0),
+                                            child: Image.asset(
+                                              'assets/images/woman-spa-2.png',
+                                              width: 108.0,
+                                              height: 164.0,
+                                              fit: BoxFit.cover,
                                             ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Montserrat',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .n100,
-                                                  fontSize: 12.0,
-                                                  letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.w600,
-                                                ),
                                           ),
-                                        ),
-                                      ],
+                                          Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    4.0, 12.0, 0.0, 0.0),
+                                            child: Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '1xnlgzx4' /* A.L.C. */,
+                                              ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Montserrat',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .n100,
+                                                    fontSize: 12.0,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.w600,
+                                                  ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ),
                                   Container(
@@ -716,7 +867,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         ),
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              18.0, 15.0, 18.0, 0.0),
+                              18.0, 20.0, 18.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [

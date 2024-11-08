@@ -21,7 +21,7 @@ Future<dynamic> appleSignin() async {
   final supabase = Supabase.instance.client;
 
   try {
-    // Obtém o credential do Apple ID
+    // Apple ID
     final credential = await SignInWithApple.getAppleIDCredential(
       scopes: [
         AppleIDAuthorizationScopes.email,
@@ -36,28 +36,24 @@ Future<dynamic> appleSignin() async {
       );
     }
 
-    // Tenta logar no Supabase usando o token da Apple
     final response = await supabase.auth.signInWithIdToken(
       provider: Provider.apple,
       idToken: idToken,
     );
 
-    // Se o login foi bem-sucedido, atualiza o perfil do usuário
     final firstName = credential.givenName ?? '';
     final lastName = credential.familyName ?? '';
     final displayName = '$firstName $lastName';
 
     await supabase.from('auth.users').upsert({
-      'id': response
-          .user?.id, // garante que o usuário seja atualizado corretamente
+      'id': response.user?.id,
       'display_name': displayName,
     });
 
-    // Retorna o objeto de resposta ao FlutterFlow (deve ser um valor não-null para continuidade)
     return response.user != null ? response.user : null;
   } catch (e) {
     print('Erro ao autenticar com Apple Sign-In: $e');
-    return null; // Retorna null em caso de erro, impedindo a navegação no FlutterFlow
+    return null;
   }
 }
 

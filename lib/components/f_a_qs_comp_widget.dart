@@ -1,24 +1,30 @@
+import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:provider/provider.dart';
 import 'f_a_qs_comp_model.dart';
 export 'f_a_qs_comp_model.dart';
 
 class FAQsCompWidget extends StatefulWidget {
   const FAQsCompWidget({
     super.key,
-    bool? status,
-  }) : status = status ?? false;
+    required this.id,
+  });
 
-  final bool status;
+  final int? id;
 
   @override
   State<FAQsCompWidget> createState() => _FAQsCompWidgetState();
 }
 
-class _FAQsCompWidgetState extends State<FAQsCompWidget> {
+class _FAQsCompWidgetState extends State<FAQsCompWidget>
+    with TickerProviderStateMixin {
   late FAQsCompModel _model;
+
+  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void setState(VoidCallback callback) {
@@ -30,6 +36,40 @@ class _FAQsCompWidgetState extends State<FAQsCompWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => FAQsCompModel());
+
+    animationsMap.addAll({
+      'iconButtonOnActionTriggerAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onActionTrigger,
+        applyInitialState: true,
+        effectsBuilder: () => [
+          RotateEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: 4.75,
+            end: 5.0,
+          ),
+        ],
+      ),
+      'containerOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          ScaleEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: const Offset(1.0, 1.0),
+            end: const Offset(1.0, 1.0),
+          ),
+        ],
+      ),
+    });
+    setupAnimations(
+      animationsMap.values.where((anim) =>
+          anim.trigger == AnimationTrigger.onActionTrigger ||
+          !anim.applyInitialState),
+      this,
+    );
   }
 
   @override
@@ -41,9 +81,11 @@ class _FAQsCompWidgetState extends State<FAQsCompWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Builder(
       builder: (context) {
-        if (!widget.status) {
+        if (!FFAppState().faqs[widget.id!]) {
           return Container(
             width: double.infinity,
             height: 50.0,
@@ -68,17 +110,20 @@ class _FAQsCompWidgetState extends State<FAQsCompWidget> {
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        FFLocalizations.of(context).getText(
-                          'r509y5u1' /* How do I earn rewards points? */,
+                      Expanded(
+                        child: Text(
+                          FFLocalizations.of(context).getText(
+                            'r509y5u1' /* How can I purchase  a product ... */,
+                          ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Montserrat',
+                                    color: FlutterFlowTheme.of(context).n800,
+                                    fontSize: 12.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w500,
+                                  ),
                         ),
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Montserrat',
-                              color: FlutterFlowTheme.of(context).n800,
-                              fontSize: 12.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.w500,
-                            ),
                       ),
                       FlutterFlowIconButton(
                         borderColor: Colors.transparent,
@@ -89,9 +134,24 @@ class _FAQsCompWidgetState extends State<FAQsCompWidget> {
                           color: FlutterFlowTheme.of(context).secondaryText,
                           size: 22.0,
                         ),
-                        onPressed: () {
-                          print('IconButton pressed ...');
+                        onPressed: () async {
+                          if (animationsMap[
+                                  'iconButtonOnActionTriggerAnimation'] !=
+                              null) {
+                            animationsMap['iconButtonOnActionTriggerAnimation']!
+                                .controller
+                                .forward(from: 0.0);
+                          }
+                          await Future.delayed(
+                              const Duration(milliseconds: 100));
+                          FFAppState().updateFaqsAtIndex(
+                            widget.id!,
+                            (_) => true,
+                          );
+                          safeSetState(() {});
                         },
+                      ).animateOnActionTrigger(
+                        animationsMap['iconButtonOnActionTriggerAnimation']!,
                       ),
                     ],
                   ),
@@ -127,18 +187,22 @@ class _FAQsCompWidgetState extends State<FAQsCompWidget> {
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          FFLocalizations.of(context).getText(
-                            'i1j4ogbk' /* How do I earn rewards points? */,
+                        Expanded(
+                          child: Text(
+                            FFLocalizations.of(context).getText(
+                              'i1j4ogbk' /* How can I purchase  a product ... */,
+                            ),
+                            textAlign: TextAlign.start,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Montserrat',
+                                  color: FlutterFlowTheme.of(context).n800,
+                                  fontSize: 12.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.w500,
+                                ),
                           ),
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Montserrat',
-                                    color: FlutterFlowTheme.of(context).n800,
-                                    fontSize: 12.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                  ),
                         ),
                         FlutterFlowIconButton(
                           borderColor: Colors.transparent,
@@ -149,8 +213,12 @@ class _FAQsCompWidgetState extends State<FAQsCompWidget> {
                             color: FlutterFlowTheme.of(context).secondaryText,
                             size: 22.0,
                           ),
-                          onPressed: () {
-                            print('IconButton pressed ...');
+                          onPressed: () async {
+                            FFAppState().updateFaqsAtIndex(
+                              widget.id!,
+                              (_) => false,
+                            );
+                            safeSetState(() {});
                           },
                         ),
                       ],
@@ -159,7 +227,7 @@ class _FAQsCompWidgetState extends State<FAQsCompWidget> {
                   Expanded(
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(9.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(9.0, 5.0, 0.0, 0.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           'zuqtota1' /* Lorem ipsum dolor sit amet con... */,
@@ -178,7 +246,7 @@ class _FAQsCompWidgetState extends State<FAQsCompWidget> {
                 ],
               ),
             ),
-          );
+          ).animateOnPageLoad(animationsMap['containerOnPageLoadAnimation']!);
         }
       },
     );
