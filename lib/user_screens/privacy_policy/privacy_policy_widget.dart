@@ -2,7 +2,6 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'privacy_policy_model.dart';
 export 'privacy_policy_model.dart';
@@ -35,7 +34,10 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).m200,
@@ -48,44 +50,44 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                 height: 48.0,
                 decoration: const BoxDecoration(),
               ),
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  FlutterFlowIconButton(
-                    borderRadius: 8.0,
-                    buttonSize: 40.0,
-                    fillColor: const Color(0x00A20A05),
-                    icon: FaIcon(
-                      FontAwesomeIcons.chevronLeft,
-                      color: FlutterFlowTheme.of(context).n950,
-                      size: 17.0,
-                    ),
-                    onPressed: () async {
-                      context.safePop();
-                    },
-                  ),
-                  Container(
-                    width: 100.0,
-                    height: 70.0,
-                    decoration: const BoxDecoration(
-                      color: Color(0x00FFFFFF),
-                    ),
-                  ),
-                  Text(
-                    FFLocalizations.of(context).getText(
-                      '3nt13122' /* PRIVACY POLICY */,
-                    ),
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'PP Hatton',
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(1.0, 0.0, 0.0, 0.0),
+                      child: FlutterFlowIconButton(
+                        borderRadius: 8.0,
+                        buttonSize: 40.0,
+                        fillColor: const Color(0x00A20A05),
+                        icon: Icon(
+                          FFIcons.kvectorConverted,
                           color: FlutterFlowTheme.of(context).n950,
-                          fontSize: 20.0,
-                          letterSpacing: 0.0,
-                          fontWeight: FontWeight.w500,
-                          useGoogleFonts: false,
+                          size: 14.0,
                         ),
-                  ),
-                ],
+                        onPressed: () async {
+                          context.safePop();
+                        },
+                      ),
+                    ),
+                    Text(
+                      FFLocalizations.of(context).getText(
+                        '3nt13122' /* PRIVACY POLICY */,
+                      ),
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'PP Hatton',
+                            color: FlutterFlowTheme.of(context).n950,
+                            fontSize: 20.0,
+                            letterSpacing: 0.0,
+                            fontWeight: FontWeight.w500,
+                            useGoogleFonts: false,
+                          ),
+                    ),
+                  ],
+                ),
               ),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
@@ -105,22 +107,31 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
               Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 20.0, 0.0, 0.0),
-                    child: Text(
-                      FFLocalizations.of(context).getText(
-                        'injpp8og' /* 1. INFORMATION COLLECTED */,
-                      ),
-                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'PP Hatton',
-                            color: FlutterFlowTheme.of(context).m500,
-                            fontSize: 20.0,
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.w500,
-                            useGoogleFonts: false,
-                            lineHeight: 1.4,
+                  Expanded(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              16.0, 20.0, 0.0, 0.0),
+                          child: Text(
+                            FFLocalizations.of(context).getText(
+                              'injpp8og' /* 1. INFORMATION COLLECTED */,
+                            ),
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'PP Hatton',
+                                  color: FlutterFlowTheme.of(context).m500,
+                                  fontSize: 20.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.w500,
+                                  useGoogleFonts: false,
+                                  lineHeight: 1.4,
+                                ),
                           ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
@@ -129,7 +140,6 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                 child: Container(
                   width: double.infinity,
-                  height: 145.0,
                   decoration: const BoxDecoration(),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -289,22 +299,31 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
-                      child: Text(
-                        FFLocalizations.of(context).getText(
-                          'nsoikk1z' /* 2. USE OF INFORMATION */,
-                        ),
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'PP Hatton',
-                              color: FlutterFlowTheme.of(context).m500,
-                              fontSize: 20.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.w500,
-                              useGoogleFonts: false,
-                              lineHeight: 1.4,
+                    Expanded(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                16.0, 0.0, 0.0, 0.0),
+                            child: Text(
+                              FFLocalizations.of(context).getText(
+                                'nsoikk1z' /* 2. USE OF INFORMATION */,
+                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'PP Hatton',
+                                    color: FlutterFlowTheme.of(context).m500,
+                                    fontSize: 20.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w500,
+                                    useGoogleFonts: false,
+                                    lineHeight: 1.4,
+                                  ),
                             ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
@@ -314,7 +333,6 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                 child: Container(
                   width: double.infinity,
-                  height: 180.0,
                   decoration: const BoxDecoration(),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -502,22 +520,32 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
-                      child: Text(
-                        FFLocalizations.of(context).getText(
-                          'xwwt13zg' /* 3. SHARING OF INFORMATION */,
-                        ),
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'PP Hatton',
-                              color: FlutterFlowTheme.of(context).m500,
-                              fontSize: 20.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.w500,
-                              useGoogleFonts: false,
-                              lineHeight: 1.4,
+                    Expanded(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                16.0, 0.0, 0.0, 0.0),
+                            child: Text(
+                              FFLocalizations.of(context).getText(
+                                'xwwt13zg' /* 3. SHARING OF INFORMATION */,
+                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'PP Hatton',
+                                    color: FlutterFlowTheme.of(context).m500,
+                                    fontSize: 20.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w500,
+                                    useGoogleFonts: false,
+                                    lineHeight: 1.4,
+                                  ),
                             ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
@@ -527,7 +555,6 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                 child: Container(
                   width: double.infinity,
-                  height: 130.0,
                   decoration: const BoxDecoration(),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -725,7 +752,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                 child: Container(
                   width: double.infinity,
-                  height: 175.0,
+                  height: 185.0,
                   decoration: const BoxDecoration(),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -1007,7 +1034,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                 child: Container(
                   width: double.infinity,
-                  height: 100.0,
+                  height: 110.0,
                   decoration: const BoxDecoration(),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,

@@ -42,16 +42,9 @@ class ProductRow extends SupabaseDataRow {
   set valueForMoney(double? value) =>
       setField<double>('value_for_money', value);
 
-  String? get specifics => getField<String>('specifics');
-  set specifics(String? value) => setField<String>('specifics', value);
+  String? get type => getField<String>('type');
+  set type(String? value) => setField<String>('type', value);
 
-  String? get compositions => getField<String>('compositions');
-  set compositions(String? value) => setField<String>('compositions', value);
-
-  String? get careInstructions => getField<String>('care_instructions');
-  set careInstructions(String? value) =>
-      setField<String>('care_instructions', value);
-
-  String? get sizeGuide => getField<String>('size_guide');
-  set sizeGuide(String? value) => setField<String>('size_guide', value);
+  int get brandId => getField<int>('brand_id')!;
+  set brandId(int value) => setField<int>('brand_id', value);
 }

@@ -3,6 +3,10 @@ import 'review_comp_widget.dart' show ReviewCompWidget;
 import 'package:flutter/material.dart';
 
 class ReviewCompModel extends FlutterFlowModel<ReviewCompWidget> {
+  ///  Local state fields for this component.
+
+  bool imageload = false;
+
   @override
   void initState(BuildContext context) {}
 

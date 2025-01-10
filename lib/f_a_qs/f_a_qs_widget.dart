@@ -3,10 +3,13 @@ import '/components/f_a_qs_comp_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'f_a_qs_model.dart';
 export 'f_a_qs_model.dart';
 
@@ -51,7 +54,10 @@ class _FAQsWidgetState extends State<FAQsWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).m200,
@@ -76,11 +82,11 @@ class _FAQsWidgetState extends State<FAQsWidget> {
               children: [
                 Container(
                   width: 100.0,
-                  height: 40.0,
+                  height: 45.0,
                   decoration: const BoxDecoration(),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -88,10 +94,10 @@ class _FAQsWidgetState extends State<FAQsWidget> {
                       FlutterFlowIconButton(
                         borderRadius: 8.0,
                         buttonSize: 40.0,
-                        icon: FaIcon(
-                          FontAwesomeIcons.angleLeft,
+                        icon: Icon(
+                          FFIcons.kvectorConverted,
                           color: FlutterFlowTheme.of(context).n950,
-                          size: 18.0,
+                          size: 14.0,
                         ),
                         onPressed: () async {
                           context.safePop();
@@ -130,8 +136,8 @@ class _FAQsWidgetState extends State<FAQsWidget> {
                       if (!snapshot.hasData) {
                         return const Center(
                           child: SizedBox(
-                            width: 50.0,
-                            height: 50.0,
+                            width: 24.0,
+                            height: 24.0,
                             child: CircularProgressIndicator(
                               valueColor: AlwaysStoppedAnimation<Color>(
                                 Color(0xFFA20A05),
@@ -157,7 +163,7 @@ class _FAQsWidgetState extends State<FAQsWidget> {
                             children: [
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 8.0, 0.0, 0.0),
+                                    0.0, 24.0, 0.0, 12.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -182,7 +188,7 @@ class _FAQsWidgetState extends State<FAQsWidget> {
                                 future: _model.faqsops(
                                   requestFn: () => FaqsOptionsTable().queryRows(
                                     queryFn: (q) => q
-                                        .eq(
+                                        .eqOrNull(
                                           'faq_id',
                                           listViewFaqsRow.id,
                                         )
@@ -194,8 +200,8 @@ class _FAQsWidgetState extends State<FAQsWidget> {
                                   if (!snapshot.hasData) {
                                     return const Center(
                                       child: SizedBox(
-                                        width: 50.0,
-                                        height: 50.0,
+                                        width: 24.0,
+                                        height: 24.0,
                                         child: CircularProgressIndicator(
                                           valueColor:
                                               AlwaysStoppedAnimation<Color>(
@@ -222,18 +228,22 @@ class _FAQsWidgetState extends State<FAQsWidget> {
                                       final listViewFaqsOptionsRow =
                                           listViewFaqsOptionsRowList[
                                               listViewIndex];
-                                      return wrapWithModel(
-                                        model: _model.fAQsCompModels.getModel(
-                                          listViewIndex.toString(),
-                                          listViewIndex,
-                                        ),
-                                        updateCallback: () =>
-                                            safeSetState(() {}),
-                                        child: FAQsCompWidget(
-                                          key: Key(
-                                            'Keyor8_${listViewIndex.toString()}',
+                                      return Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 4.0, 0.0, 0.0),
+                                        child: wrapWithModel(
+                                          model: _model.fAQsCompModels.getModel(
+                                            listViewIndex.toString(),
+                                            listViewIndex,
                                           ),
-                                          id: listViewIndex,
+                                          updateCallback: () =>
+                                              safeSetState(() {}),
+                                          child: FAQsCompWidget(
+                                            key: Key(
+                                              'Keyor8_${listViewIndex.toString()}',
+                                            ),
+                                            id: listViewIndex,
+                                          ),
                                         ),
                                       );
                                     },
@@ -296,18 +306,54 @@ class _FAQsWidgetState extends State<FAQsWidget> {
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 0.0),
-                              child: Text(
-                                FFLocalizations.of(context).getText(
-                                  'pkt5y0k8' /* Feel free to contact us at hel... */,
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Montserrat',
-                                      color: FlutterFlowTheme.of(context).n600,
-                                      fontSize: 12.0,
-                                      letterSpacing: 0.0,
+                              child: RichText(
+                                textScaler: MediaQuery.of(context).textScaler,
+                                text: TextSpan(
+                                  children: [
+                                    TextSpan(
+                                      text: FFLocalizations.of(context).getText(
+                                        'mpj7266j' /* Feel free to contact us at  */,
+                                      ),
+                                      style: GoogleFonts.getFont(
+                                        'Montserrat',
+                                        color:
+                                            FlutterFlowTheme.of(context).n600,
+                                        fontSize: 12.0,
+                                      ),
                                     ),
+                                    TextSpan(
+                                      text: FFLocalizations.of(context).getText(
+                                        'ja77fsan' /* hello@modie.co */,
+                                      ),
+                                      style: GoogleFonts.getFont(
+                                        'Montserrat',
+                                        color:
+                                            FlutterFlowTheme.of(context).n600,
+                                        fontSize: 12.0,
+                                        decoration: TextDecoration.underline,
+                                      ),
+                                      mouseCursor: SystemMouseCursors.click,
+                                      recognizer: TapGestureRecognizer()
+                                        ..onTap = () async {
+                                          await launchUrl(Uri(
+                                            scheme: 'mailto',
+                                            path: 'hello@modie.co',
+                                          ));
+                                        },
+                                    )
+                                  ],
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Montserrat',
+                                        color:
+                                            FlutterFlowTheme.of(context).n300,
+                                        fontSize: 12.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w600,
+                                        lineHeight: 1.2,
+                                      ),
+                                ),
                               ),
                             ),
                           ].divide(const SizedBox(width: 12.0)),

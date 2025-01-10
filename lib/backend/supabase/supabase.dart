@@ -5,7 +5,7 @@ export 'storage/storage.dart';
 
 String _kSupabaseUrl = 'https://maxlytiwpgziyiekedql.supabase.co';
 String _kSupabaseAnonKey =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1heGx5dGl3cGd6aXlpZWtlZHFsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjI5NTAyOTEsImV4cCI6MjAzODUyNjI5MX0.OE6Gg-owzAqrnQz07LhVY1KbwNuZl_wAO6Xm-yEsWeA';
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1heGx5dGl3cGd6aXlpZWtlZHFsIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcyMjk1MDI5MSwiZXhwIjoyMDM4NTI2MjkxfQ.dxxP43SrsQzmihwufrnND7651TF_GbaDydXETv9-PgY';
 
 class SupaFlow {
   SupaFlow._();
@@ -20,5 +20,7 @@ class SupaFlow {
         url: _kSupabaseUrl,
         anonKey: _kSupabaseAnonKey,
         debug: false,
+        authOptions:
+            const FlutterAuthClientOptions(authFlowType: AuthFlowType.implicit),
       );
 }

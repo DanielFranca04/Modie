@@ -45,7 +45,10 @@ class _MyShippingAdressWidgetState extends State<MyShippingAdressWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).m200,
@@ -54,33 +57,32 @@ class _MyShippingAdressWidgetState extends State<MyShippingAdressWidget> {
           children: [
             Container(
               width: 100.0,
-              height: 50.0,
+              height: 48.0,
               decoration: const BoxDecoration(),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  FlutterFlowIconButton(
-                    borderColor: Colors.transparent,
-                    borderRadius: 8.0,
-                    buttonSize: 40.0,
-                    fillColor: const Color(0x00A20A05),
-                    icon: Icon(
-                      Icons.chevron_left,
-                      color: FlutterFlowTheme.of(context).n950,
-                      size: 20.0,
+                  Padding(
+                    padding: const EdgeInsetsDirectional.fromSTEB(1.0, 0.0, 0.0, 0.0),
+                    child: FlutterFlowIconButton(
+                      borderColor: Colors.transparent,
+                      borderRadius: 8.0,
+                      buttonSize: 40.0,
+                      fillColor: const Color(0x00A20A05),
+                      icon: Icon(
+                        FFIcons.kvectorConverted,
+                        color: FlutterFlowTheme.of(context).n950,
+                        size: 14.0,
+                      ),
+                      onPressed: () async {
+                        context.goNamed('MyModie');
+                      },
                     ),
-                    onPressed: () async {
-                      context.goNamed('MyModie');
-                    },
-                  ),
-                  Container(
-                    width: 100.0,
-                    height: 40.0,
-                    decoration: const BoxDecoration(),
                   ),
                   Text(
                     FFLocalizations.of(context).getText(
@@ -100,7 +102,7 @@ class _MyShippingAdressWidgetState extends State<MyShippingAdressWidget> {
             ),
             Container(
               width: 100.0,
-              height: 40.0,
+              height: 20.0,
               decoration: const BoxDecoration(),
             ),
             Expanded(
@@ -109,7 +111,7 @@ class _MyShippingAdressWidgetState extends State<MyShippingAdressWidget> {
                     (_model.requestCompleter ??= Completer<List<AddressRow>>()
                           ..complete(AddressTable().queryRows(
                             queryFn: (q) => q
-                                .eq(
+                                .eqOrNull(
                                   'profile_id',
                                   currentUserUid,
                                 )
@@ -121,8 +123,8 @@ class _MyShippingAdressWidgetState extends State<MyShippingAdressWidget> {
                   if (!snapshot.hasData) {
                     return const Center(
                       child: SizedBox(
-                        width: 50.0,
-                        height: 50.0,
+                        width: 24.0,
+                        height: 24.0,
                         child: CircularProgressIndicator(
                           valueColor: AlwaysStoppedAnimation<Color>(
                             Color(0xFFA20A05),
@@ -145,8 +147,9 @@ class _MyShippingAdressWidgetState extends State<MyShippingAdressWidget> {
                     itemBuilder: (context, listViewIndex) {
                       final listViewAddressRow =
                           listViewAddressRowList[listViewIndex];
-                      return SizedBox(
+                      return Container(
                         height: 530.0,
+                        decoration: const BoxDecoration(),
                         child: wrapWithModel(
                           model: _model.addressModels.getModel(
                             listViewIndex.toString(),

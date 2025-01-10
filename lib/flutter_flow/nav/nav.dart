@@ -16,6 +16,8 @@ export 'serialization_util.dart';
 
 const kTransitionInfoKey = '__transition_info__';
 
+GlobalKey<NavigatorState> appNavigatorKey = GlobalKey<NavigatorState>();
+
 class AppStateNotifier extends ChangeNotifier {
   AppStateNotifier._();
 
@@ -73,14 +75,15 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
+      navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const HomePageWidget() : const LoadingScreenWidget(),
+          appStateNotifier.loggedIn ? const LoadPageWidget() : const LoadingScreenWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
-              ? const HomePageWidget()
+              ? const LoadPageWidget()
               : const LoadingScreenWidget(),
         ),
         FFRoute(
@@ -167,7 +170,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'StartQuiz',
           path: '/startQuiz',
-          builder: (context, params) => const StartQuizWidget(),
+          builder: (context, params) => StartQuizWidget(
+            navback: params.getParam(
+              'navback',
+              ParamType.bool,
+            ),
+          ),
         ),
         FFRoute(
           name: 'QuizPage',
@@ -259,6 +267,93 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const MyPaymentsCardsWidget(),
         ),
         FFRoute(
+          name: 'ExploreProduct',
+          path: '/exploreProduct',
+          requireAuth: true,
+          builder: (context, params) => ExploreProductWidget(
+            idProdShopify: params.getParam(
+              'idProdShopify',
+              ParamType.String,
+            ),
+            idProdInternal: params.getParam(
+              'idProdInternal',
+              ParamType.int,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'ExplorePage',
+          path: '/explorePage',
+          requireAuth: true,
+          builder: (context, params) => const ExplorePageWidget(),
+        ),
+        FFRoute(
+          name: 'ScoringGuide',
+          path: '/scoringGuide',
+          builder: (context, params) => const ScoringGuideWidget(),
+        ),
+        FFRoute(
+          name: 'MyFavourites',
+          path: '/myFavourites',
+          builder: (context, params) => const MyFavouritesWidget(),
+        ),
+        FFRoute(
+          name: 'ProductGuide',
+          path: '/productGuide',
+          requireAuth: true,
+          builder: (context, params) => const ProductGuideWidget(),
+        ),
+        FFRoute(
+          name: 'ExploreReviews',
+          path: '/exploreReviews',
+          builder: (context, params) => const ExploreReviewsWidget(),
+        ),
+        FFRoute(
+          name: 'ExploreArticlesPage',
+          path: '/exploreArticlesPage',
+          builder: (context, params) => ExploreArticlesPageWidget(
+            title: params.getParam(
+              'title',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'MyOrderStatus',
+          path: '/myOrderStatus',
+          builder: (context, params) => const MyOrderStatusWidget(),
+        ),
+        FFRoute(
+          name: 'MyOrder',
+          path: '/myOrder',
+          builder: (context, params) => const MyOrderWidget(),
+        ),
+        FFRoute(
+          name: 'ReturnSelect',
+          path: '/returnSelect',
+          builder: (context, params) => const ReturnSelectWidget(),
+        ),
+        FFRoute(
+          name: 'ReturnForm',
+          path: '/returnForm',
+          builder: (context, params) => const ReturnFormWidget(),
+        ),
+        FFRoute(
+          name: 'OurBrands',
+          path: '/ourBrands',
+          builder: (context, params) => const OurBrandsWidget(),
+        ),
+        FFRoute(
+          name: 'OurBrandsInfo',
+          path: '/ourBrandsInfo',
+          builder: (context, params) => OurBrandsInfoWidget(
+            val: params.getParam(
+              'val',
+              ParamType.int,
+            ),
+          ),
+        ),
+        FFRoute(
           name: 'AddAdressEdit',
           path: '/addAdressEdit',
           builder: (context, params) => AddAdressEditWidget(
@@ -269,15 +364,43 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'ExploreProduct',
-          path: '/exploreProduct',
-          builder: (context, params) => const ExploreProductWidget(),
+          name: 'ShopScreen',
+          path: '/shopScreen',
+          builder: (context, params) => const ShopScreenWidget(),
         ),
         FFRoute(
-          name: 'ExplorePage',
-          path: '/explorePage',
-          requireAuth: true,
-          builder: (context, params) => const ExplorePageWidget(),
+          name: 'ShopScreenProducts',
+          path: '/shopScreenProducts',
+          builder: (context, params) => ShopScreenProductsWidget(
+            type: params.getParam(
+              'type',
+              ParamType.String,
+            ),
+            requeststatus: params.getParam(
+              'requeststatus',
+              ParamType.bool,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'QuizPageCopy',
+          path: '/quizPageCopy',
+          builder: (context, params) => const QuizPageCopyWidget(),
+        ),
+        FFRoute(
+          name: 'QuizShop',
+          path: '/quizShop',
+          builder: (context, params) => QuizShopWidget(
+            type: params.getParam(
+              'type',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'ShoppingCart',
+          path: '/shoppingCart',
+          builder: (context, params) => const ShoppingCartWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
@@ -465,8 +588,8 @@ class FFRoute {
           final child = appStateNotifier.loading
               ? const Center(
                   child: SizedBox(
-                    width: 50.0,
-                    height: 50.0,
+                    width: 24.0,
+                    height: 24.0,
                     child: CircularProgressIndicator(
                       valueColor: AlwaysStoppedAnimation<Color>(
                         Color(0xFFA20A05),

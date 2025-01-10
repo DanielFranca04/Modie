@@ -20,4 +20,7 @@ class BrandPartnersRow extends SupabaseDataRow {
 
   int get partnerId => getField<int>('partner_id')!;
   set partnerId(int value) => setField<int>('partner_id', value);
+
+  int? get id => getField<int>('id');
+  set id(int? value) => setField<int>('id', value);
 }

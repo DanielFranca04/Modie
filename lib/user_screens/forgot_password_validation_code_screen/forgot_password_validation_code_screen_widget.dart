@@ -6,7 +6,6 @@ import '/custom_code/actions/index.dart' as actions;
 import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'forgot_password_validation_code_screen_model.dart';
@@ -55,7 +54,10 @@ class _ForgotPasswordValidationCodeScreenWidgetState
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -80,23 +82,27 @@ class _ForgotPasswordValidationCodeScreenWidgetState
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(16.0, 55.0, 18.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 48.0, 18.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          FlutterFlowIconButton(
-                            borderColor: Colors.transparent,
-                            borderRadius: 8.0,
-                            buttonSize: 40.0,
-                            icon: FaIcon(
-                              FontAwesomeIcons.angleLeft,
-                              color: FlutterFlowTheme.of(context).n950,
-                              size: 19.0,
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                1.0, 0.0, 0.0, 0.0),
+                            child: FlutterFlowIconButton(
+                              borderColor: Colors.transparent,
+                              borderRadius: 8.0,
+                              buttonSize: 40.0,
+                              icon: Icon(
+                                FFIcons.kvectorConverted,
+                                color: FlutterFlowTheme.of(context).n950,
+                                size: 14.0,
+                              ),
+                              onPressed: () async {
+                                context.safePop();
+                              },
                             ),
-                            onPressed: () async {
-                              context.safePop();
-                            },
                           ),
                           Container(
                             width: 77.54,

@@ -58,7 +58,10 @@ class _CreateAccountScreenWidgetState extends State<CreateAccountScreenWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -81,10 +84,11 @@ class _CreateAccountScreenWidgetState extends State<CreateAccountScreenWidget> {
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
-                            16.0, 55.0, 18.0, 0.0),
+                            16.0, 48.0, 18.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.end,
@@ -648,7 +652,7 @@ class _CreateAccountScreenWidgetState extends State<CreateAccountScreenWidget> {
                               safeSetState(() {});
                               _model.outputemail =
                                   await ProfileTable().queryRows(
-                                queryFn: (q) => q.eq(
+                                queryFn: (q) => q.eqOrNull(
                                   'email',
                                   _model.emailTextFieldTextController.text,
                                 ),
@@ -663,7 +667,7 @@ class _CreateAccountScreenWidgetState extends State<CreateAccountScreenWidget> {
                                         '') {
                                   _model.codevalidator =
                                       await InvitationTable().queryRows(
-                                    queryFn: (q) => q.eq(
+                                    queryFn: (q) => q.eqOrNull(
                                       'code',
                                       _model
                                           .invitationCodeTextFieldTextController
@@ -809,7 +813,7 @@ class _CreateAccountScreenWidgetState extends State<CreateAccountScreenWidget> {
                       ),
                       Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
-                            16.0, 55.0, 16.0, 0.0),
+                            16.0, 30.0, 16.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -942,7 +946,7 @@ class _CreateAccountScreenWidgetState extends State<CreateAccountScreenWidget> {
                       ),
                       Container(
                         width: 100.0,
-                        height: 50.0,
+                        height: 30.0,
                         decoration: const BoxDecoration(),
                       ),
                     ],

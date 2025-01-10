@@ -59,7 +59,7 @@ Future<DateTime> convertTodate(
       monthInNumber = "01";
   }
 
-  String dateStr = "$year-$monthInNumber-${day.toString().padLeft(2, '0')}";
+  String dateStr = "${day.toString().padLeft(2, '0')}-$monthInNumber-$year-";
 
   DateTime date = DateTime.parse(dateStr);
 

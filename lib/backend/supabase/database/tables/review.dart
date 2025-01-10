@@ -31,4 +31,17 @@ class ReviewRow extends SupabaseDataRow {
 
   DateTime? get createdAt => getField<DateTime>('created_at');
   set createdAt(DateTime? value) => setField<DateTime>('created_at', value);
+
+  bool get approved => getField<bool>('approved')!;
+  set approved(bool value) => setField<bool>('approved', value);
+
+  int? get overallScore => getField<int>('overall_score');
+  set overallScore(int? value) => setField<int>('overall_score', value);
+
+  bool get rejected => getField<bool>('rejected')!;
+  set rejected(bool value) => setField<bool>('rejected', value);
+
+  bool get contentDownloaded => getField<bool>('content_downloaded')!;
+  set contentDownloaded(bool value) =>
+      setField<bool>('content_downloaded', value);
 }

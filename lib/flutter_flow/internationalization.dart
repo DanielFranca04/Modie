@@ -235,27 +235,27 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'vxipsy8v': {
       'en': 'Field is required',
-      'it': '',
+      'it': 'Il campo è obbligatorio',
     },
     'jcn97ic6': {
       'en': 'Please choose an option from the dropdown',
-      'it': '',
+      'it': 'Si prega di selezionare un\'opzione dal menu a discesa',
     },
     'kd1iwao9': {
       'en': 'Field is required',
-      'it': '',
+      'it': 'Il campo è obbligatorio',
     },
     '5tch86hh': {
       'en': 'Please choose an option from the dropdown',
-      'it': '',
+      'it': 'Si prega di selezionare un\'opzione dal menu a discesa',
     },
     '638w6gzl': {
       'en': 'Field is required',
-      'it': '',
+      'it': 'Il campo è obbligatorio',
     },
     'x0c2qng2': {
       'en': 'Please choose an option from the dropdown',
-      'it': '',
+      'it': 'Si prega di selezionare un\'opzione dal menu a discesa',
     },
     'l646p7cq': {
       'en': 'Does not match',
@@ -267,7 +267,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'kb53gao6': {
       'en': 'Invalid code',
-      'it': 'Non corrisponde',
+      'it': 'Codice non valido',
     },
     'x0n2s2nd': {
       'en': 'CONTINUE',
@@ -299,7 +299,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     't5ssyrpu': {
       'en': 'Home',
-      'it': '',
+      'it': 'Casa',
     },
   },
   // SetupProfileScreen
@@ -326,11 +326,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ovca9uej': {
       'en': 'Field is required',
-      'it': '',
+      'it': 'Il campo è obbligatorio',
     },
     '9tyo3xzh': {
       'en': 'Please choose an option from the dropdown',
-      'it': '',
+      'it': 'Si prega di selezionare un\'opzione dal menu a discesa',
     },
     '64fx4q6z': {
       'en': 'BECOME A MODIER',
@@ -351,11 +351,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en':
           'This data assists Modie in tailoring the content you see whilst ensuring the safety of the Modie community. Your data remains confidential and will not be disclosed to any third party.',
       'it':
-          'Questi dati aiutano Modie a personalizzare i contenuti che vedi, garantendo al contempo la sicurezza della comunità Modie. I tuoi dati rimangono riservati e non saranno divulgati a terzi.',
+          'Questi dati aiutano Modie a personalizzare i contenuti che vedi, garantendo al contempo la sicurezza della comunità Modie. I tuoi dati rimangono riservati e non saranno divulgati a terze parti.',
     },
     'r4yhne1d': {
       'en': 'Birthday (DD MM YYYY)',
-      'it': 'Compleanno (gg/mm/aaaa)',
+      'it': 'Compleanno (GG MM AAAA)',
     },
     '4sgs1j8w': {
       'en': '',
@@ -390,10 +390,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'ytk7cpf4': {
       'en': 'VIEW MORE',
       'it': 'GUARDA DI PIÙ',
-    },
-    'g83z1ngm': {
-      'en': '5  NEW-SEASON TRENDS WE LOVE',
-      'it': '5 TENDENZE DELLA NUOVA STAGIONE CHE AMIAMO',
     },
     'odt26hb6': {
       'en': '02',
@@ -499,11 +495,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'e17jks9g': {
       'en': 'Field is required',
-      'it': '',
+      'it': 'Il campo è obbligatorio',
     },
     'xskyhx39': {
       'en': 'Please choose an option from the dropdown',
-      'it': '',
+      'it': 'Si prega di selezionare un\'opzione dal menu a discesa',
     },
     'c3mnnecc': {
       'en': 'Email not registered',
@@ -581,19 +577,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'w73rumy6': {
       'en': 'Field is required',
-      'it': '',
+      'it': 'Il campo è obbligatorio',
     },
     'n0deucim': {
       'en': 'Please choose an option from the dropdown',
-      'it': '',
+      'it': 'Si prega di selezionare un\'opzione dal menu a discesa',
     },
     'hq99wd28': {
       'en': 'Field is required',
-      'it': '',
+      'it': 'Il campo è obbligatorio',
     },
     'am8f8p0b': {
       'en': 'Please choose an option from the dropdown',
-      'it': '',
+      'it': 'Si prega di selezionare un\'opzione dal menu a discesa',
     },
     '5gx6bifs': {
       'en': 'CHANGE NOW',
@@ -829,7 +825,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     '8f3n592h': {
       'en': 'WHAT LIFESTYLE DO YOU LIVE?',
-      'it': 'CHE STILE DI VITA VIVI?',
+      'it': 'CHE STILE DI VITA CONDIVIDI?',
     },
     'pi88eco1': {
       'en':
@@ -856,6 +852,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Hello World',
       'it': 'Ciao mondo',
     },
+    'um1wut4p': {
+      'en': '',
+      'it': '',
+    },
     'v1a22l0t': {
       'en': 'Home',
       'it': 'Casa',
@@ -865,24 +865,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'jaiuzih3': {
       'en': '150',
-      'it': '',
+      'it': '150',
     },
     '5ggu0tn1': {
       'en': 'WELCOME TO MODIE!',
-      'it': '',
+      'it': 'BENVENUTI A MODIE!',
     },
     'vnsl9gqz': {
       'en':
           'As a thank you for becoming a Modier, we have given you 150 welcome points',
-      'it': '',
+      'it':
+          'Come ringraziamento per essere diventato un Modier, ti abbiamo dato 150 punti di benvenuto',
     },
     '2vtavthc': {
       'en': 'COLLECT REWARD',
-      'it': '',
+      'it': 'RACCOGLI LA RICOMPENSA',
     },
     '0r1iufro': {
       'en': 'Home',
-      'it': '',
+      'it': 'Casa',
     },
   },
   // MyModie
@@ -957,11 +958,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'daexp526': {
       'en': 'Need help? Please contact ',
-      'it': 'Hai bisogno di aiuto? Contatta  ',
+      'it': 'Hai bisogno di aiuto? Contatta',
     },
     '70exfmb7': {
       'en': 'hello@modie.co',
-      'it': 'hello@modie.co',
+      'it': 'ciao@modie.co',
     },
     '49jhextf': {
       'en': 'Home',
@@ -1195,41 +1196,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'MY PROFILE',
       'it': 'IL MIO PROFILO',
     },
-    'arbfjsfg': {
+    'hd5o26ia': {
       'en': 'First Name',
       'it': 'Nome di battesimo',
     },
-    'hd5o26ia': {
-      'en': '',
-      'it': '',
-    },
-    '22cnghd3': {
+    'fchgwt8k': {
       'en': 'Surname',
       'it': 'Cognome',
     },
-    'fchgwt8k': {
-      'en': '',
-      'it': '',
-    },
-    'vak0x190': {
+    '12rtcmgs': {
       'en': 'Username',
       'it': 'Nome utente',
-    },
-    '12rtcmgs': {
-      'en': '',
-      'it': '',
     },
     'yxlbbjb8': {
       'en': 'This username is already in use',
       'it': 'Questo nome utente è già in uso',
     },
-    'ptxjm96j': {
-      'en': 'Date of Birth',
-      'it': 'Data di nascita',
-    },
     '6oaklsam': {
-      'en': 'Birthday (dd/mm/yyyy)',
-      'it': 'Compleanno (gg/mm/aaaa)',
+      'en': 'Date (DD MM YYYY)',
+      'it': 'Data (GG MM AAAA)',
     },
     'bk7h41fl': {
       'en': '',
@@ -1254,6 +1239,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'vv2sac76': {
       'en': 'My Interests',
       'it': 'I miei interessi',
+    },
+    'jaz9t7c6': {
+      'en': 'Do you want to delete your account? ',
+      'it': 'Vuoi eliminare il tuo account?',
+    },
+    'ngne2im5': {
+      'en': 'Click here',
+      'it': 'clicca qui',
     },
     'qyhq258m': {
       'en': 'Home',
@@ -1317,6 +1310,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Hello World',
       'it': 'Ciao mondo',
     },
+    'tbgv7tdt': {
+      'en': '',
+      'it': '',
+    },
     'r9kf8a6a': {
       'en': 'Home',
       'it': 'Casa',
@@ -1343,157 +1340,81 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'ADD NEW ADDRESS',
       'it': 'AGGIUNGI NUOVO INDIRIZZO',
     },
-    'n8rpn4lp': {
+    'abdw5h3f': {
       'en': 'First Name',
       'it': 'Nome di battesimo',
     },
-    'abdw5h3f': {
-      'en': '',
-      'it': '',
+    'cqu87v37': {
+      'en': 'Field is required',
+      'it': 'Il campo è obbligatorio',
     },
-    '4rk2yen8': {
+    'x3kjzm9q': {
       'en': 'Surname',
       'it': 'Cognome',
     },
-    'x3kjzm9q': {
-      'en': '',
-      'it': '',
+    '7jmovf8t': {
+      'en': 'Field is required',
+      'it': 'Il campo è obbligatorio',
     },
-    'fsacblyr': {
+    'lrgiern1': {
       'en': 'Dialing Code',
       'it': 'Prefisso telefonico',
     },
-    'lrgiern1': {
-      'en': '',
-      'it': '',
+    '1ofgeumq': {
+      'en': 'Field is required',
+      'it': 'Il campo è obbligatorio',
     },
-    'k0rkemf5': {
+    'e7h0h1vl': {
       'en': 'Phone',
       'it': 'Telefono',
     },
-    'e7h0h1vl': {
-      'en': '',
-      'it': '',
+    'g0rsauuh': {
+      'en': 'Field is required',
+      'it': 'Il campo è obbligatorio',
     },
     'lb0hcv5s': {
       'en': 'USE MY CURRENT LOCATION',
       'it': 'USA LA MIA POSIZIONE ATTUALE',
     },
-    'h1kz2ka6': {
+    'gnjuywan': {
       'en': 'Address Line 1',
       'it': 'Indirizzo Linea 1',
     },
-    'n8u4gv6e': {
-      'en': '',
-      'it': '',
-    },
-    'x66y0zbk': {
-      'en': 'Address Line 2',
-      'it': 'Indirizzo riga 2',
+    'viin7zxe': {
+      'en': 'Field is required',
+      'it': 'Il campo è obbligatorio',
     },
     'krol4k5u': {
-      'en': '',
-      'it': '',
+      'en': 'Address Line 2 (Optional)',
+      'it': 'Indirizzo riga 2 (facoltativo)',
     },
-    'hmejbrzn': {
+    'rwdcae9b': {
       'en': 'City / Town',
       'it': 'Città / Paese',
     },
-    'rwdcae9b': {
-      'en': '',
-      'it': '',
+    '95ug2zy0': {
+      'en': 'Field is required',
+      'it': 'Il campo è obbligatorio',
     },
-    '4qzi8n2y': {
+    'zd47x32u': {
       'en': 'Postcode',
       'it': 'Codice postale',
     },
-    'zd47x32u': {
-      'en': '',
-      'it': '',
+    'xz5kz54f': {
+      'en': 'Field is required',
+      'it': 'Il campo è obbligatorio',
     },
-    '860t6rpr': {
+    '2oq4vgm9': {
       'en': 'Country',
       'it': 'Paese',
     },
-    '2oq4vgm9': {
-      'en': '',
-      'it': '',
+    'hu2juj2i': {
+      'en': 'Field is required',
+      'it': 'Il campo è obbligatorio',
     },
     'ekck0f2z': {
       'en': 'SAVE ADDRESS',
       'it': 'SALVA INDIRIZZO',
-    },
-    'ga7utx82': {
-      'en': 'Field is required',
-      'it': '',
-    },
-    'b15z0k7l': {
-      'en': 'Please choose an option from the dropdown',
-      'it': '',
-    },
-    '0z0q44uu': {
-      'en': 'Field is required',
-      'it': '',
-    },
-    'vzijunu5': {
-      'en': 'Please choose an option from the dropdown',
-      'it': '',
-    },
-    'bzlmmjjt': {
-      'en': 'Field is required',
-      'it': '',
-    },
-    'vokz5f6c': {
-      'en': 'Please choose an option from the dropdown',
-      'it': '',
-    },
-    '01ro4kw8': {
-      'en': 'Field is required',
-      'it': '',
-    },
-    '50d7aeib': {
-      'en': 'Please choose an option from the dropdown',
-      'it': '',
-    },
-    'a2itiihl': {
-      'en': 'Field is required',
-      'it': '',
-    },
-    'zzp0ff3p': {
-      'en': 'Please choose an option from the dropdown',
-      'it': '',
-    },
-    'hn7u0my2': {
-      'en': 'Field is required',
-      'it': '',
-    },
-    '6ne0j0ck': {
-      'en': 'Please choose an option from the dropdown',
-      'it': '',
-    },
-    'brnfk8b5': {
-      'en': 'Field is required',
-      'it': '',
-    },
-    '0tt2mhh9': {
-      'en': 'Please choose an option from the dropdown',
-      'it': '',
-    },
-    'or2f46w3': {
-      'en': 'Field is required',
-      'it': '',
-    },
-    'd1drvr6p': {
-      'en': 'Please choose an option from the dropdown',
-      'it': '',
-    },
-    'b82fzccp': {
-      'en': 'Field is required',
-      'it': '',
-    },
-    '794iccll': {
-      'en': 'Please choose an option from the dropdown',
-      'it': '',
     },
     'txvetus9': {
       'en': 'Home',
@@ -1509,6 +1430,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'leglavxt': {
       'en': 'Hello World',
       'it': 'Ciao mondo',
+    },
+    'bdd8d31e': {
+      'en': '',
+      'it': '',
     },
     'etii8kc7': {
       'en': 'Home',
@@ -1542,69 +1467,73 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'xuv7dgfq': {
       'en': 'NOTIFICATIONS',
-      'it': 'INVITARE',
+      'it': 'NOTIFICHE',
     },
     'ogkrlhx0': {
       'en': 'Manage your alerts',
-      'it': '',
+      'it': 'Gestisci i tuoi avvisi',
     },
     'tt922l5f': {
       'en': 'Order updates',
-      'it': '',
+      'it': 'Aggiornamenti degli ordini',
     },
     '9r2j74tb': {
       'en': 'Promotions & sales',
-      'it': '',
+      'it': 'Promozioni e saldi',
     },
     's4eh38yd': {
       'en': 'New brands',
-      'it': '',
+      'it': 'Nuovi marchi',
     },
     '0q4q1ikv': {
       'en': 'New product guides',
-      'it': '',
+      'it': 'Nuove guide ai prodotti',
     },
     'iij8fr4m': {
       'en': 'Approval of your review',
-      'it': '',
+      'it': 'Approvazione della tua recensione',
     },
     'xryd7aau': {
       'en': 'Content download',
-      'it': '',
+      'it': 'Scaricamento dei contenuti',
     },
     '3kp8um8z': {
       'en': 'Pre-order alert',
-      'it': '',
+      'it': 'Avviso di pre-ordine',
     },
     'f4pd5vrz': {
       'en': 'Home',
-      'it': '',
+      'it': 'Casa',
     },
   },
   // FAQs
   {
     'curpy294': {
       'en': 'FAQS',
-      'it': '',
+      'it': 'Domande frequenti',
     },
     'oqhehfgo': {
       'en': 'Couldn’t find what you were looking for?',
-      'it': '',
+      'it': 'Non hai trovato quello che cercavi?',
     },
-    'pkt5y0k8': {
-      'en': 'Feel free to contact us at hello@modie.com',
-      'it': '',
+    'mpj7266j': {
+      'en': 'Feel free to contact us at ',
+      'it': 'Non esitate a contattarci a',
+    },
+    'ja77fsan': {
+      'en': 'hello@modie.co',
+      'it': 'ciao@modie.co',
     },
     '94s4ydor': {
       'en': 'Home',
-      'it': '',
+      'it': 'Casa',
     },
   },
   // LoadPage
   {
     'jqy95btn': {
       'en': 'Home',
-      'it': '',
+      'it': 'Casa',
     },
   },
   // MyPaymentsCards
@@ -1618,174 +1547,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
     },
   },
-  // AddAdressEdit
-  {
-    'hgackt3h': {
-      'en': 'ADD NEW ADDRESS',
-      'it': 'AGGIUNGI NUOVO INDIRIZZO',
-    },
-    '98gwdu03': {
-      'en': 'First Name',
-      'it': 'Nome di battesimo',
-    },
-    'bj28woa1': {
-      'en': '',
-      'it': '',
-    },
-    '3i20gpub': {
-      'en': 'Surname',
-      'it': 'Cognome',
-    },
-    'h19d64xz': {
-      'en': '',
-      'it': '',
-    },
-    'tcjrdm9u': {
-      'en': 'Dialing Code',
-      'it': 'Prefisso telefonico',
-    },
-    '6zrf6bxd': {
-      'en': '',
-      'it': '',
-    },
-    's4o8o2al': {
-      'en': 'Phone',
-      'it': 'Telefono',
-    },
-    'atph5off': {
-      'en': '',
-      'it': '',
-    },
-    '7uxb45tn': {
-      'en': 'USE MY CURRENT LOCATION',
-      'it': 'USA LA MIA POSIZIONE ATTUALE',
-    },
-    '0eptc6l6': {
-      'en': 'Address Line 1',
-      'it': 'Indirizzo Linea 1',
-    },
-    'l4qfjhac': {
-      'en': '',
-      'it': '',
-    },
-    'zbowgell': {
-      'en': 'Address Line 2',
-      'it': 'Indirizzo riga 2',
-    },
-    'wan5o854': {
-      'en': '',
-      'it': '',
-    },
-    'l9nyceuc': {
-      'en': 'City / Town',
-      'it': 'Città / Paese',
-    },
-    'cntcwv1e': {
-      'en': '',
-      'it': '',
-    },
-    'dr59galw': {
-      'en': 'Postcode',
-      'it': 'Codice postale',
-    },
-    'qqskdv3d': {
-      'en': '',
-      'it': '',
-    },
-    '52ou7rfy': {
-      'en': 'Country',
-      'it': 'Paese',
-    },
-    'v2hv97wh': {
-      'en': '',
-      'it': '',
-    },
-    '76upn0xl': {
-      'en': 'SAVE ADDRESS',
-      'it': 'SALVA INDIRIZZO',
-    },
-    'dehvry8e': {
-      'en': 'Field is required',
-      'it': '',
-    },
-    'gvzbzesn': {
-      'en': 'Please choose an option from the dropdown',
-      'it': '',
-    },
-    'rpgbq5xn': {
-      'en': 'Field is required',
-      'it': '',
-    },
-    '1b2e72rx': {
-      'en': 'Please choose an option from the dropdown',
-      'it': '',
-    },
-    'nmkqh88d': {
-      'en': 'Field is required',
-      'it': '',
-    },
-    'znrcp0cp': {
-      'en': 'Please choose an option from the dropdown',
-      'it': '',
-    },
-    'mwy1k5kf': {
-      'en': 'Field is required',
-      'it': '',
-    },
-    'pwk9v7v7': {
-      'en': 'Please choose an option from the dropdown',
-      'it': '',
-    },
-    'dlz699vl': {
-      'en': 'Field is required',
-      'it': '',
-    },
-    'x1nf61tf': {
-      'en': 'Please choose an option from the dropdown',
-      'it': '',
-    },
-    'raceftvd': {
-      'en': 'Field is required',
-      'it': '',
-    },
-    '36ta0oqo': {
-      'en': 'Please choose an option from the dropdown',
-      'it': '',
-    },
-    'u0auv7do': {
-      'en': 'Field is required',
-      'it': '',
-    },
-    'dhb0ktd1': {
-      'en': 'Please choose an option from the dropdown',
-      'it': '',
-    },
-    'qmo61pnp': {
-      'en': 'Field is required',
-      'it': '',
-    },
-    'ysl4xa4a': {
-      'en': 'Please choose an option from the dropdown',
-      'it': '',
-    },
-    'cumwd0ir': {
-      'en': 'Field is required',
-      'it': '',
-    },
-    'vty0en0i': {
-      'en': 'Please choose an option from the dropdown',
-      'it': '',
-    },
-    '6xap495j': {
-      'en': 'Home',
-      'it': 'Casa',
-    },
-  },
   // ExploreProduct
   {
     'd0kltzcu': {
       'en': 'MODIE REVIEWS',
       'it': 'AGGIUNGI NUOVO INDIRIZZO',
+    },
+    'c6evdsel': {
+      'en': '',
+      'it': '',
     },
     '6jf6smmv': {
       'en': 'OVERALL SCORE',
@@ -1815,32 +1585,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'VALUE FOR MONEY',
       'it': '',
     },
-    'v2phwt2f': {
-      'en': 'A.L.C',
-      'it': '',
-    },
-    's9l6kp2n': {
-      'en': 'AXEL SATIN-CREPE BLAZER',
-      'it': '',
-    },
-    'imx9hdsb': {
-      'en': '\$120',
-      'it': '',
-    },
     'e90plw5j': {
       'en': 'COLOUR: ',
       'it': '',
     },
-    '5j9dd3hp': {
-      'en': 'WHITE',
-      'it': '',
-    },
     'gundkt3s': {
       'en': 'SIZE & FIT: ',
-      'it': '',
-    },
-    'xk090lf5': {
-      'en': 'S',
       'it': '',
     },
     '3taxh3gh': {
@@ -1879,27 +1629,36 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'SPECIFICS',
       'it': '',
     },
-    'olqkl3zx': {
-      'en':
-          'Lorem ipsum dolor sit amet consectetur. Commodo turpis arcu porttitor in enim. Placerat in laoreet mi enim gravida ut. Fringilla nunc aliquam et tristique tellus parturient venenatis justo arcu. Amet risus facilisi at diam ipsum eu quis auctor tortor.',
+    '7mbqv4t2': {
+      'en': 'SPECIFICS',
       'it': '',
     },
     '1toejhjv': {
       'en': 'COMPOSITION',
       'it': '',
     },
-    'oqzx44qj': {
-      'en':
-          'Lorem ipsum dolor sit amet consectetur. Commodo turpis arcu porttitor in enim. Placerat in laoreet mi enim gravida ut. Fringilla nunc aliquam et tristique tellus parturient venenatis justo arcu. Amet risus facilisi at diam ipsum eu quis auctor tortor.',
+    'dpdj48q0': {
+      'en': 'COMPOSITION',
       'it': '',
     },
     '188kiosl': {
       'en': 'CARE INSTRUCTIONS',
       'it': '',
     },
-    'wm68z27x': {
-      'en':
-          'Lorem ipsum dolor sit amet consectetur. Commodo turpis arcu porttitor in enim. Placerat in laoreet mi enim gravida ut. Fringilla nunc aliquam et tristique tellus parturient venenatis justo arcu. Amet risus facilisi at diam ipsum eu quis auctor tortor.',
+    'y0h4xlic': {
+      'en': 'CARE INSTRUCTIONS',
+      'it': '',
+    },
+    'm7fs1urv': {
+      'en': 'DELIVERY & REPAIR INSTRUCTIONS',
+      'it': '',
+    },
+    '66bftxxk': {
+      'en': 'DELIVERY & REPAIR INSTRUCTIONS',
+      'it': '',
+    },
+    'o0qi9xqw': {
+      'en': 'FIND OUT MORE',
       'it': '',
     },
     'hk4nr93i': {
@@ -1908,6 +1667,54 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'je44k3qb': {
       'en': 'PRODUCT IN ACTION',
+      'it': '',
+    },
+    'v4h5yh89': {
+      'en': '@username',
+      'it': '',
+    },
+    'xm5yb04z': {
+      'en': 'WHAT MODIERS SAID',
+      'it': '',
+    },
+    'qx26s81r': {
+      'en': 'Newest',
+      'it': '',
+    },
+    'w93yebb1': {
+      'en': '',
+      'it': '',
+    },
+    'p5u4eazq': {
+      'en': 'Search...',
+      'it': '',
+    },
+    'e3ijj8hf': {
+      'en': 'Newest',
+      'it': '',
+    },
+    'bux4s56a': {
+      'en': 'Oldest',
+      'it': '',
+    },
+    'nrp8ytmy': {
+      'en': '1',
+      'it': '',
+    },
+    'n54nid96': {
+      'en': '2',
+      'it': '',
+    },
+    'pphv4odk': {
+      'en': '3',
+      'it': '',
+    },
+    'voqgotfe': {
+      'en': '4',
+      'it': '',
+    },
+    'k2jgkz0i': {
+      'en': '5',
       'it': '',
     },
     '0ypw57mp': {
@@ -1931,62 +1738,1327 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '0619l5p2': {
       'en': '02',
-      'it': '01',
+      'it': '02',
     },
     'e1eu9fay': {
       'en': 'OUR ',
-      'it': 'GUIDE AI PRODOTTI',
+      'it': 'GUIDE AI ',
     },
     'd4ol55og': {
       'en': 'BRANDS',
-      'it': 'GUIDE AI PRODOTTI',
+      'it': 'PRODOTTI',
     },
     'iqq0icbp': {
       'en': '03',
-      'it': '01',
+      'it': '03',
     },
     '20zj5mes': {
       'en': 'FAVOURITES',
-      'it': 'GUIDE AI PRODOTTI',
+      'it': 'PREFERITI',
     },
     'sokql5vi': {
       'en': 'Home',
       'it': 'Casa',
     },
   },
-  // ReviewComp
+  // ScoringGuide
   {
-    'gfe7f338': {
-      'en': 'REVIEW TITLE',
-      'it': 'TITOLO DELLA RECENSIONE',
+    'yk8un0lj': {
+      'en': 'SCORING GUIDE',
+      'it': 'AGGIUNGI NUOVO INDIRIZZO',
     },
-    'bc5er89c': {
-      'en': '@idasaporito',
-      'it': '@idasaporito',
-    },
-    'msxqowjv': {
+    '3jgkkogm': {
       'en': 'OVERALL SCORE',
-      'it': 'PUNTEGGIO TOTALE',
+      'it': '',
     },
-    'zy4p7ux2': {
+    'c9rlkymz': {
+      'en': 'SCORE 1: ',
+      'it': '',
+    },
+    '16ou9c2q': {
+      'en': ' Doesn\'t meet expectations',
+      'it': '',
+    },
+    '7h3smu7u': {
+      'en': 'SCORE 2: ',
+      'it': '',
+    },
+    'gzparzli': {
+      'en': ' Bellow expectations',
+      'it': '',
+    },
+    'l9aymq26': {
+      'en': 'SCORE 3: ',
+      'it': '',
+    },
+    'n9fep138': {
+      'en': ' Meets expectations partially',
+      'it': '',
+    },
+    '6791sllb': {
+      'en': 'SCORE 4: ',
+      'it': '',
+    },
+    '00uns1kw': {
+      'en': ' Nearly meets expectations',
+      'it': '',
+    },
+    '705vrqst': {
+      'en': 'SCORE 5: ',
+      'it': '',
+    },
+    't1xr3jpn': {
+      'en': ' Fully meets expectations',
+      'it': '',
+    },
+    '3d0vjy8i': {
+      'en': 'DURABILITY',
+      'it': '',
+    },
+    'agfnqtex': {
+      'en': 'SCORE 1: ',
+      'it': '',
+    },
+    'ntst9syz': {
+      'en': ' Very poor',
+      'it': '',
+    },
+    'zjy5ryqk': {
+      'en': 'SCORE 2: ',
+      'it': '',
+    },
+    'sf2kmjo4': {
+      'en': ' Poor',
+      'it': '',
+    },
+    'f7kaleqo': {
+      'en': 'SCORE 3: ',
+      'it': '',
+    },
+    '37mi2mfl': {
+      'en': ' Average',
+      'it': '',
+    },
+    'nw2bnaef': {
+      'en': 'SCORE 4: ',
+      'it': '',
+    },
+    'sz556hfl': {
+      'en': ' Good',
+      'it': '',
+    },
+    '1yloflh4': {
+      'en': 'SCORE 5: ',
+      'it': '',
+    },
+    'oumfhm7g': {
+      'en': ' Excellent',
+      'it': '',
+    },
+    'bhbh8z0g': {
+      'en': 'SIZE & FIT',
+      'it': '',
+    },
+    '7yg5147i': {
+      'en': 'SCORE 1: ',
+      'it': '',
+    },
+    'ga8wnch3': {
+      'en':
+          ' Far from true to fit i.e. significantly smaller or larger than expected',
+      'it': '',
+    },
+    'okpdpfir': {
+      'en': 'SCORE 2: ',
+      'it': '',
+    },
+    '15ia1mf3': {
+      'en':
+          ' Below average fit i.e. slightly smaller or larger than expected, resulting in minor issues with fit or comfort',
+      'it': '',
+    },
+    'wskety8g': {
+      'en': 'SCORE 3: ',
+      'it': '',
+    },
+    'r2924pzz': {
+      'en':
+          ' True to fit i.e. matching the expected size, within the standard sizing norms, fitting most people comfortably',
+      'it': '',
+    },
+    'igd7baou': {
+      'en': 'SCORE 4: ',
+      'it': '',
+    },
+    'bpm16600': {
+      'en':
+          ' Above average fit i.e. slightly smaller or larger than expected, fitting most people comfortably with minor adjustments',
+      'it': '',
+    },
+    'cz460ibt': {
+      'en': 'SCORE 5: ',
+      'it': '',
+    },
+    'pgf1v71t': {
+      'en': ' Perfect fit i.e. no need for adjustments',
+      'it': '',
+    },
+    'ukhy26kt': {
+      'en': 'VERSATIBILITY',
+      'it': '',
+    },
+    'mtmanxqh': {
+      'en': '(ABILITY TO BE USED IN MULTIPLE WAYS/ OCCASIONS)',
+      'it': '',
+    },
+    'cw99sn89': {
+      'en': 'SCORE 1: ',
+      'it': '',
+    },
+    '8hoaa646': {
+      'en': ' Extremely limited',
+      'it': '',
+    },
+    'qd35n6b9': {
+      'en': 'SCORE 2: ',
+      'it': '',
+    },
+    'rgp6siml': {
+      'en': ' Very low',
+      'it': '',
+    },
+    'w702i06f': {
+      'en': 'SCORE 3: ',
+      'it': '',
+    },
+    'jwynutya': {
+      'en': ' Below average',
+      'it': '',
+    },
+    'zv3wx1s3': {
+      'en': 'SCORE 4: ',
+      'it': '',
+    },
+    'l0yoogu0': {
+      'en': ' Moderate',
+      'it': '',
+    },
+    '8hg1xu4b': {
+      'en': 'SCORE 5: ',
+      'it': '',
+    },
+    '4roq7uye': {
+      'en': ' Exceptional',
+      'it': '',
+    },
+    '6icfeakn': {
+      'en': 'FUNCTIONALITY',
+      'it': '',
+    },
+    'ej67lzu5': {
+      'en': '(CONFORT AND EASE OF CARE)',
+      'it': '',
+    },
+    'mlf3l9lx': {
+      'en': 'SCORE 1: ',
+      'it': '',
+    },
+    'skgnzbas': {
+      'en': ' Non functional',
+      'it': '',
+    },
+    'bbi8ocea': {
+      'en': 'SCORE 2: ',
+      'it': '',
+    },
+    'wqbfbzt9': {
+      'en': ' Poor',
+      'it': '',
+    },
+    'zjw8uwj2': {
+      'en': 'SCORE 3: ',
+      'it': '',
+    },
+    'kc20wiwz': {
+      'en': ' Average',
+      'it': '',
+    },
+    '1s0w7g63': {
+      'en': 'SCORE 4: ',
+      'it': '',
+    },
+    'dgmw7ibr': {
+      'en': ' Good',
+      'it': '',
+    },
+    'o92q70xd': {
+      'en': 'SCORE 5: ',
+      'it': '',
+    },
+    '8zjy19g6': {
+      'en': ' Excellent',
+      'it': '',
+    },
+    'yefjq4xb': {
+      'en': 'VALUE FOR MONEY',
+      'it': '',
+    },
+    'ux9festw': {
+      'en': 'SCORE 1: ',
+      'it': '',
+    },
+    'emaewlsc': {
+      'en': ' Very poor',
+      'it': '',
+    },
+    'po63xrv3': {
+      'en': 'SCORE 2: ',
+      'it': '',
+    },
+    '6tb9w1nz': {
+      'en': ' Poor',
+      'it': '',
+    },
+    'x6tjzhkq': {
+      'en': 'SCORE 3: ',
+      'it': '',
+    },
+    '6bqmtc8y': {
+      'en': ' Average',
+      'it': '',
+    },
+    'u3c7u4od': {
+      'en': 'SCORE 4: ',
+      'it': '',
+    },
+    'dibgjw3r': {
+      'en': ' Good',
+      'it': '',
+    },
+    'wir5dqw5': {
+      'en': 'SCORE 5: ',
+      'it': '',
+    },
+    'j4y4iqp7': {
+      'en': ' Excellent',
+      'it': '',
+    },
+    'ff6e26ih': {
+      'en': 'Home',
+      'it': '',
+    },
+  },
+  // MyFavourites
+  {
+    'apc2oyh3': {
+      'en': 'MY FAVOURITES',
+      'it': '',
+    },
+    'i6a6dth2': {
+      'en': 'Fashion',
+      'it': '',
+    },
+    'j7tlt4vz': {
+      'en': 'Jewellery',
+      'it': '',
+    },
+    'a5nentzp': {
+      'en': 'Fashion',
+      'it': '',
+    },
+    'rkixlbox': {
+      'en': 'OVERALL',
+      'it': '',
+    },
+    'ycl7k3s1': {
+      'en': 'Home',
+      'it': '',
+    },
+  },
+  // ProductGuide
+  {
+    'i40grw8g': {
+      'en': 'PRODUCT GUIDES',
+      'it': '',
+    },
+    'xyy79956': {
+      'en': 'Lifestyle',
+      'it': '',
+    },
+    'jy7xy8ez': {
+      'en': 'Luxury',
+      'it': '',
+    },
+    'bayvaoww': {
+      'en': 'Minimalist',
+      'it': '',
+    },
+    'gt4rvqya': {
+      'en': 'Wellness',
+      'it': '',
+    },
+    'qo8zxf8c': {
+      'en': 'Bohemian',
+      'it': '',
+    },
+    'wmjxbig1': {
+      'en': 'Outdoorsy',
+      'it': '',
+    },
+    'yluhg7ep': {
+      'en': 'Luxury',
+      'it': '',
+    },
+    'ncvu0y23': {
+      'en': 'Home',
+      'it': '',
+    },
+  },
+  // ExploreReviews
+  {
+    'w1uztyn5': {
+      'en': 'MODIE REVIEWS',
+      'it': '',
+    },
+    'prjgkvxt': {
+      'en': 'Home',
+      'it': '',
+    },
+  },
+  // ExploreArticlesPage
+  {
+    'q5sue31a': {
+      'en': 'PRODUCT GUIDES',
+      'it': '',
+    },
+    '5cfjikqu': {
+      'en':
+          'Lorem ipsum dolor sit amet consectetur. Congue tristique risus mi nunc mi risus.',
+      'it': '',
+    },
+    'vsk3spm3': {
+      'en': 'TAILORED TO ',
+      'it': '',
+    },
+    'd8hvnb7o': {
+      'en': 'MY STYLE',
+      'it': '',
+    },
+    's964ad58': {
+      'en': 'SEE MODIE REVIEWS',
+      'it': '',
+    },
+    'g5n9isxf': {
+      'en': 'A.L.C.',
+      'it': '',
+    },
+    'wjblambu': {
+      'en': 'Axel Satin-Crepe Blazer',
+      'it': '',
+    },
+    'qbux7bau': {
+      'en': '£120',
+      'it': '',
+    },
+    '9me0yqg1': {
+      'en': 'OTHER STYLES ',
+      'it': '',
+    },
+    'veng8owz': {
+      'en': 'YOU MAY LIKE',
+      'it': '',
+    },
+    'k55oisgp': {
+      'en': 'SEE MODIE REVIEWS',
+      'it': '',
+    },
+    '2czku43w': {
+      'en': 'Home',
+      'it': '',
+    },
+  },
+  // MyOrderStatus
+  {
+    'p63fbuzw': {
+      'en': 'MY ORDER STATUS',
+      'it': '',
+    },
+    'ssbthaze': {
+      'en': 'All',
+      'it': '',
+    },
+    'eu0y1pud': {
+      'en': 'Out for Delivery',
+      'it': '',
+    },
+    '5xyd3vx6': {
+      'en': 'Delivered',
+      'it': '',
+    },
+    'n8wkpwjt': {
+      'en': 'Returned',
+      'it': '',
+    },
+    'ce0w1ox9': {
+      'en': 'Exchanged',
+      'it': '',
+    },
+    '6p9y06ec': {
+      'en': 'All',
+      'it': '',
+    },
+    'br6d4tr7': {
+      'en': 'Nº6381092',
+      'it': '',
+    },
+    'nhnmub7e': {
+      'en': 'In process',
+      'it': '',
+    },
+    'gi0a6oh4': {
+      'en': '23 Item(s)',
+      'it': '',
+    },
+    'ym20e2q0': {
+      'en': 'Total: £128.42',
+      'it': '',
+    },
+    'xaf2660i': {
+      'en': 'Track my order',
+      'it': '',
+    },
+    'dnr7m5p9': {
+      'en': 'Purchased on: 23/12/2024',
+      'it': '',
+    },
+    'z13z17sc': {
+      'en': '+ 18',
+      'it': '',
+    },
+    'q2ykqzyg': {
+      'en': 'SEE DETAILS',
+      'it': '',
+    },
+    'd6lg210o': {
+      'en': 'Nº6381092',
+      'it': '',
+    },
+    'cdc0lya4': {
+      'en': 'In process',
+      'it': '',
+    },
+    'j71y6qj0': {
+      'en': '23 Item(s)',
+      'it': '',
+    },
+    '5o7a5n5l': {
+      'en': 'Total: £128.42',
+      'it': '',
+    },
+    'rtg09m9c': {
+      'en': 'Track my order',
+      'it': '',
+    },
+    'jep0qx1w': {
+      'en': 'Purchased on: 23/12/2024',
+      'it': '',
+    },
+    'tzt0p2ap': {
+      'en': '+ 18',
+      'it': '',
+    },
+    '2s8kb7kr': {
+      'en': 'SEE DETAILS',
+      'it': '',
+    },
+    'yggq7m0c': {
+      'en': 'Contact Modie',
+      'it': '',
+    },
+    'xk8kqfgy': {
+      'en': 'Home',
+      'it': '',
+    },
+  },
+  // MyOrder
+  {
+    'u65vext6': {
+      'en': 'MY ORDER',
+      'it': '',
+    },
+    'fgzt7bfy': {
+      'en': 'Nº6381092',
+      'it': '',
+    },
+    'qupsrznm': {
+      'en': 'Out for Delivery',
+      'it': '',
+    },
+    'oovyk8vh': {
+      'en': 'A.L.C.',
+      'it': '',
+    },
+    'rjll4lfo': {
+      'en': 'AXEL SATIN-CREPE BLAZER',
+      'it': '',
+    },
+    'c47u4psi': {
+      'en': 'COLOUR: ',
+      'it': '',
+    },
+    'iyfm5fg3': {
+      'en': 'Beige',
+      'it': '',
+    },
+    'oj9opgrj': {
+      'en': 'SIZE: ',
+      'it': '',
+    },
+    'zpmq5pqd': {
+      'en': 'S',
+      'it': '',
+    },
+    'kyar1r5i': {
+      'en': 'QUANTITY: ',
+      'it': '',
+    },
+    'e64m0mwo': {
+      'en': '2',
+      'it': '',
+    },
+    '8si6jxgd': {
+      'en': '£120',
+      'it': '',
+    },
+    'arqv2oi2': {
+      'en': 'each \$120',
+      'it': '',
+    },
+    'c8jgcl94': {
+      'en': 'TOTAL ',
+      'it': '',
+    },
+    '3o6vaoty': {
+      'en': ' VAT inclusive',
+      'it': '',
+    },
+    '7vuuf4xt': {
+      'en': '£123,43',
+      'it': '',
+    },
+    'oo8oprze': {
+      'en': 'Track my order',
+      'it': '',
+    },
+    'q31da60n': {
+      'en': 'Purchased on: 23/12/2024',
+      'it': '',
+    },
+    'kt100gyn': {
+      'en': 'Home',
+      'it': '',
+    },
+  },
+  // ReturnSelect
+  {
+    'uuzb05xr': {
+      'en': 'MY ORDER',
+      'it': '',
+    },
+    '25blejqq': {
+      'en': 'SELECT THE ITEMS YOU WISH TO RETURN / EXCHANGE',
+      'it': '',
+    },
+    '856m8asm': {
+      'en': '',
+      'it': '',
+    },
+    '8yuwjfdc': {
+      'en': 'A.L.C.',
+      'it': '',
+    },
+    'j0k3rjb8': {
+      'en': 'AXEL SATIN-CREPE BLAZER',
+      'it': '',
+    },
+    'txlivdgn': {
+      'en': 'COLOUR: ',
+      'it': '',
+    },
+    'x2ojr9g7': {
+      'en': 'Beige',
+      'it': '',
+    },
+    'j5y7n8f5': {
+      'en': 'SIZE: ',
+      'it': '',
+    },
+    'txwy52j0': {
+      'en': 'S',
+      'it': '',
+    },
+    'glpxrv68': {
+      'en': 'QUANTITY: ',
+      'it': '',
+    },
+    'dlhoraar': {
+      'en': '2',
+      'it': '',
+    },
+    'jh4gelc5': {
+      'en': '£120',
+      'it': '',
+    },
+    'g8a92sr4': {
+      'en': 'each £120',
+      'it': '',
+    },
+    '0vvo7m18': {
+      'en': 'CONTINUE',
+      'it': '',
+    },
+    '547fx4bc': {
+      'en': 'Cancel',
+      'it': '',
+    },
+    'suba2xqw': {
+      'en': 'Home',
+      'it': '',
+    },
+  },
+  // ReturnForm
+  {
+    'qc425o3z': {
+      'en': 'REASON FOR RETURN',
+      'it': '',
+    },
+    'tnc5zlna': {
+      'en': 'WHY DO YOU WANT TO RETURN THE ITEM?',
+      'it': '',
+    },
+    '3xhotlok': {
+      'en': 'Incorrect Size/Fit',
+      'it': '',
+    },
+    'u7ujmij2': {
+      'en': 'Lack of Versability',
+      'it': '',
+    },
+    'tu0e91de': {
+      'en': 'Functional Defects',
+      'it': '',
+    },
+    'wdxt0ot4': {
+      'en': 'Poor Value for Money',
+      'it': '',
+    },
+    'ae94514h': {
+      'en': 'Defective or Damaged',
+      'it': '',
+    },
+    '162yvubh': {
+      'en': 'Changed Mind',
+      'it': '',
+    },
+    'cg0av0fe': {
+      'en': 'Item Not as Described',
+      'it': '',
+    },
+    '066jb9df': {
+      'en': 'Wrong Item',
+      'it': '',
+    },
+    'pmnvm8j9': {
+      'en': 'Late Delivery',
+      'it': '',
+    },
+    'uuhrmev7': {
+      'en': 'Other',
+      'it': '',
+    },
+    'm6ny6kuc': {
+      'en': 'Write something...',
+      'it': 'Scrivi qualcosa su di te...',
+    },
+    'eduqrrsr': {
+      'en': 'CONTINUE',
+      'it': '',
+    },
+    'vfwytxof': {
+      'en': 'Home',
+      'it': '',
+    },
+  },
+  // OurBrands
+  {
+    'slrczpvx': {
+      'en': 'OUR BRANDS',
+      'it': '',
+    },
+    'wxxoli2d': {
+      'en': 'Fashion',
+      'it': '',
+    },
+    's742fn4o': {
+      'en': 'Jewellery',
+      'it': '',
+    },
+    'r54phlw1': {
+      'en': 'Fashion',
+      'it': '',
+    },
+    'zc2e9s91': {
+      'en': 'Home',
+      'it': '',
+    },
+  },
+  // OurBrandsInfo
+  {
+    '39y4w0md': {
+      'en': 'OUR BRANDS',
+      'it': 'I NOSTRI MARCHI',
+    },
+    'satxh2dk': {
+      'en': 'BRAND DETAILS',
+      'it': 'DETTAGLI DEL MARCHIO',
+    },
+    'thh0tu7p': {
+      'en': 'OFFERING:',
+      'it': 'OFFERTA:',
+    },
+    'qn75cq1b': {
+      'en': 'LOCATED IN:',
+      'it': 'SITUATO IN:',
+    },
+    'wpvt8lzb': {
+      'en': 'PHILOSOPHY',
+      'it': 'FILOSOFIA',
+    },
+    'q1lgyg2s': {
+      'en': 'MISSION:',
+      'it': 'MISSIONE:',
+    },
+    'x3r9qklz': {
+      'en': 'VISION:',
+      'it': 'VISIONE:',
+    },
+    '3ud42ctn': {
+      'en': 'STORY',
+      'it': 'STORIA',
+    },
+    'x1xc971y': {
+      'en': 'FOUNDING TEAM',
+      'it': 'TEAM FONDATORE',
+    },
+    'kdu70tq9': {
+      'en': 'ENVIRONMENTAL RESPONSIBILITY',
+      'it': 'RESPONSABILITÀ AMBIENTALE',
+    },
+    'xehef7a8': {
+      'en': 'MANUFACTURING PRACTICES',
+      'it': 'PRATICHE DI PRODUZIONE',
+    },
+    'enqle66s': {
+      'en': 'Waste Generation',
+      'it': 'Generazione di rifiuti',
+    },
+    'g3zr2u2m': {
+      'en': 'Water Conservation',
+      'it': 'Conservazione dell\'acqua',
+    },
+    'zq96foaz': {
+      'en': 'Energy Use in Production',
+      'it': 'Utilizzo dell\'energia nella produzione',
+    },
+    'sf8xdk33': {
+      'en': 'Product\'s Carbon Footprint Measurement',
+      'it': 'Misurazione dell\'impronta di carbonio del prodotto',
+    },
+    'fqxebbcg': {
+      'en': 'MATERIALS AND PACKAGING',
+      'it': 'MATERIALI E IMBALLAGGIO',
+    },
+    'dck5h7qr': {
+      'en': 'Use of Certified Materials',
+      'it': 'Utilizzo di materiali certificati',
+    },
+    '54jjo257': {
+      'en': 'Packaging',
+      'it': 'Confezione',
+    },
+    'myyoh6dg': {
+      'en': 'SUPPLY CHAIN AND PRODUCTION',
+      'it': 'CATENA DI FORNITURA E PRODUZIONE',
+    },
+    '8mvdmeuk': {
+      'en': 'Local Production',
+      'it': 'Produzione locale',
+    },
+    '1jxtweqb': {
+      'en': 'Transparency and Traceability in Supply Chain',
+      'it': 'Trasparenza e tracciabilità nella catena di fornitura',
+    },
+    'w7el0uh8': {
+      'en': 'PRODUCT PRODUCTION',
+      'it': 'PRODUZIONE DEL PRODOTTO',
+    },
+    'itlk48f5': {
+      'en': 'MATERIALS:',
+      'it': 'MATERIALI:',
+    },
+    'hgiqv8qy': {
+      'en': 'PARTNERS:',
+      'it': 'PARTNER:',
+    },
+    'pfsph1ub': {
+      'en': 'ENVIRONMENTAL IMPACT IN DETAIL ',
+      'it': 'IMPATTO AMBIENTALE IN DETTAGLIO',
+    },
+    '2jj24fro': {
+      'en': 'SOCIAL RESPONSIBILITY',
+      'it': 'RESPONSABILITÀ SOCIALE',
+    },
+    'jgu0fkcr': {
+      'en': 'ETHICAL LABOUR PRACTICES',
+      'it': 'PRATICHE DI LAVORO ETICHE',
+    },
+    'ft007jpg': {
+      'en': 'PEOPLE POLICIES',
+      'it': 'POLITICHE PER LE PERSONE',
+    },
+    'tdv1krqf': {
+      'en': 'HEALTH SAFETY & WELLBEING',
+      'it': 'SALUTE, SICUREZZA E BENESSERE',
+    },
+    'y9tp1yoy': {
+      'en': 'DIVERSITY, EQUALITY, AND INCLUSION',
+      'it': 'DIVERSITÀ, UGUAGLIANZA E INCLUSIONE',
+    },
+    'vpk8kj5w': {
+      'en': 'COMMUNITY ENGAGEMENT',
+      'it': 'COINVOLGIMENTO DELLA COMUNITÀ',
+    },
+    'wtyq0wrp': {
+      'en': 'SOCIAL IMPACT IN DETAIL',
+      'it': 'IMPATTO SOCIALE IN DETTAGLIO',
+    },
+    'n1gnnu2b': {
+      'en': 'CERTIFICATIONS & AWARDS',
+      'it': 'CERTIFICAZIONI E PREMI',
+    },
+    'vohl0bmk': {
+      'en': 'WHAT\'S NEW',
+      'it': 'COSA C\'È DI NUOVO',
+    },
+    'e1d24ksr': {
+      'en': 'VIEW MORE',
+      'it': 'GUARDA DI PIÙ',
+    },
+    't2i2n9u4': {
       'en': 'A.L.C.',
       'it': 'A.L.C.',
     },
-    '69v3m3ep': {
-      'en': 'Axel Satin-Crepe Blazer',
-      'it': 'Blazer in raso e crepe Axel',
+    '7p27puf9': {
+      'en': 'BEST SELLERS',
+      'it': 'I PIÙ VENDUTI',
     },
-    'tcimxjr0': {
-      'en': '\$120',
-      'it': '120 \$',
+    '7r4zznat': {
+      'en': 'VIEW MORE',
+      'it': 'GUARDA DI PIÙ',
     },
-    '50hr3g6t': {
-      'en': 'SHOP NOW ',
-      'it': 'ACQUISTA ORA',
+    'muxeno9y': {
+      'en': 'A.L.C.',
+      'it': 'A.L.C.',
     },
-    'b6hvpv6p': {
-      'en': 'SEE FULL REVIEW',
-      'it': 'GUARDA LA RECENSIONE COMPLETA',
+    'v6ubjnis': {
+      'en': 'Home',
+      'it': 'Casa',
+    },
+  },
+  // AddAdressEdit
+  {
+    'zgqgm72p': {
+      'en': 'ADD NEW ADDRESS',
+      'it': 'AGGIUNGI NUOVO INDIRIZZO',
+    },
+    'tz8kt9my': {
+      'en': 'First Name',
+      'it': '',
+    },
+    'yiwtzqsn': {
+      'en': 'Field is required',
+      'it': 'Credenziali non valide',
+    },
+    'dx6m084g': {
+      'en': 'Surname',
+      'it': '',
+    },
+    'x7ilhjuf': {
+      'en': 'Field is required',
+      'it': 'Credenziali non valide',
+    },
+    'zdgo4s5u': {
+      'en': 'Dialing Code',
+      'it': '',
+    },
+    '5ehdl2pm': {
+      'en': 'Field is required',
+      'it': 'Credenziali non valide',
+    },
+    'unt6sqf4': {
+      'en': 'Phone',
+      'it': '',
+    },
+    'pc8gknjo': {
+      'en': 'Field is required',
+      'it': 'Credenziali non valide',
+    },
+    '868rtk7t': {
+      'en': 'USE MY CURRENT LOCATION',
+      'it': 'USA LA MIA POSIZIONE ATTUALE',
+    },
+    'cchyjox3': {
+      'en': 'Address Line 1',
+      'it': 'E-mail',
+    },
+    'qpzkkzh8': {
+      'en': 'Field is required',
+      'it': 'Credenziali non valide',
+    },
+    'v3rwagp8': {
+      'en': 'Address Line 2 (Optional)',
+      'it': '',
+    },
+    '6w6is7hm': {
+      'en': 'City / Town',
+      'it': '',
+    },
+    'afmznfxr': {
+      'en': 'Field is required',
+      'it': 'Credenziali non valide',
+    },
+    'i72ehrod': {
+      'en': 'Postcode',
+      'it': '',
+    },
+    '5adsa9aa': {
+      'en': 'Field is required',
+      'it': 'Credenziali non valide',
+    },
+    'rxazdt3m': {
+      'en': 'Country',
+      'it': '',
+    },
+    'ous4dogk': {
+      'en': 'Field is required',
+      'it': 'Credenziali non valide',
+    },
+    'curfpb3s': {
+      'en': 'SAVE ADDRESS',
+      'it': 'SALVA INDIRIZZO',
+    },
+    'h2670m0u': {
+      'en': 'Home',
+      'it': 'Casa',
+    },
+  },
+  // ShopScreen
+  {
+    'p2d7re4p': {
+      'en': '',
+      'it': '',
+    },
+    '021pmo7r': {
+      'en': '01',
+      'it': '01',
+    },
+    'oagcw7br': {
+      'en': 'NEW ARRIVALS',
+      'it': 'NUOVI ARRIVI',
+    },
+    'lg6m3b31': {
+      'en': '02',
+      'it': '02',
+    },
+    'z35r726k': {
+      'en': 'FASHION',
+      'it': 'MODA',
+    },
+    'isjwbl2g': {
+      'en': '03',
+      'it': '03',
+    },
+    'cbsowt19': {
+      'en': 'JEWELLERY',
+      'it': 'GIOIELLERIA',
+    },
+    'mp6sexqm': {
+      'en': 'OVERALL',
+      'it': 'COMPLESSIVAMENTE',
+    },
+    'l8v450kx': {
+      'en': 'Home',
+      'it': 'Casa',
+    },
+  },
+  // ShopScreenProducts
+  {
+    'et6fg9nj': {
+      'en': 'All',
+      'it': '',
+    },
+    'xmbnn9ka': {
+      'en': 'Tops',
+      'it': '',
+    },
+    'szmfzlyz': {
+      'en': 'Wellness',
+      'it': '',
+    },
+    'lqim06vu': {
+      'en': 'Bohemian',
+      'it': '',
+    },
+    '8lfkjz2t': {
+      'en': 'Outdoorsy',
+      'it': '',
+    },
+    'yphj06mj': {
+      'en': 'All',
+      'it': '',
+    },
+    'saj76o7z': {
+      'en': 'Filter by',
+      'it': '',
+    },
+    '82ht9g5i': {
+      'en': 'Sort by',
+      'it': '',
+    },
+    '9syuszma': {
+      'en': 'OVERALL',
+      'it': '',
+    },
+    'e814b6no': {
+      'en': 'SCORE',
+      'it': '',
+    },
+    'lxcdiea2': {
+      'en': 'Home',
+      'it': '',
+    },
+  },
+  // QuizPageCopy
+  {
+    'qmx2jtz8': {
+      'en': ' — ',
+      'it': '—',
+    },
+    'e6zb6uz8': {
+      'en': 'Hello World',
+      'it': 'Ciao mondo',
+    },
+    '3pgu17ll': {
+      'en': ' — ',
+      'it': '—',
+    },
+    'bvw3lse7': {
+      'en': 'Hello World',
+      'it': 'Ciao mondo',
+    },
+    'bii1wl3g': {
+      'en': '',
+      'it': '',
+    },
+    'p7fxf56w': {
+      'en': 'Home',
+      'it': 'Casa',
+    },
+  },
+  // QuizShop
+  {
+    'wgcxlljq': {
+      'en': ' — ',
+      'it': '—',
+    },
+    '61dzb6zr': {
+      'en': 'Hello World',
+      'it': 'Ciao mondo',
+    },
+    '5uj0ob2x': {
+      'en': 'Price from',
+      'it': '',
+    },
+    '4fvh449t': {
+      'en': 'Price from',
+      'it': '',
+    },
+    'nrigrg5t': {
+      'en': '',
+      'it': '',
+    },
+    'mnz1gl2j': {
+      'en': 'Home',
+      'it': 'Casa',
+    },
+  },
+  // ShoppingCart
+  {
+    '196rdxmx': {
+      'en': 'MY SHOPPING CART',
+      'it': 'IL MIO INDIRIZZO DI SPEDIZIONE',
+    },
+    '2uhofsc5': {
+      'en': 'Items (3)',
+      'it': '',
+    },
+    'rjcqrzj1': {
+      'en': 'Saved for Later (3)',
+      'it': '',
+    },
+    'zk3uez5v': {
+      'en': 'What points and how many would you like to redeem?',
+      'it': '',
+    },
+    '4av3qaah': {
+      'en': '(i)',
+      'it': '',
+    },
+    'eher2rkc': {
+      'en': 'What points and how many would you like to redeem? (i)',
+      'it': '',
+    },
+    'ba1l8wf9': {
+      'en': 'Generic Points',
+      'it': '',
+    },
+    '34uk80un': {
+      'en': 'Generic Points',
+      'it': '',
+    },
+    'zvpr0rw2': {
+      'en': 'Search...',
+      'it': '',
+    },
+    'b8jm4v1z': {
+      'en': 'Generic Points',
+      'it': '',
+    },
+    'l5lxtaa1': {
+      'en': 'Option 2',
+      'it': '',
+    },
+    '9lblhf6f': {
+      'en': 'Option 3',
+      'it': '',
+    },
+    'qrmhklgl': {
+      'en': 'REDEEMABLE   ',
+      'it': '',
+    },
+    'jh499hzc': {
+      'en': '80',
+      'it': '',
+    },
+    '00m3ssbm': {
+      'en': 'USE',
+      'it': '',
+    },
+    'qc8tz88u': {
+      'en': '80',
+      'it': '',
+    },
+    'xrno36dw': {
+      'en': '= ',
+      'it': '',
+    },
+    'u8gyxzi5': {
+      'en': '£ 160',
+      'it': '',
+    },
+    'edp4do44': {
+      'en': 'REDEEM',
+      'it': '',
+    },
+    'mbs6ab9b': {
+      'en': 'TOTAL VALUE',
+      'it': '',
+    },
+    'z2sxytb1': {
+      'en': '£339,90',
+      'it': '',
+    },
+    'blnp66an': {
+      'en': 'DEDUCTION',
+      'it': '',
+    },
+    'hzkddkg0': {
+      'en': '-£19,00',
+      'it': '',
+    },
+    'gt8txxjz': {
+      'en': 'REWARDS REDEMPTION',
+      'it': '',
+    },
+    'tuz373rq': {
+      'en': '-£160,00',
+      'it': '',
+    },
+    'e9mjir8h': {
+      'en': 'SHIPPING',
+      'it': '',
+    },
+    'kc5ejxt7': {
+      'en': 'It will be calculated in the Checkout',
+      'it': '',
+    },
+    'gaiw5cu3': {
+      'en': 'TOTAL',
+      'it': '',
+    },
+    'j6qzbkxx': {
+      'en': '£160,90',
+      'it': '',
+    },
+    'qi2lp9du': {
+      'en': 'CHECKOUT',
+      'it': '',
+    },
+    'l2w1iek4': {
+      'en': 'LOOKS LIKE YOUR CART IS EMPTY!',
+      'it': '',
+    },
+    'p9xr1se4': {
+      'en': 'ADD SOME ITEMS AND YOU\'LL SEE THEM HERE.',
+      'it': '',
+    },
+    'ofzupecp': {
+      'en': 'YOU\'RE JUST ONE STEP AWAY FROM UNLOCKING',
+      'it': '',
+    },
+    '4o11mt6n': {
+      'en': 'AWESOME REWARDS WITH YOU PURCHASE',
+      'it': '',
+    },
+    'v0jj2rfe': {
+      'en': 'NO ITEMS SAVED YET!',
+      'it': '',
+    },
+    '6hsldz8p': {
+      'en': 'START SAVING YOUR FAVOURITE PIECES.',
+      'it': '',
+    },
+    'fssgk4ot': {
+      'en': 'THEY\'LL BE HERE WHENEVER YOU\'RE READY TO',
+      'it': '',
+    },
+    'n7lbeqqa': {
+      'en': 'BUY AND UNLOCK SOME COOL REWARDS!',
+      'it': '',
+    },
+    'figedqmn': {
+      'en': 'Home',
+      'it': '',
     },
   },
   // navbar
@@ -2267,77 +3339,46 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'lp8ayw00': {
       'en': 'Billing Address',
-      'it': '',
+      'it': 'Indirizzo di fatturazione',
     },
   },
-  // ReviewCompCopy
-  {
-    'w6x08xcv': {
-      'en': 'REVIEW TITLE',
-      'it': 'TITOLO DELLA RECENSIONE',
-    },
-    'anqfx6lm': {
-      'en': '@idasaporito',
-      'it': '@idasaporito',
-    },
-    '0fv8jqgr': {
-      'en': 'OVERALL SCORE',
-      'it': 'PUNTEGGIO TOTALE',
-    },
-    '27wxn9hx': {
-      'en': 'A.L.C.',
-      'it': 'A.L.C.',
-    },
-    'barpubiu': {
-      'en': 'Axel Satin-Crepe Blazer',
-      'it': 'Blazer in raso e crepe Axel',
-    },
-    '1mxz4qoi': {
-      'en': '\$120',
-      'it': '120 \$',
-    },
-    'pmwq6g0k': {
-      'en': 'SHOP NOW ',
-      'it': 'ACQUISTA ORA',
-    },
-    'kk6fxjvs': {
-      'en': 'SEE FULL REVIEW',
-      'it': 'GUARDA LA RECENSIONE COMPLETA',
-    },
-  },
-  // ReviewCompCopy2
+  // ReviewComp
   {
     'mipko0gk': {
       'en': 'REVIEW TITLE',
-      'it': '',
+      'it': 'TITOLO DELLA RECENSIONE',
     },
     'fe67986n': {
       'en': '@idasaporito',
+      'it': '@idasaporito',
+    },
+    'qk78wp79': {
+      'en': '',
       'it': '',
     },
     'nrmc1wxr': {
       'en': 'OVERALL SCORE',
-      'it': '',
+      'it': 'PUNTEGGIO TOTALE',
     },
     'jtsl3650': {
       'en': 'A.L.C.',
-      'it': '',
+      'it': 'A.L.C.',
     },
     'xlxvvg35': {
       'en': 'Axel Satin-Crepe Blazer',
-      'it': '',
+      'it': 'Blazer in raso e crepe Axel',
     },
     'sud9ojx5': {
-      'en': '\$120',
-      'it': '',
+      'en': '£120',
+      'it': '120 \$',
     },
     'e9jnprp4': {
       'en': 'SHOP NOW ',
-      'it': '',
+      'it': 'ACQUISTA ORA',
     },
     'ujn7q0o6': {
       'en': 'SEE FULL REVIEW',
-      'it': '',
+      'it': 'GUARDA LA RECENSIONE COMPLETA',
     },
   },
   // FAQsComp
@@ -2345,17 +3386,20 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'r509y5u1': {
       'en':
           'How can I purchase  a product that is made to order /made to measure? ',
-      'it': '',
+      'it':
+          'Come posso acquistare un prodotto realizzato su ordinazione/su misura?',
     },
     'i1j4ogbk': {
       'en':
           'How can I purchase  a product that is made to order /made to measure? ',
-      'it': '',
+      'it':
+          'Come posso acquistare un prodotto realizzato su ordinazione/su misura?',
     },
     'zuqtota1': {
       'en':
           'Lorem ipsum dolor sit amet consectetur. Blandit sed amet id aliquam porta nisl pellentesque. Et vulputate facilisi vel cursus porttitor pretium. Non tortor nunc eget molestie gravida ipsum consectetur consectetur.',
-      'it': '',
+      'it':
+          'Lorem ipsum dolor sit amet consectetur. Blandit sed amet id aliquam porta nisl pellentesque. Et vulputate facilisi vel cursus porttitor pretium. Non tortor nunc eget molestie gravida ipsum consectetur consectetur.',
     },
   },
   // EmptyCard
@@ -2370,15 +3414,861 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           'Qui puoi visualizzare e gestire l\'indirizzo che utilizzi per i tuoi ordini',
     },
   },
+  // AddToCart
+  {
+    '7xyn04rj': {
+      'en': 'ADDED TO YOUR CART',
+      'it': '',
+    },
+    'vv34ozm3': {
+      'en': 'COLOUR: ',
+      'it': '',
+    },
+    'bhbxovc0': {
+      'en': 'SIZE: ',
+      'it': '',
+    },
+    'y3y6brec': {
+      'en': 'QUANTITY: ',
+      'it': '',
+    },
+    '1mqzlezj': {
+      'en': 'Delete',
+      'it': '',
+    },
+    'pp5fovmt': {
+      'en': 'NEW CART',
+      'it': '',
+    },
+    'llb8h635': {
+      'en': 'Continue Shopping',
+      'it': '',
+    },
+  },
+  // EmptyFav
+  {
+    '26j29mkx': {
+      'en': 'HEY THERE! YOUR FAVOURITES LIST IS',
+      'it': '',
+    },
+    'fi4w04g4': {
+      'en': 'CURRENTLY EMPTY. READY TO GET INSPIRED?',
+      'it': '',
+    },
+    's6m88us1': {
+      'en': 'START BY CLICKING THE ',
+      'it': '',
+    },
+    'bm63rydi': {
+      'en': ' BUTTON',
+      'it': '',
+    },
+    'jtb8ec8k': {
+      'en': 'IN OUR PRODUCT GUIDES AND SHOP SECTION.',
+      'it': '',
+    },
+    'cptmf7ih': {
+      'en': 'IT\'S THE PERFECT WAY TO COLLECT ALL THE',
+      'it': '',
+    },
+    'outpt9q5': {
+      'en': 'THINGS THAT CATCH YOUR EYE.',
+      'it': '',
+    },
+    'smztth41': {
+      'en': 'HAPPY BROWSING AND SHOPPING!',
+      'it': '',
+    },
+  },
+  // Review
+  {
+    '5g3ew2vx': {
+      'en': 'SEE REVIEW ',
+      'it': '',
+    },
+    't65noyq1': {
+      'en': 'Durability:  ',
+      'it': '',
+    },
+    'y6zjcpw7': {
+      'en':
+          'Lorem ipsum dolor sit amet consectetur. Eros nec ut libero felis. Tellus viverra at in donec at. Turpis imperdie...',
+      'it': '',
+    },
+    '1yd2raw0': {
+      'en': 'Size & Fit: ',
+      'it': '',
+    },
+    'so0yk67o': {
+      'en':
+          'Lorem ipsum dolor sit amet consectetur. Eros nec ut libero felis. Tellus viverra at in donec at. Turpis imperdie...',
+      'it': '',
+    },
+    'mstbp22c': {
+      'en': 'Versatility: ',
+      'it': '',
+    },
+    'zfis9w5x': {
+      'en':
+          'Lorem ipsum dolor sit amet consectetur. Eros nec ut libero felis. Tellus viverra at in donec at. Turpis imperdie...',
+      'it': '',
+    },
+    'qvjt6j71': {
+      'en': 'Functionality: ',
+      'it': '',
+    },
+    'v7b0oud9': {
+      'en':
+          'Lorem ipsum dolor sit amet consectetur. Eros nec ut libero felis. Tellus viverra at in donec at. ',
+      'it': '',
+    },
+    'we35mhsi': {
+      'en': 'Value for Money: ',
+      'it': '',
+    },
+    'e92aum2h': {
+      'en': 'Lorem ipsum dolor sit amet consectetur. ',
+      'it': '',
+    },
+  },
+  // EmptyReviews
+  {
+    'cqg8y1ys': {
+      'en': 'NO REVIEWS YET. DISCOVER IT,  WEAR IT, AND TELL',
+      'it': '',
+    },
+    'acx8czjj': {
+      'en': 'OTHERS WHAT YOU THINK!',
+      'it': '',
+    },
+  },
+  // ConfirmationReturn
+  {
+    '75ec5r9n': {
+      'en': 'YOUR RETURN HAS BEEN REGISTERED',
+      'it': '',
+    },
+    '3pnmi3b3': {
+      'en':
+          'Please check your email for detailed instructions for returning your item. A refund will be issued when the brand receives the item.',
+      'it': '',
+    },
+    '25gckpqg': {
+      'en': 'CONTINUE',
+      'it': '',
+    },
+  },
+  // ConfirmationExchange
+  {
+    'iz9qkfvb': {
+      'en': 'YOUR EXCHANGE HAS BEEN REGISTERED',
+      'it': '',
+    },
+    'k1d1ssln': {
+      'en':
+          'Please check your email for detailed instructions to proceed with the exchange.',
+      'it': '',
+    },
+    'rm7vpcc8': {
+      'en': 'CONTINUE',
+      'it': '',
+    },
+  },
+  // copycode
+  {
+    'o4mhuwta': {
+      'en': 'Code copied!',
+      'it': '',
+    },
+  },
+  // SortBy
+  {
+    'pmh8x06f': {
+      'en': 'SORT BY',
+      'it': '',
+    },
+    '066wlgms': {
+      'en': 'Relevance',
+      'it': '',
+    },
+    '27obtrne': {
+      'en': 'Newest Arrivals',
+      'it': '',
+    },
+    'krqnuit6': {
+      'en': 'Hottest Products',
+      'it': '',
+    },
+    'nxcrl9ly': {
+      'en': 'Overall Review Score ',
+      'it': '',
+    },
+    'k2t0c6f9': {
+      'en': '(High to Low)',
+      'it': '',
+    },
+    'p5r5mvzc': {
+      'en': 'Reviews ',
+      'it': '',
+    },
+    '4jhfnbhe': {
+      'en': '(Most to Least)',
+      'it': '',
+    },
+    'v6zykz9o': {
+      'en': 'Price ',
+      'it': '',
+    },
+    '55slt8zn': {
+      'en': '(High to Low)',
+      'it': '',
+    },
+    'e2hr5e71': {
+      'en': 'Price ',
+      'it': '',
+    },
+    '8zizg2lh': {
+      'en': '(Low to High)',
+      'it': '',
+    },
+    'v1siciz1': {
+      'en': 'SUBMIT',
+      'it': '',
+    },
+    '2kdtcpj3': {
+      'en': 'Redefine',
+      'it': '',
+    },
+  },
+  // RequestQuiz
+  {
+    'bvgdpb9e': {
+      'en': 'WOULD YOU LIKE A CUSTOM QUIZ TO ASSIST WITH YOUR RESEARCH?',
+      'it': '',
+    },
+    'dzqw4kb1': {
+      'en': 'We\'ve got you covered! Just answer ',
+      'it': '',
+    },
+    '5jha74x6': {
+      'en': '4',
+      'it': '',
+    },
+    '8dp7u6xe': {
+      'en':
+          ' quick questions and we\'ll help you find what you are looking for.',
+      'it': '',
+    },
+    't98kicir': {
+      'en': 'TAKE THE QUIZ',
+      'it': '',
+    },
+    '63vkqf4m': {
+      'en': 'Go on without',
+      'it': '',
+    },
+  },
+  // EmptySearch
+  {
+    '15u94v52': {
+      'en': 'NO PRODUCT WAS FOUND.',
+      'it': '',
+    },
+    'e63ji2u5': {
+      'en': 'PLEASE TRY SEARCHING WITH A DIFFERENT WORD TO',
+      'it': '',
+    },
+    'bi8z5gw1': {
+      'en': 'DESCRIBE WHAT YOU\'RE LOOKING FOR',
+      'it': '',
+    },
+  },
+  // DelteAccount
+  {
+    'yd8hedec': {
+      'en': 'DELETE ACCOUNT',
+      'it': '',
+    },
+    'ycm8yytg': {
+      'en': 'Are you sure you want to delete your account?',
+      'it': '',
+    },
+    'vesiw6em': {
+      'en':
+          'This action is irreversible. You will lose access to all your points, history, and any associated rewards.',
+      'it': '',
+    },
+    'aq330kfn': {
+      'en': 'CANCEL',
+      'it': '',
+    },
+    'ad5l8rwa': {
+      'en': 'Delete account',
+      'it': '',
+    },
+  },
+  // Filter
+  {
+    'z14g3knd': {
+      'en': 'FILTER BY',
+      'it': '',
+    },
+    'xr0bmbe4': {
+      'en': 'COLOUR:',
+      'it': '',
+    },
+    'l173d23l': {
+      'en': 'SIZE & FIT:',
+      'it': '',
+    },
+    '0c4pk84y': {
+      'en': 'XXS',
+      'it': '',
+    },
+    '80e2yqyq': {
+      'en': 'XS',
+      'it': '',
+    },
+    'twavvc5v': {
+      'en': 'S',
+      'it': '',
+    },
+    'glto7uf2': {
+      'en': 'M',
+      'it': '',
+    },
+    '5e26jkcu': {
+      'en': 'L',
+      'it': '',
+    },
+    'x92tfgcm': {
+      'en': 'XL',
+      'it': '',
+    },
+    'tyitdlqf': {
+      'en': 'XXL',
+      'it': '',
+    },
+    '907kxi21': {
+      'en': 'XXXL',
+      'it': '',
+    },
+    'n2squfc2': {
+      'en': 'c',
+      'it': '',
+    },
+    'q29nkahm': {
+      'en': 'XXS',
+      'it': '',
+    },
+    'ro9xq5gb': {
+      'en': 'XS',
+      'it': '',
+    },
+    'yzovocul': {
+      'en': 'S',
+      'it': '',
+    },
+    'dcalz9cz': {
+      'en': 'M',
+      'it': '',
+    },
+    'pqszw0pe': {
+      'en': 'L',
+      'it': '',
+    },
+    'v14zxf21': {
+      'en': 'XL',
+      'it': '',
+    },
+    'h61n19go': {
+      'en': 'XXL',
+      'it': '',
+    },
+    'po0xtyqi': {
+      'en': 'XXXL',
+      'it': '',
+    },
+    'vdl0ozgv': {
+      'en': 'c',
+      'it': '',
+    },
+    'i1f42hl6': {
+      'en': 'MATERIALS:',
+      'it': '',
+    },
+    'amzxnklt': {
+      'en': 'XXS',
+      'it': '',
+    },
+    'ifwic418': {
+      'en': 'XS',
+      'it': '',
+    },
+    'rdiozoh4': {
+      'en': 'S',
+      'it': '',
+    },
+    '72zdv49b': {
+      'en': 'M',
+      'it': '',
+    },
+    '1h0qg3lw': {
+      'en': 'L',
+      'it': '',
+    },
+    'ljdprl0q': {
+      'en': 'XL',
+      'it': '',
+    },
+    'q740amny': {
+      'en': 'XXL',
+      'it': '',
+    },
+    'j8deeh84': {
+      'en': 'XXXL',
+      'it': '',
+    },
+    '2iz7m73d': {
+      'en': 'c',
+      'it': '',
+    },
+    '7yau6ixa': {
+      'en': 'XXS',
+      'it': '',
+    },
+    'u52asyki': {
+      'en': 'XS',
+      'it': '',
+    },
+    'pno9m6h5': {
+      'en': 'S',
+      'it': '',
+    },
+    'y5xgj2e8': {
+      'en': 'M',
+      'it': '',
+    },
+    'm4tkkzxm': {
+      'en': 'L',
+      'it': '',
+    },
+    'wlxc7yvq': {
+      'en': 'XL',
+      'it': '',
+    },
+    '20y4ysa8': {
+      'en': 'XXL',
+      'it': '',
+    },
+    'vz5i2aw7': {
+      'en': 'XXXL',
+      'it': '',
+    },
+    'kufz8kn6': {
+      'en': 'c',
+      'it': '',
+    },
+    'vp265hra': {
+      'en': 'BRAND:',
+      'it': '',
+    },
+    '1u1gryoa': {
+      'en': 'XXS',
+      'it': '',
+    },
+    'dm8sp9u1': {
+      'en': 'XS',
+      'it': '',
+    },
+    'nog1toja': {
+      'en': 'S',
+      'it': '',
+    },
+    'j9evsnai': {
+      'en': 'M',
+      'it': '',
+    },
+    'qy1llwgr': {
+      'en': 'L',
+      'it': '',
+    },
+    'yl4iplwa': {
+      'en': 'XL',
+      'it': '',
+    },
+    'bi132gzh': {
+      'en': 'XXL',
+      'it': '',
+    },
+    'c7zw07h9': {
+      'en': 'XXXL',
+      'it': '',
+    },
+    'xryfmq6e': {
+      'en': 'c',
+      'it': '',
+    },
+    'i5r7jw1s': {
+      'en': 'XXS',
+      'it': '',
+    },
+    'zuqifud2': {
+      'en': 'XS',
+      'it': '',
+    },
+    'zphw455h': {
+      'en': 'S',
+      'it': '',
+    },
+    'hjhn4xxu': {
+      'en': 'M',
+      'it': '',
+    },
+    'dxnlqvcu': {
+      'en': 'L',
+      'it': '',
+    },
+    'f62iefth': {
+      'en': 'XL',
+      'it': '',
+    },
+    'ljt8q685': {
+      'en': 'XXL',
+      'it': '',
+    },
+    'ggnbwom6': {
+      'en': 'XXXL',
+      'it': '',
+    },
+    'x54ylz85': {
+      'en': 'c',
+      'it': '',
+    },
+    'aajivwmv': {
+      'en': 'PRICE',
+      'it': '',
+    },
+    'ckb18l6q': {
+      'en': 'From',
+      'it': '',
+    },
+    'e1pq2ct2': {
+      'en': 'To',
+      'it': '',
+    },
+    'm1nzb96d': {
+      'en': 'SHOW RESULTS',
+      'it': '',
+    },
+    'y1h5iuc6': {
+      'en': 'Clear All',
+      'it': '',
+    },
+  },
+  // ProdReviewsComp
+  {
+    'vyawvw0b': {
+      'en': 'OVERALL SCORE',
+      'it': '',
+    },
+    'cpm7k09s': {
+      'en': '  (i)',
+      'it': '',
+    },
+    'fbbid3ig': {
+      'en': 'DURABILITY',
+      'it': '',
+    },
+    '5amfndwo': {
+      'en': 'SIZE & FIT',
+      'it': '',
+    },
+    '2pym7317': {
+      'en': 'VERSATILITY',
+      'it': '',
+    },
+    'jxz3604j': {
+      'en': 'FUNCTIONALITY',
+      'it': '',
+    },
+    'v2vum5uk': {
+      'en': 'VALUE FOR MONEY',
+      'it': '',
+    },
+  },
+  // EmptyProdGuides
+  {
+    'hs0kh4dl': {
+      'en': 'WE\'RE WORKING ON MORE AWESOME CONTENT',
+      'it': '',
+    },
+    'h4hwai3j': {
+      'en': 'TO INSPIRE YOU WITH OUR PRODUCT GUIDES.',
+      'it': '',
+    },
+    'rgk6rlcj': {
+      'en': 'CHECK BACK LATER TO SEE WHAT\'S NEW!',
+      'it': '',
+    },
+  },
+  // Productshop
+  {
+    'qnlb07uk': {
+      'en': 'SCORE',
+      'it': '',
+    },
+  },
+  // RedemptionGuidelines
+  {
+    'rv6ctcpn': {
+      'en': 'REDEMPTION GUIDELINES',
+      'it': '',
+    },
+    'a6vnduq3': {
+      'en': '1.',
+      'it': '',
+    },
+    'rfoxjk6o': {
+      'en': ' Points Availability: ',
+      'it': '',
+    },
+    '7kntqdbh': {
+      'en':
+          ' Redeem only the points in your account; you can\'t exceed your balance.',
+      'it': '',
+    },
+    'z4ow0osw': {
+      'en': '2.',
+      'it': '',
+    },
+    'rtr4y3se': {
+      'en': ' Reward Application Limiti:',
+      'it': '',
+    },
+    'mxjev1xd': {
+      'en':
+          ' Rewards cover up to 50% of your basket\'s total within 12 months.',
+      'it': '',
+    },
+    'ysgzii2u': {
+      'en': '3.',
+      'it': '',
+    },
+    'p8tc7z0h': {
+      'en': ' Whole Number Redemptions:',
+      'it': '',
+    },
+    '1b9gd5kz': {
+      'en':
+          ' Redeem points in whole numbers (e.g. 20 or 21). No partial amounts allowed.',
+      'it': '',
+    },
+    'gw8edabw': {
+      'en': '4.',
+      'it': '',
+    },
+    'l4gwesv2': {
+      'en': ' Reward Type:',
+      'it': '',
+    },
+    '4bd3ep8g': {
+      'en':
+          ' Redeem either generic rewards (for product reviews) or brand-specific rewards (if the brand buys your visual content).',
+      'it': '',
+    },
+    'iyolhlke': {
+      'en': 'CONTINUE',
+      'it': '',
+    },
+  },
+  // ProductsCart
+  {
+    'lm5zwu2s': {
+      'en': 'OTHER BRAND',
+      'it': '',
+    },
+    '00afhiei': {
+      'en': 'AXEL SATIN-CREPE BLAZER',
+      'it': '',
+    },
+    'ls393b9g': {
+      'en': 'COLOUR: ',
+      'it': '',
+    },
+    'r1gt7wgr': {
+      'en': 'Beige',
+      'it': '',
+    },
+    '9gb13vo7': {
+      'en': 'AXEL SATIN-CREPE BLAZER',
+      'it': '',
+    },
+    'z6iovqw1': {
+      'en': 'Size: ',
+      'it': '',
+    },
+    '3sg5jm68': {
+      'en': 'S',
+      'it': '',
+    },
+    'md7p6089': {
+      'en': 'AXEL SATIN-CREPE BLAZER',
+      'it': '',
+    },
+    '65hcjefo': {
+      'en': 'QUANTITY: ',
+      'it': '',
+    },
+    'ujb28x1o': {
+      'en': '2',
+      'it': '',
+    },
+    'qbic4dt7': {
+      'en': 'AXEL SATIN-CREPE BLAZER',
+      'it': '',
+    },
+    'v0q08xdm': {
+      'en': 'Delete',
+      'it': '',
+    },
+    'pttdqe5b': {
+      'en': 'Save for Later',
+      'it': '',
+    },
+    'yx5ensm5': {
+      'en': '£120',
+      'it': '',
+    },
+    '4mjot89a': {
+      'en': 'each £60',
+      'it': '',
+    },
+  },
+  // CheckoutCart
+  {
+    'jt5jkpyo': {
+      'en': 'TOTAL VALUE',
+      'it': '',
+    },
+    'xoyttvud': {
+      'en': '£339,90',
+      'it': '',
+    },
+    'bbrusmce': {
+      'en': 'DEDUCTION',
+      'it': '',
+    },
+    '0evmowt8': {
+      'en': '-£19,00',
+      'it': '',
+    },
+    'tg0o0oh1': {
+      'en': 'REWARDS REDEMPTION',
+      'it': '',
+    },
+    'q6zypq64': {
+      'en': '-£160,00',
+      'it': '',
+    },
+    '8wjj7nep': {
+      'en': 'SHIPPING',
+      'it': '',
+    },
+    'bsd4ca3p': {
+      'en': 'It will be calculated in the Checkout',
+      'it': '',
+    },
+    'ferbef96': {
+      'en': 'TOTAL',
+      'it': '',
+    },
+    '7xoqv6ai': {
+      'en': '£160,90',
+      'it': '',
+    },
+    '6p19sqpu': {
+      'en': 'CHECKOUT',
+      'it': '',
+    },
+  },
+  // CartPoints
+  {
+    '7gsxevnp': {
+      'en': 'What points and how many would you like to redeem?',
+      'it': '',
+    },
+    'ryenqjrt': {
+      'en': '(i)',
+      'it': '',
+    },
+    'tn752an6': {
+      'en': 'What points and how many would you like to redeem? (i)',
+      'it': '',
+    },
+    'z44yphdz': {
+      'en': 'Generic Points',
+      'it': '',
+    },
+    'gserupa8': {
+      'en': 'Generic Points',
+      'it': '',
+    },
+    'wzpjevlz': {
+      'en': 'Search...',
+      'it': '',
+    },
+    'fcwlgnz3': {
+      'en': 'Generic Points',
+      'it': '',
+    },
+    'vfgcqoe9': {
+      'en': 'Option 2',
+      'it': '',
+    },
+    'ypfz6pl8': {
+      'en': 'Option 3',
+      'it': '',
+    },
+    '3lu94w4l': {
+      'en': 'REDEEMABLE   ',
+      'it': '',
+    },
+    'fw796j13': {
+      'en': '80',
+      'it': '',
+    },
+    'gg1vib05': {
+      'en': 'USE',
+      'it': '',
+    },
+    'ddlwfr1e': {
+      'en': '80',
+      'it': '',
+    },
+    'sfvr1v8e': {
+      'en': '= ',
+      'it': '',
+    },
+    'b5vzhxxr': {
+      'en': '£ 160',
+      'it': '',
+    },
+    '5g890or7': {
+      'en': 'REDEEM',
+      'it': '',
+    },
+  },
   // Miscellaneous
   {
     'uz38x5yt': {
       'en':
-          'Turning on location services allow us to show you when pals are nearby',
+          'Enabling location services lets us autofill your shipping address for faster checkout',
       'it': '',
     },
     '3cp75ohg': {
-      'en': '',
+      'en':
+          'This lets you select photos and videos from your library and attach to your entry.',
       'it': '',
     },
     'j7tk5e8f': {

@@ -204,8 +204,8 @@ class _FlutterFlowVideoPlayerState extends State<FlutterFlowVideoPlayer>
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SizedBox(
-                          width: 50.0,
-                          height: 50.0,
+                          width: 24.0,
+                          height: 24.0,
                           child: CircularProgressIndicator(
                             valueColor: AlwaysStoppedAnimation<Color>(
                               Color(0xFFA20A05),

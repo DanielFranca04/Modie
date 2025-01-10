@@ -28,7 +28,7 @@ class _GetStartedScreenWidgetState extends State<GetStartedScreenWidget> {
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       await requestPermission(notificationsPermission);
       await requestPermission(locationPermission);
-      await actions.solicitarPermissaoTracking();
+      await actions.appTracking();
     });
   }
 
@@ -42,7 +42,10 @@ class _GetStartedScreenWidgetState extends State<GetStartedScreenWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: WillPopScope(
         onWillPop: () async => false,
         child: Scaffold(
@@ -105,22 +108,25 @@ class _GetStartedScreenWidgetState extends State<GetStartedScreenWidget> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                FFLocalizations.of(context).getText(
-                                  '9n0f1ur3' /* THE FIRST USER-LED & SHOPPABLE... */,
+                              Opacity(
+                                opacity: 0.9,
+                                child: Text(
+                                  FFLocalizations.of(context).getText(
+                                    '9n0f1ur3' /* THE FIRST USER-LED & SHOPPABLE... */,
+                                  ),
+                                  textAlign: TextAlign.start,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'PP Hatton',
+                                        color: const Color(0xFFD6E1E2),
+                                        fontSize: 32.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w500,
+                                        useGoogleFonts: false,
+                                        lineHeight: 1.4,
+                                      ),
                                 ),
-                                textAlign: TextAlign.start,
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'PP Hatton',
-                                      color: const Color(0xFFD6E1E2),
-                                      fontSize: 32.0,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w500,
-                                      useGoogleFonts: false,
-                                      lineHeight: 1.4,
-                                    ),
                               ),
                             ],
                           ),

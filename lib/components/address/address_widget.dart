@@ -71,13 +71,20 @@ class _AddressWidgetState extends State<AddressWidget> {
       height: double.infinity,
       decoration: BoxDecoration(
         border: Border.all(
-          color: FlutterFlowTheme.of(context).n950,
-          width: 1.0,
+          color: Colors.transparent,
+          width: 0.0,
         ),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
+          Container(
+            width: double.infinity,
+            height: 1.0,
+            decoration: BoxDecoration(
+              color: FlutterFlowTheme.of(context).n950,
+            ),
+          ),
           Container(
             width: 100.0,
             height: 15.0,
@@ -121,7 +128,7 @@ class _AddressWidgetState extends State<AddressWidget> {
                       ),
                       onPressed: () async {
                         await AddressTable().delete(
-                          matchingRows: (rows) => rows.eq(
+                          matchingRows: (rows) => rows.eqOrNull(
                             'address_id',
                             widget.id,
                           ),
@@ -140,25 +147,34 @@ class _AddressWidgetState extends State<AddressWidget> {
                       },
                     ),
                   ),
-                FlutterFlowIconButton(
-                  borderRadius: 8.0,
-                  buttonSize: 40.0,
-                  icon: Icon(
-                    Icons.edit,
-                    color: FlutterFlowTheme.of(context).n950,
-                    size: 24.0,
+                Container(
+                  decoration: const BoxDecoration(),
+                  child: InkWell(
+                    splashColor: Colors.transparent,
+                    focusColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () async {
+                      context.pushNamed(
+                        'AddAdressEdit',
+                        queryParameters: {
+                          'addressid': serializeParam(
+                            widget.id,
+                            ParamType.int,
+                          ),
+                        }.withoutNulls,
+                      );
+                    },
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(0.0),
+                      child: Image.asset(
+                        'assets/images/Group.png',
+                        width: 20.0,
+                        height: 20.0,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
                   ),
-                  onPressed: () async {
-                    context.pushNamed(
-                      'AddAdressEdit',
-                      queryParameters: {
-                        'addressid': serializeParam(
-                          widget.id,
-                          ParamType.int,
-                        ),
-                      }.withoutNulls,
-                    );
-                  },
                 ),
               ],
             ),
@@ -678,8 +694,7 @@ class _AddressWidgetState extends State<AddressWidget> {
                       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                       shape: CircleBorder(),
                     ),
-                    unselectedWidgetColor:
-                        FlutterFlowTheme.of(context).secondaryBackground,
+                    unselectedWidgetColor: FlutterFlowTheme.of(context).n950,
                   ),
                   child: Checkbox(
                     value: _model.checkboxValue ??= widget.status!,
@@ -690,7 +705,7 @@ class _AddressWidgetState extends State<AddressWidget> {
                           data: {
                             'status': false,
                           },
-                          matchingRows: (rows) => rows.eq(
+                          matchingRows: (rows) => rows.eqOrNull(
                             'profile_id',
                             currentUserUid,
                           ),
@@ -700,11 +715,11 @@ class _AddressWidgetState extends State<AddressWidget> {
                             'status': true,
                           },
                           matchingRows: (rows) => rows
-                              .eq(
+                              .eqOrNull(
                                 'profile_id',
                                 currentUserUid,
                               )
-                              .eq(
+                              .eqOrNull(
                                 'address_id',
                                 widget.id,
                               ),
@@ -724,7 +739,7 @@ class _AddressWidgetState extends State<AddressWidget> {
                     },
                     side: BorderSide(
                       width: 2,
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      color: FlutterFlowTheme.of(context).n950,
                     ),
                     activeColor: FlutterFlowTheme.of(context).m500,
                     checkColor: FlutterFlowTheme.of(context).m500,

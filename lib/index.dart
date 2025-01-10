@@ -46,8 +46,28 @@ export '/f_a_qs/f_a_qs_widget.dart' show FAQsWidget;
 export '/user_screens/load_page/load_page_widget.dart' show LoadPageWidget;
 export '/user_screens/my_payments_cards/my_payments_cards_widget.dart'
     show MyPaymentsCardsWidget;
-export '/setup_account/add_adress_edit/add_adress_edit_widget.dart'
-    show AddAdressEditWidget;
 export '/explore_product/explore_product_widget.dart' show ExploreProductWidget;
 export '/user_screens/explore_page/explore_page_widget.dart'
     show ExplorePageWidget;
+export '/scoring_guide/scoring_guide_widget.dart' show ScoringGuideWidget;
+export '/my_favourites/my_favourites_widget.dart' show MyFavouritesWidget;
+export '/product_guide/product_guide_widget.dart' show ProductGuideWidget;
+export '/explore_reviews/explore_reviews_widget.dart' show ExploreReviewsWidget;
+export '/explore_articles_page/explore_articles_page_widget.dart'
+    show ExploreArticlesPageWidget;
+export '/my_order_status/my_order_status_widget.dart' show MyOrderStatusWidget;
+export '/my_order/my_order_widget.dart' show MyOrderWidget;
+export '/return_select/return_select_widget.dart' show ReturnSelectWidget;
+export '/return_form/return_form_widget.dart' show ReturnFormWidget;
+export '/our_brands/our_brands_widget.dart' show OurBrandsWidget;
+export '/our_brands_info/our_brands_info_widget.dart' show OurBrandsInfoWidget;
+export '/setup_account/add_adress_edit/add_adress_edit_widget.dart'
+    show AddAdressEditWidget;
+export '/shop_screen/shop_screen_widget.dart' show ShopScreenWidget;
+export '/shop_screen_products/shop_screen_products_widget.dart'
+    show ShopScreenProductsWidget;
+export '/quiz/quiz_page_copy/quiz_page_copy_widget.dart'
+    show QuizPageCopyWidget;
+export '/quiz/quiz_shop/quiz_shop_widget.dart' show QuizShopWidget;
+export '/shopping_cart/shopping_cart/shopping_cart_widget.dart'
+    show ShoppingCartWidget;

@@ -1,4 +1,3 @@
-export 'onesignal_initialise.dart' show onesignalInitialise;
 export 'onesignal_login.dart' show onesignalLogin;
 export 'verify_email_with_token.dart' show verifyEmailWithToken;
 export 'verify_email_reset_password.dart' show verifyEmailResetPassword;
@@ -11,5 +10,6 @@ export 'convert_todate.dart' show convertTodate;
 export 'username_validator.dart' show usernameValidator;
 export 'get_lat.dart' show getLat;
 export 'get_lng.dart' show getLng;
-export 'apple_signin.dart' show appleSignin;
-export 'solicitar_permissao_tracking.dart' show solicitarPermissaoTracking;
+export 'app_tracking.dart' show appTracking;
+export 'change_status_bar_color.dart' show changeStatusBarColor;
+export 'check_color.dart' show checkColor;

@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'change_password_screen_model.dart';
 export 'change_password_screen_model.dart';
@@ -48,7 +47,10 @@ class _ChangePasswordScreenWidgetState
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -73,22 +75,26 @@ class _ChangePasswordScreenWidgetState
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(16.0, 55.0, 18.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 48.0, 18.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          FlutterFlowIconButton(
-                            borderRadius: 8.0,
-                            buttonSize: 40.0,
-                            icon: FaIcon(
-                              FontAwesomeIcons.angleLeft,
-                              color: FlutterFlowTheme.of(context).n950,
-                              size: 19.0,
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                1.0, 0.0, 0.0, 0.0),
+                            child: FlutterFlowIconButton(
+                              borderRadius: 8.0,
+                              buttonSize: 40.0,
+                              icon: Icon(
+                                FFIcons.kvectorConverted,
+                                color: FlutterFlowTheme.of(context).n950,
+                                size: 14.0,
+                              ),
+                              onPressed: () async {
+                                context.safePop();
+                              },
                             ),
-                            onPressed: () async {
-                              context.safePop();
-                            },
                           ),
                           Container(
                             width: 77.54,

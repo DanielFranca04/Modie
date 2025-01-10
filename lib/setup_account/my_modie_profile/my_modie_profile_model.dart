@@ -51,6 +51,15 @@ class MyModieProfileModel extends FlutterFlowModel<MyModieProfileWidget> {
       FFUploadedFile(bytes: Uint8List.fromList([]));
   String uploadedFileUrl4 = '';
 
+  // Stores action output result for [Backend Call - Query Rows] action in Row widget.
+  List<QuizRow>? quizout;
+  // Stores action output result for [Backend Call - Query Rows] action in Row widget.
+  List<QuizResultsRow>? optionsoutput;
+  // Stores action output result for [Backend Call - Query Rows] action in Row widget.
+  List<QuizRow>? quizoutp;
+  // Stores action output result for [Backend Call - Query Rows] action in Row widget.
+  List<QuizResultsRow>? optionsoutpu;
+
   @override
   void initState(BuildContext context) {}
 

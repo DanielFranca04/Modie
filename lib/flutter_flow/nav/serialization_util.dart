@@ -226,6 +226,8 @@ dynamic deserializeParam<T>(
             return FaqsRow(data);
           case CertificationsRow:
             return CertificationsRow(data);
+          case ActivityLogRow:
+            return ActivityLogRow(data);
           case BrandRow:
             return BrandRow(data);
           case BrandPartnersRow:
@@ -242,8 +244,12 @@ dynamic deserializeParam<T>(
             return UserPreferenceValuesRow(data);
           case RewardTransactionsRow:
             return RewardTransactionsRow(data);
+          case BrandProductmaterialRow:
+            return BrandProductmaterialRow(data);
           case BrandCertificationsRow:
             return BrandCertificationsRow(data);
+          case BrandResponsibilityRow:
+            return BrandResponsibilityRow(data);
           case BrandPracticesRow:
             return BrandPracticesRow(data);
           case RewardPointsRow:
@@ -254,6 +260,8 @@ dynamic deserializeParam<T>(
             return FiltersRow(data);
           case ReviewRow:
             return ReviewRow(data);
+          case FavouritesRow:
+            return FavouritesRow(data);
           case QuizRow:
             return QuizRow(data);
           case OptionsRow:
@@ -262,6 +270,8 @@ dynamic deserializeParam<T>(
             return FilterValuesRow(data);
           case ReviewScoresRow:
             return ReviewScoresRow(data);
+          case SocialResponsibilityRow:
+            return SocialResponsibilityRow(data);
           case AddressRow:
             return AddressRow(data);
           case MaterialsRow:
@@ -270,6 +280,12 @@ dynamic deserializeParam<T>(
             return ProfileRow(data);
           case RewardCategoriesRow:
             return RewardCategoriesRow(data);
+          case ProductMaterialRow:
+            return ProductMaterialRow(data);
+          case BrandImagesRow:
+            return BrandImagesRow(data);
+          case BackofficeUserRow:
+            return BackofficeUserRow(data);
           case InvitationRow:
             return InvitationRow(data);
           case FaqsOptionsRow:

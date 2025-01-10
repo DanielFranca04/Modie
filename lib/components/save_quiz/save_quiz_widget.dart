@@ -95,18 +95,23 @@ class _SaveQuizWidgetState extends State<SaveQuizWidget> {
                   while (FFAppState().ops < FFAppState().quizids.length) {
                     await QuizResultsTable().update(
                       data: {
-                        'answers': FFAppState().quiz[FFAppState().ops].options,
+                        'answers': FFAppState()
+                            .quiz
+                            .elementAtOrNull(FFAppState().ops)
+                            ?.options,
                         'answered_at':
                             supaSerialize<DateTime>(getCurrentTimestamp),
                       },
                       matchingRows: (rows) => rows
-                          .eq(
+                          .eqOrNull(
                             'user_id',
                             currentUserUid,
                           )
-                          .eq(
+                          .eqOrNull(
                             'quiz_id',
-                            FFAppState().quizids[FFAppState().ops],
+                            FFAppState()
+                                .quizids
+                                .elementAtOrNull(FFAppState().ops),
                           ),
                     );
                     FFAppState().ops = FFAppState().ops + 1;

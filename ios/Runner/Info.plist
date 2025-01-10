@@ -33,17 +33,6 @@
             <string>Editor</string>
             <key>CFBundleURLSchemes</key>
             <array>
-                <!--FF_REVERSED_CLIENT_ID-->
-                
-            </array>
-        </dict>
-
-
-        <dict>
-            <key>CFBundleTypeRole</key>
-            <string>Editor</string>
-            <key>CFBundleURLSchemes</key>
-            <array>
                 <string>com.googleusercontent.apps.732082109116-dv71fupvmvbm26mbv3egt94hhdksovsp</string>
             </array>
         </dict>
@@ -69,9 +58,9 @@
 	<true/>
 
 	<key>NSLocationWhenInUseUsageDescription</key>
-    <string>Turning on location services allow us to show you when pals are nearby</string>
+    <string>Enabling location services lets us autofill your shipping address for faster checkout</string>
 	<key>NSCameraUsageDescription</key>
-    <string>In order to take a picture or video, this app requires permission to access the camera.</string>
+    <string>This lets you select photos and videos from your library and attach to your entry.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
     <string>In order to upload data, this app requires permission to access the photo library.</string>
 	<key>NSUserTrackingUsageDescription</key>

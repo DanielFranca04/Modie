@@ -65,7 +65,8 @@ class _QuizComponentWidgetState extends State<QuizComponentWidget> {
             style: FlutterFlowTheme.of(context).bodyMedium.override(
                   fontFamily: 'Montserrat',
                   color: FFAppState()
-                          .quiz[FFAppState().i]
+                          .quiz
+                          .elementAtOrNull(FFAppState().i)!
                           .options
                           .contains(widget.name)
                       ? FlutterFlowTheme.of(context).m500
@@ -81,7 +82,8 @@ class _QuizComponentWidgetState extends State<QuizComponentWidget> {
             highlightColor: Colors.transparent,
             onTap: () async {
               if (FFAppState()
-                  .quiz[FFAppState().i]
+                  .quiz
+                  .elementAtOrNull(FFAppState().i)!
                   .options
                   .contains(widget.name)) {
                 FFAppState().updateQuizAtIndex(
@@ -106,7 +108,8 @@ class _QuizComponentWidgetState extends State<QuizComponentWidget> {
             child: Container(
               decoration: BoxDecoration(
                 color: FFAppState()
-                        .quiz[FFAppState().i]
+                        .quiz
+                        .elementAtOrNull(FFAppState().i)!
                         .options
                         .contains(widget.name)
                     ? FlutterFlowTheme.of(context).m500
@@ -135,7 +138,8 @@ class _QuizComponentWidgetState extends State<QuizComponentWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Montserrat',
                     color: FFAppState()
-                            .quiz[FFAppState().i]
+                            .quiz
+                            .elementAtOrNull(FFAppState().i)!
                             .options
                             .contains(widget.name)
                         ? FlutterFlowTheme.of(context).m500

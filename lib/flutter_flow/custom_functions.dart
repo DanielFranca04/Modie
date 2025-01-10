@@ -13,7 +13,6 @@ import '/backend/supabase/supabase.dart';
 import '/auth/supabase_auth/auth_util.dart';
 
 DateTime? stringToDate(String? date) {
-  // convert 24/02/2004 for example to date
   if (date == null) {
     return null;
   }
@@ -100,10 +99,52 @@ int? getYear(DateTime? date) {
 
 String? dateToString(DateTime? date) {
   // Convert date to string
-  // Convert a DateTime object to a string in the format 'yyyy-MM-dd'
   if (date == null) {
     return null;
   }
 
-  return DateFormat('yyyy-MM-dd').format(date);
+  return DateFormat('dd/MM/yyyy').format(date);
+}
+
+int? stringtoInt(String? val) {
+  // convert a string to int
+  try {
+    return int.parse(val!);
+  } catch (e) {
+    return null;
+  }
+}
+
+bool? checkIndex(int? numb) {
+  // Check if the number is a even number, if so return true otherwise false
+  if (numb != null) {
+    return numb % 2 == 0;
+  }
+  return null;
+}
+
+bool checkColorType(String codeColor) {
+  // Create a function that verify if the color is darker, if so return false otherwise return true
+  // Convert color code to RGB values
+  int r = int.parse(codeColor.substring(1, 3), radix: 16);
+  int g = int.parse(codeColor.substring(3, 5), radix: 16);
+  int b = int.parse(codeColor.substring(5, 7), radix: 16);
+
+  // Calculate luminance
+  double luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+
+  // Check if color is darker
+  if (luminance > 0.5 && codeColor != "#000000") {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+int? round(double? value) {
+  // Round the number if 14.5 returns 15
+  if (value != null) {
+    return value.round();
+  }
+  return null;
 }

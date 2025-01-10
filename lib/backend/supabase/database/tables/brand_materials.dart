@@ -20,4 +20,10 @@ class BrandMaterialsRow extends SupabaseDataRow {
 
   int get materialId => getField<int>('material_id')!;
   set materialId(int value) => setField<int>('material_id', value);
+
+  String? get status => getField<String>('status');
+  set status(String? value) => setField<String>('status', value);
+
+  int get id => getField<int>('id')!;
+  set id(int value) => setField<int>('id', value);
 }

@@ -1,7 +1,12 @@
+import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_video_player.dart';
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:percent_indicator/percent_indicator.dart';
 import 'review_comp_model.dart';
 export 'review_comp_model.dart';
 
@@ -12,8 +17,11 @@ class ReviewCompWidget extends StatefulWidget {
   State<ReviewCompWidget> createState() => _ReviewCompWidgetState();
 }
 
-class _ReviewCompWidgetState extends State<ReviewCompWidget> {
+class _ReviewCompWidgetState extends State<ReviewCompWidget>
+    with TickerProviderStateMixin {
   late ReviewCompModel _model;
+
+  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void setState(VoidCallback callback) {
@@ -25,6 +33,31 @@ class _ReviewCompWidgetState extends State<ReviewCompWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ReviewCompModel());
+
+    // On component load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.imageload = true;
+      safeSetState(() {});
+      await Future.delayed(const Duration(milliseconds: 1000));
+      _model.imageload = false;
+      safeSetState(() {});
+    });
+
+    animationsMap.addAll({
+      'progressBarOnPageLoadAnimation': AnimationInfo(
+        loop: true,
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          RotateEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
+    });
   }
 
   @override
@@ -76,7 +109,7 @@ class _ReviewCompWidgetState extends State<ReviewCompWidget> {
                 children: [
                   Text(
                     FFLocalizations.of(context).getText(
-                      'gfe7f338' /* REVIEW TITLE */,
+                      'mipko0gk' /* REVIEW TITLE */,
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'PP Hatton',
@@ -119,7 +152,7 @@ class _ReviewCompWidgetState extends State<ReviewCompWidget> {
                 children: [
                   Text(
                     FFLocalizations.of(context).getText(
-                      'bc5er89c' /* @idasaporito */,
+                      'fe67986n' /* @idasaporito */,
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Montserrat',
@@ -138,86 +171,62 @@ class _ReviewCompWidgetState extends State<ReviewCompWidget> {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Expanded(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
+                  Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Container(
+                        width: 140.0,
+                        height: 207.0,
+                        decoration: const BoxDecoration(
+                          color: Color(0x00A20A05),
+                        ),
+                        child: Stack(
                           children: [
-                            Expanded(
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Container(
-                                    width: double.infinity,
-                                    height: 205.0,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context).m500,
-                                    ),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        SizedBox(
-                                          width: double.infinity,
-                                          height: 205.0,
-                                          child: Stack(
-                                            children: [
-                                              Padding(
-                                                padding: const EdgeInsets.all(1.0),
-                                                child: ClipRRect(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          0.0),
-                                                  child: Image.asset(
-                                                    'assets/images/Frame_48096470.png',
-                                                    width: double.infinity,
-                                                    height: 205.0,
-                                                    fit: BoxFit.fill,
-                                                  ),
-                                                ),
-                                              ),
-                                              Align(
-                                                alignment: const AlignmentDirectional(
-                                                    0.05, 0.06),
-                                                child: Container(
-                                                  width: 40.0,
-                                                  height: 40.0,
-                                                  decoration: const BoxDecoration(
-                                                    color: Color(0x65A20A05),
-                                                    shape: BoxShape.circle,
-                                                  ),
-                                                  child: Column(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      Icon(
-                                                        Icons.play_arrow,
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                        size: 24.0,
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ],
+                            Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Expanded(
+                                  child: Opacity(
+                                    opacity:
+                                        _model.imageload == true ? 0.0 : 1.0,
+                                    child: const FlutterFlowVideoPlayer(
+                                      path:
+                                          'https://maxlytiwpgziyiekedql.supabase.co/storage/v1/object/public/Reviews/WhatsApp%20Video%202024-11-22%20at%2014.41.11.mp4',
+                                      videoType: VideoType.network,
+                                      width: 160.0,
+                                      height: 125.0,
+                                      aspectRatio: 0.65,
+                                      autoPlay: true,
+                                      looping: true,
+                                      showControls: false,
+                                      allowFullScreen: false,
+                                      allowPlaybackSpeedMenu: false,
+                                      lazyLoad: true,
                                     ),
                                   ),
-                                ],
+                                ),
+                              ],
+                            ),
+                            Opacity(
+                              opacity: _model.imageload == true ? 1.0 : 0.0,
+                              child: Align(
+                                alignment: const AlignmentDirectional(0.05, 0.02),
+                                child: CircularPercentIndicator(
+                                  percent: 0.5,
+                                  radius: 25.0,
+                                  lineWidth: 4.0,
+                                  animation: true,
+                                  animateFromLastPercent: true,
+                                  progressColor:
+                                      FlutterFlowTheme.of(context).primary,
+                                ).animateOnPageLoad(animationsMap[
+                                    'progressBarOnPageLoadAnimation']!),
                               ),
                             ),
                           ],
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                   Expanded(
                     child: Column(
@@ -371,22 +380,27 @@ class _ReviewCompWidgetState extends State<ReviewCompWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
-                                    FFLocalizations.of(context).getText(
-                                      'msxqowjv' /* OVERALL SCORE */,
+                                  Align(
+                                    alignment: const AlignmentDirectional(0.0, 1.0),
+                                    child: Text(
+                                      FFLocalizations.of(context).getText(
+                                        'nrmc1wxr' /* OVERALL SCORE */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'PP Hatton',
+                                            color: FlutterFlowTheme.of(context)
+                                                .m500,
+                                            fontSize: 10.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w500,
+                                            useGoogleFonts: false,
+                                            lineHeight: 0.0,
+                                          ),
                                     ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'PP Hatton',
-                                          color:
-                                              FlutterFlowTheme.of(context).m500,
-                                          fontSize: 10.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w500,
-                                          useGoogleFonts: false,
-                                        ),
                                   ),
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
@@ -442,7 +456,7 @@ class _ReviewCompWidgetState extends State<ReviewCompWidget> {
                                 children: [
                                   Text(
                                     FFLocalizations.of(context).getText(
-                                      'zy4p7ux2' /* A.L.C. */,
+                                      'jtsl3650' /* A.L.C. */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -462,7 +476,7 @@ class _ReviewCompWidgetState extends State<ReviewCompWidget> {
                               children: [
                                 Text(
                                   FFLocalizations.of(context).getText(
-                                    '69v3m3ep' /* Axel Satin-Crepe Blazer */,
+                                    'xlxvvg35' /* Axel Satin-Crepe Blazer */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -484,7 +498,7 @@ class _ReviewCompWidgetState extends State<ReviewCompWidget> {
                                 children: [
                                   Text(
                                     FFLocalizations.of(context).getText(
-                                      'tcimxjr0' /* $120 */,
+                                      'sud9ojx5' /* £120 */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -509,7 +523,7 @@ class _ReviewCompWidgetState extends State<ReviewCompWidget> {
                                 children: [
                                   Text(
                                     FFLocalizations.of(context).getText(
-                                      '50hr3g6t' /* SHOP NOW  */,
+                                      'e9jnprp4' /* SHOP NOW  */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -523,10 +537,13 @@ class _ReviewCompWidgetState extends State<ReviewCompWidget> {
                                           decoration: TextDecoration.underline,
                                         ),
                                   ),
-                                  FaIcon(
-                                    FontAwesomeIcons.greaterThan,
-                                    color: FlutterFlowTheme.of(context).m500,
-                                    size: 12.0,
+                                  Transform.rotate(
+                                    angle: 180.0 * (math.pi / 180),
+                                    child: Icon(
+                                      FFIcons.kvectorConverted,
+                                      color: FlutterFlowTheme.of(context).m500,
+                                      size: 10.0,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -553,7 +570,7 @@ class _ReviewCompWidgetState extends State<ReviewCompWidget> {
                   children: [
                     Text(
                       FFLocalizations.of(context).getText(
-                        'b6hvpv6p' /* SEE FULL REVIEW */,
+                        'ujn7q0o6' /* SEE FULL REVIEW */,
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'PP Hatton',

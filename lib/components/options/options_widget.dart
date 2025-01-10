@@ -84,22 +84,13 @@ class _OptionsWidgetState extends State<OptionsWidget>
           height: double.infinity,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).m200,
-            border: Border.all(
-              color: FlutterFlowTheme.of(context).n950,
-              width: 1.0,
-            ),
           ),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
               Container(
                 width: 100.0,
-                height: 40.0,
-                decoration: const BoxDecoration(),
-              ),
-              Container(
-                width: 100.0,
-                height: 24.0,
+                height: 48.0,
                 decoration: const BoxDecoration(),
               ),
               Expanded(
@@ -171,7 +162,9 @@ class _OptionsWidgetState extends State<OptionsWidget>
                               focusColor: Colors.transparent,
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
-                              onTap: () async {},
+                              onTap: () async {
+                                context.goNamed('MyModie');
+                              },
                               child: Icon(
                                 FFIcons.kuserSquare,
                                 color: FlutterFlowTheme.of(context).n950,
@@ -186,7 +179,9 @@ class _OptionsWidgetState extends State<OptionsWidget>
                                 focusColor: Colors.transparent,
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
-                                onTap: () async {},
+                                onTap: () async {
+                                  context.goNamed('MyModie');
+                                },
                                 child: Text(
                                   FFLocalizations.of(context).getText(
                                     '127x5b00' /* MY MODIE */,
@@ -214,28 +209,47 @@ class _OptionsWidgetState extends State<OptionsWidget>
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            Icon(
-                              FFIcons.karchiveMinus,
-                              color: FlutterFlowTheme.of(context).n950,
-                              size: 24.0,
+                            InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                context.pushNamed('MyFavourites');
+                              },
+                              child: Icon(
+                                FFIcons.karchiveMinus,
+                                color: FlutterFlowTheme.of(context).n950,
+                                size: 24.0,
+                              ),
                             ),
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 0.0, 0.0),
-                              child: Text(
-                                FFLocalizations.of(context).getText(
-                                  'qqqjiz4g' /* FAVOURITES */,
+                              child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context.pushNamed('MyFavourites');
+                                },
+                                child: Text(
+                                  FFLocalizations.of(context).getText(
+                                    'qqqjiz4g' /* FAVOURITES */,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Montserrat',
+                                        color:
+                                            FlutterFlowTheme.of(context).n950,
+                                        fontSize: 12.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w500,
+                                        lineHeight: 1.4,
+                                      ),
                                 ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Montserrat',
-                                      color: FlutterFlowTheme.of(context).n950,
-                                      fontSize: 12.0,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w500,
-                                      lineHeight: 1.4,
-                                    ),
                               ),
                             ),
                           ],
@@ -247,28 +261,47 @@ class _OptionsWidgetState extends State<OptionsWidget>
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            Icon(
-                              FFIcons.kglobal,
-                              color: FlutterFlowTheme.of(context).n950,
-                              size: 24.0,
+                            InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                await launchURL('https://modie.co');
+                              },
+                              child: Icon(
+                                FFIcons.kglobal,
+                                color: FlutterFlowTheme.of(context).n950,
+                                size: 24.0,
+                              ),
                             ),
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 0.0, 0.0),
-                              child: Text(
-                                FFLocalizations.of(context).getText(
-                                  'rhuxg41h' /* ABOUT MODIE */,
+                              child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  await launchURL('https://modie.co');
+                                },
+                                child: Text(
+                                  FFLocalizations.of(context).getText(
+                                    'rhuxg41h' /* ABOUT MODIE */,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Montserrat',
+                                        color:
+                                            FlutterFlowTheme.of(context).n950,
+                                        fontSize: 12.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w500,
+                                        lineHeight: 1.4,
+                                      ),
                                 ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Montserrat',
-                                      color: FlutterFlowTheme.of(context).n950,
-                                      fontSize: 12.0,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w500,
-                                      lineHeight: 1.4,
-                                    ),
                               ),
                             ),
                           ],
@@ -365,6 +398,13 @@ class _OptionsWidgetState extends State<OptionsWidget>
             ],
           ),
         ),
+        Container(
+          width: 1.0,
+          height: double.infinity,
+          decoration: BoxDecoration(
+            color: FlutterFlowTheme.of(context).n950,
+          ),
+        ),
         InkWell(
           splashColor: Colors.transparent,
           focusColor: Colors.transparent,
@@ -380,7 +420,7 @@ class _OptionsWidgetState extends State<OptionsWidget>
             _model.updatePage(() {});
           },
           child: Container(
-            width: MediaQuery.sizeOf(context).width * 0.25,
+            width: MediaQuery.sizeOf(context).width * 0.24,
             height: double.infinity,
             decoration: const BoxDecoration(),
           ),

@@ -7,10 +7,11 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
 import 'quiz_page_model.dart';
 export 'quiz_page_model.dart';
@@ -35,6 +36,15 @@ class _QuizPageWidgetState extends State<QuizPageWidget>
     super.initState();
     _model = createModel(context, () => QuizPageModel());
 
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.imgload = true;
+      safeSetState(() {});
+      await Future.delayed(const Duration(milliseconds: 750));
+      _model.imgload = false;
+      safeSetState(() {});
+    });
+
     animationsMap.addAll({
       'textOnActionTriggerAnimation': AnimationInfo(
         trigger: AnimationTrigger.onActionTrigger,
@@ -47,6 +57,19 @@ class _QuizPageWidgetState extends State<QuizPageWidget>
             hz: 4,
             offset: const Offset(4.0, 0.0),
             rotation: 0,
+          ),
+        ],
+      ),
+      'progressBarOnPageLoadAnimation': AnimationInfo(
+        loop: true,
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          RotateEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
           ),
         ],
       ),
@@ -72,9 +95,9 @@ class _QuizPageWidgetState extends State<QuizPageWidget>
 
     return FutureBuilder<List<QuizRow>>(
       future: QuizTable().querySingleRow(
-        queryFn: (q) => q.eq(
+        queryFn: (q) => q.eqOrNull(
           'id',
-          FFAppState().quizids[FFAppState().i],
+          FFAppState().quizids.elementAtOrNull(FFAppState().i),
         ),
       ),
       builder: (context, snapshot) {
@@ -84,8 +107,8 @@ class _QuizPageWidgetState extends State<QuizPageWidget>
             backgroundColor: FlutterFlowTheme.of(context).m200,
             body: const Center(
               child: SizedBox(
-                width: 50.0,
-                height: 50.0,
+                width: 24.0,
+                height: 24.0,
                 child: CircularProgressIndicator(
                   valueColor: AlwaysStoppedAnimation<Color>(
                     Color(0xFFA20A05),
@@ -113,37 +136,42 @@ class _QuizPageWidgetState extends State<QuizPageWidget>
                     children: [
                       Container(
                         width: 100.0,
-                        height: 45.0,
+                        height: 48.0,
                         decoration: const BoxDecoration(),
                       ),
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            16.0, 0.0, 16.0, 0.0),
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            FlutterFlowIconButton(
-                              borderColor: Colors.transparent,
-                              borderRadius: 8.0,
-                              buttonSize: 40.0,
-                              icon: FaIcon(
-                                FontAwesomeIcons.angleLeft,
-                                color: FlutterFlowTheme.of(context).n950,
-                                size: 18.0,
-                              ),
-                              onPressed: () async {
-                                context.pushNamed('StartQuiz');
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  1.0, 0.0, 0.0, 0.0),
+                              child: FlutterFlowIconButton(
+                                borderColor: Colors.transparent,
+                                borderRadius: 8.0,
+                                buttonSize: 40.0,
+                                icon: Icon(
+                                  FFIcons.kvectorConverted,
+                                  color: FlutterFlowTheme.of(context).n950,
+                                  size: 14.0,
+                                ),
+                                onPressed: () async {
+                                  context.pushNamed(
+                                    'StartQuiz',
+                                    queryParameters: {
+                                      'navback': serializeParam(
+                                        false,
+                                        ParamType.bool,
+                                      ),
+                                    }.withoutNulls,
+                                  );
 
-                                FFAppState().quiz = [];
-                                FFAppState().quizids = [];
-                                safeSetState(() {});
-                              },
-                            ),
-                            Expanded(
-                              child: Container(
-                                width: 20.0,
-                                height: 20.0,
-                                decoration: const BoxDecoration(),
+                                  FFAppState().i = 0;
+                                  safeSetState(() {});
+                                },
                               ),
                             ),
                             ClipRRect(
@@ -280,202 +308,252 @@ class _QuizPageWidgetState extends State<QuizPageWidget>
                           width: double.infinity,
                           height: 550.0,
                           decoration: const BoxDecoration(),
-                          child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                16.0, 0.0, 8.0, 0.0),
-                            child: FutureBuilder<List<OptionsRow>>(
-                              future: OptionsTable().queryRows(
-                                queryFn: (q) => q
-                                    .eq(
-                                      'quiz_id',
-                                      quizPageQuizRow?.id,
-                                    )
-                                    .order('Order', ascending: true),
-                                limit: 6,
-                              ),
-                              builder: (context, snapshot) {
-                                // Customize what your widget looks like when it's loading.
-                                if (!snapshot.hasData) {
-                                  return const Center(
-                                    child: SizedBox(
-                                      width: 50.0,
-                                      height: 50.0,
-                                      child: CircularProgressIndicator(
-                                        valueColor:
-                                            AlwaysStoppedAnimation<Color>(
-                                          Color(0xFFA20A05),
-                                        ),
-                                      ),
+                          child: Builder(
+                            builder: (context) {
+                              if (_model.imgload == false) {
+                                return Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      16.0, 0.0, 8.0, 0.0),
+                                  child: FutureBuilder<List<OptionsRow>>(
+                                    future: OptionsTable().queryRows(
+                                      queryFn: (q) => q
+                                          .eqOrNull(
+                                            'quiz_id',
+                                            quizPageQuizRow?.id,
+                                          )
+                                          .order('Order', ascending: true),
+                                      limit: 6,
                                     ),
-                                  );
-                                }
-                                List<OptionsRow> staggeredViewOptionsRowList =
-                                    snapshot.data!;
-
-                                return MasonryGridView.builder(
-                                  physics: const NeverScrollableScrollPhysics(),
-                                  gridDelegate:
-                                      const SliverSimpleGridDelegateWithFixedCrossAxisCount(
-                                    crossAxisCount: 3,
-                                  ),
-                                  crossAxisSpacing: 10.0,
-                                  itemCount: staggeredViewOptionsRowList.length,
-                                  itemBuilder: (context, staggeredViewIndex) {
-                                    final staggeredViewOptionsRow =
-                                        staggeredViewOptionsRowList[
-                                            staggeredViewIndex];
-                                    return Container(
-                                      width: 108.67,
-                                      height: 230.0,
-                                      decoration: const BoxDecoration(),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceAround,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            '0${valueOrDefault<String>(
-                                              functions
-                                                  .add1(staggeredViewIndex),
-                                              '- -',
-                                            )}',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Montserrat',
-                                                  color: FFAppState()
-                                                          .quiz[FFAppState().i]
-                                                          .options
-                                                          .contains(
-                                                              staggeredViewOptionsRow
-                                                                  .optionText)
-                                                      ? FlutterFlowTheme.of(
-                                                              context)
-                                                          .m500
-                                                      : FlutterFlowTheme.of(
-                                                              context)
-                                                          .n950,
-                                                  fontSize: 12.0,
-                                                  letterSpacing: 0.0,
-                                                ),
+                                    builder: (context, snapshot) {
+                                      // Customize what your widget looks like when it's loading.
+                                      if (!snapshot.hasData) {
+                                        return const Center(
+                                          child: SizedBox(
+                                            width: 24.0,
+                                            height: 24.0,
+                                            child: CircularProgressIndicator(
+                                              valueColor:
+                                                  AlwaysStoppedAnimation<Color>(
+                                                Color(0xFFA20A05),
+                                              ),
+                                            ),
                                           ),
-                                          InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              if (FFAppState()
-                                                  .quiz[FFAppState().i]
-                                                  .options
-                                                  .contains(
-                                                      staggeredViewOptionsRow
-                                                          .optionText)) {
-                                                FFAppState().updateQuizAtIndex(
-                                                  FFAppState().i,
-                                                  (e) => e
-                                                    ..updateOptions(
-                                                      (e) => e.remove(
-                                                          staggeredViewOptionsRow
-                                                              .optionText),
-                                                    ),
-                                                );
-                                                safeSetState(() {});
-                                              } else {
-                                                if (FFAppState()
-                                                        .quiz[FFAppState().i]
-                                                        .options
-                                                        .length ==
-                                                    quizPageQuizRow
-                                                        ?.minqstnumb) {
-                                                  if (animationsMap[
-                                                          'textOnActionTriggerAnimation'] !=
-                                                      null) {
-                                                    await animationsMap[
-                                                            'textOnActionTriggerAnimation']!
-                                                        .controller
-                                                        .forward(from: 0.0);
-                                                  }
-                                                  return;
-                                                }
-                                                FFAppState().updateQuizAtIndex(
-                                                  FFAppState().i,
-                                                  (e) => e
-                                                    ..updateOptions(
-                                                      (e) => e.add(
-                                                          staggeredViewOptionsRow
-                                                              .optionText),
-                                                    ),
-                                                );
-                                                safeSetState(() {});
-                                              }
-                                            },
-                                            child: Container(
-                                              decoration: BoxDecoration(
-                                                color: FFAppState()
-                                                        .quiz[FFAppState().i]
+                                        );
+                                      }
+                                      List<OptionsRow>
+                                          staggeredViewOptionsRowList =
+                                          snapshot.data!;
+
+                                      return MasonryGridView.builder(
+                                        physics:
+                                            const NeverScrollableScrollPhysics(),
+                                        gridDelegate:
+                                            const SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                                          crossAxisCount: 3,
+                                        ),
+                                        crossAxisSpacing: 10.0,
+                                        itemCount:
+                                            staggeredViewOptionsRowList.length,
+                                        itemBuilder:
+                                            (context, staggeredViewIndex) {
+                                          final staggeredViewOptionsRow =
+                                              staggeredViewOptionsRowList[
+                                                  staggeredViewIndex];
+                                          return Container(
+                                            width: 108.67,
+                                            height: 240.0,
+                                            decoration: const BoxDecoration(),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceAround,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  '0${valueOrDefault<String>(
+                                                    functions.add1(
+                                                        staggeredViewIndex),
+                                                    '- -',
+                                                  )}',
+                                                  style:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Montserrat',
+                                                            color: FFAppState()
+                                                                    .quiz
+                                                                    .elementAtOrNull(
+                                                                        FFAppState()
+                                                                            .i)!
+                                                                    .options
+                                                                    .contains(
+                                                                        staggeredViewOptionsRow
+                                                                            .optionText)
+                                                                ? FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .m500
+                                                                : FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .n950,
+                                                            fontSize: 12.0,
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                ),
+                                                InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    if (FFAppState()
+                                                        .quiz
+                                                        .elementAtOrNull(
+                                                            FFAppState().i)!
                                                         .options
                                                         .contains(
                                                             staggeredViewOptionsRow
-                                                                .optionText)
-                                                    ? FlutterFlowTheme.of(
-                                                            context)
-                                                        .m500
-                                                    : Colors.transparent,
-                                              ),
-                                              child: Padding(
-                                                padding: const EdgeInsets.all(2.0),
-                                                child: ClipRRect(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          0.0),
-                                                  child: Image.network(
-                                                    staggeredViewOptionsRow
-                                                        .image!,
-                                                    width: 107.0,
-                                                    height: 163.0,
-                                                    fit: BoxFit.cover,
+                                                                .optionText)) {
+                                                      FFAppState()
+                                                          .updateQuizAtIndex(
+                                                        FFAppState().i,
+                                                        (e) => e
+                                                          ..updateOptions(
+                                                            (e) => e.remove(
+                                                                staggeredViewOptionsRow
+                                                                    .optionText),
+                                                          ),
+                                                      );
+                                                      safeSetState(() {});
+                                                    } else {
+                                                      if (FFAppState()
+                                                              .quiz
+                                                              .elementAtOrNull(
+                                                                  FFAppState()
+                                                                      .i)
+                                                              ?.options
+                                                              .length ==
+                                                          quizPageQuizRow
+                                                              ?.minqstnumb) {
+                                                        if (animationsMap[
+                                                                'textOnActionTriggerAnimation'] !=
+                                                            null) {
+                                                          await animationsMap[
+                                                                  'textOnActionTriggerAnimation']!
+                                                              .controller
+                                                              .forward(
+                                                                  from: 0.0);
+                                                        }
+                                                        return;
+                                                      }
+                                                      FFAppState()
+                                                          .updateQuizAtIndex(
+                                                        FFAppState().i,
+                                                        (e) => e
+                                                          ..updateOptions(
+                                                            (e) => e.add(
+                                                                staggeredViewOptionsRow
+                                                                    .optionText),
+                                                          ),
+                                                      );
+                                                      safeSetState(() {});
+                                                    }
+                                                  },
+                                                  child: Container(
+                                                    decoration: BoxDecoration(
+                                                      color: FFAppState()
+                                                              .quiz
+                                                              .elementAtOrNull(
+                                                                  FFAppState()
+                                                                      .i)!
+                                                              .options
+                                                              .contains(
+                                                                  staggeredViewOptionsRow
+                                                                      .optionText)
+                                                          ? FlutterFlowTheme.of(
+                                                                  context)
+                                                              .m500
+                                                          : Colors.transparent,
+                                                    ),
+                                                    child: Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(2.0),
+                                                      child: ClipRRect(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(0.0),
+                                                        child: Image.network(
+                                                          staggeredViewOptionsRow
+                                                              .image!,
+                                                          width: 107.0,
+                                                          height: 163.0,
+                                                          fit: BoxFit.cover,
+                                                        ),
+                                                      ),
+                                                    ),
                                                   ),
                                                 ),
-                                              ),
-                                            ),
-                                          ),
-                                          Expanded(
-                                            child: Text(
-                                              staggeredViewOptionsRow
-                                                  .optionText,
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily: 'Montserrat',
-                                                    color: FFAppState()
-                                                            .quiz[
-                                                                FFAppState().i]
-                                                            .options
-                                                            .contains(
-                                                                staggeredViewOptionsRow
-                                                                    .optionText)
-                                                        ? FlutterFlowTheme.of(
+                                                Expanded(
+                                                  child: Text(
+                                                    staggeredViewOptionsRow
+                                                        .optionText,
+                                                    style:
+                                                        FlutterFlowTheme.of(
                                                                 context)
-                                                            .m500
-                                                        : FlutterFlowTheme.of(
-                                                                context)
-                                                            .n900,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w600,
+                                                            .bodyMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  'Montserrat',
+                                                              color: FFAppState()
+                                                                      .quiz
+                                                                      .elementAtOrNull(
+                                                                          FFAppState()
+                                                                              .i)!
+                                                                      .options
+                                                                      .contains(
+                                                                          staggeredViewOptionsRow
+                                                                              .optionText)
+                                                                  ? FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .m500
+                                                                  : FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .n900,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w600,
+                                                            ),
                                                   ),
+                                                ),
+                                              ],
                                             ),
-                                          ),
-                                        ],
-                                      ),
-                                    );
-                                  },
+                                          );
+                                        },
+                                      );
+                                    },
+                                  ),
                                 );
-                              },
-                            ),
+                              } else {
+                                return CircularPercentIndicator(
+                                  percent: 0.5,
+                                  radius: 20.0,
+                                  lineWidth: 3.0,
+                                  animation: true,
+                                  animateFromLastPercent: true,
+                                  progressColor:
+                                      FlutterFlowTheme.of(context).primary,
+                                ).animateOnPageLoad(animationsMap[
+                                    'progressBarOnPageLoadAnimation']!);
+                              }
+                            },
                           ),
                         ),
                       ),
@@ -525,8 +603,10 @@ class _QuizPageWidgetState extends State<QuizPageWidget>
                     ),
                     Builder(
                       builder: (context) {
-                        if (FFAppState().quiz[FFAppState().i].options.length <
-                            quizPageQuizRow!.minqstnumb!) {
+                        if (FFAppState()
+                                .quiz
+                                .elementAtOrNull(FFAppState().i)
+                                ?.options.isEmpty) {
                           return ClipRRect(
                             borderRadius: BorderRadius.circular(8.0),
                             child: Image.asset(
@@ -568,10 +648,12 @@ class _QuizPageWidgetState extends State<QuizPageWidget>
                                     await QuizResultsTable().insert({
                                       'user_id': currentUserUid,
                                       'quiz_id': FFAppState()
-                                          .quizids[FFAppState().ops],
+                                          .quizids
+                                          .elementAtOrNull(FFAppState().ops),
                                       'answers': FFAppState()
-                                          .quiz[FFAppState().ops]
-                                          .options,
+                                          .quiz
+                                          .elementAtOrNull(FFAppState().ops)
+                                          ?.options,
                                       'answered_at': supaSerialize<DateTime>(
                                           getCurrentTimestamp),
                                     });

@@ -85,7 +85,7 @@ class _FAQsCompWidgetState extends State<FAQsCompWidget>
 
     return Builder(
       builder: (context) {
-        if (!FFAppState().faqs[widget.id!]) {
+        if (!FFAppState().faqs.elementAtOrNull(widget.id!)!) {
           return Container(
             width: double.infinity,
             height: 50.0,

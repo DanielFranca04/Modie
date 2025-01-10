@@ -20,4 +20,7 @@ class BrandCertificationsRow extends SupabaseDataRow {
 
   int get certificationId => getField<int>('certification_id')!;
   set certificationId(int value) => setField<int>('certification_id', value);
+
+  String? get imgCert => getField<String>('img_cert');
+  set imgCert(String? value) => setField<String>('img_cert', value);
 }

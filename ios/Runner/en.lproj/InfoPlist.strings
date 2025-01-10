@@ -1,3 +1,4 @@
 NSLocationWhenInUseUsageDescription = "Turning on location services allows us to show you when pals are nearby.";
+NSCameraUsageDescription = "This lets you select photos and videos from your library and attach to your entry.";
 NSUserTrackingUsageDescription = "Your data will be used to personalise and optimise your experience on Modie.";
 PermissionGroupNotification = "Notifications may include alerts, sounds, and icon badges. These can be configured in Settings.";

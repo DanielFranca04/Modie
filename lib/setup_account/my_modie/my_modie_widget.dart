@@ -52,7 +52,7 @@ class _MyModieWidgetState extends State<MyModieWidget> {
 
     return FutureBuilder<List<ProfileRow>>(
       future: ProfileTable().querySingleRow(
-        queryFn: (q) => q.eq(
+        queryFn: (q) => q.eqOrNull(
           'profile_id',
           currentUserUid,
         ),
@@ -64,8 +64,8 @@ class _MyModieWidgetState extends State<MyModieWidget> {
             backgroundColor: FlutterFlowTheme.of(context).n950,
             body: const Center(
               child: SizedBox(
-                width: 50.0,
-                height: 50.0,
+                width: 24.0,
+                height: 24.0,
                 child: CircularProgressIndicator(
                   valueColor: AlwaysStoppedAnimation<Color>(
                     Color(0xFFA20A05),
@@ -82,7 +82,10 @@ class _MyModieWidgetState extends State<MyModieWidget> {
             : null;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).n950,
@@ -92,12 +95,12 @@ class _MyModieWidgetState extends State<MyModieWidget> {
                 children: [
                   Container(
                     width: 100.0,
-                    height: 40.0,
+                    height: 48.0,
                     decoration: const BoxDecoration(),
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(6.0, 0.0, 16.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -124,13 +127,6 @@ class _MyModieWidgetState extends State<MyModieWidget> {
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
                             size: 24.0,
-                          ),
-                        ),
-                        Expanded(
-                          child: Container(
-                            width: 20.0,
-                            height: 40.0,
-                            decoration: const BoxDecoration(),
                           ),
                         ),
                         Text(
@@ -195,10 +191,15 @@ class _MyModieWidgetState extends State<MyModieWidget> {
                                       image: DecorationImage(
                                         fit: BoxFit.cover,
                                         image: Image.asset(
-                                          'assets/images/Frame_48096331.png',
+                                          'assets/images/no_photo.png',
                                         ).image,
                                       ),
                                       shape: BoxShape.circle,
+                                      border: Border.all(
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        width: 1.0,
+                                      ),
                                     ),
                                   );
                                 }
@@ -350,7 +351,7 @@ class _MyModieWidgetState extends State<MyModieWidget> {
                             highlightColor: Colors.transparent,
                             onTap: () async {
                               _model.quizout = await QuizTable().queryRows(
-                                queryFn: (q) => q.eq(
+                                queryFn: (q) => q.eqOrNull(
                                   'type',
                                   'MYSTYLE',
                                 ),
@@ -359,19 +360,23 @@ class _MyModieWidgetState extends State<MyModieWidget> {
                                 _model.optionsoutput =
                                     await QuizResultsTable().queryRows(
                                   queryFn: (q) => q
-                                      .eq(
+                                      .eqOrNull(
                                         'user_id',
                                         currentUserUid,
                                       )
-                                      .eq(
+                                      .eqOrNull(
                                         'quiz_id',
-                                        _model.quizout?[FFAppState().i].id,
+                                        _model.quizout
+                                            ?.elementAtOrNull(FFAppState().i)
+                                            ?.id,
                                       ),
                                 );
-                                FFAppState().addToQuizids(
-                                    _model.quizout![FFAppState().i].id);
+                                FFAppState().addToQuizids(_model.quizout!
+                                    .elementAtOrNull(FFAppState().i)!
+                                    .id);
                                 FFAppState().addToQuiz(QuizoptionsStruct(
-                                  options: _model.optionsoutput?.first.answers,
+                                  options: _model
+                                      .optionsoutput?.firstOrNull?.answers,
                                 ));
                                 safeSetState(() {});
                                 FFAppState().i = FFAppState().i + 1;
@@ -445,7 +450,7 @@ class _MyModieWidgetState extends State<MyModieWidget> {
                             highlightColor: Colors.transparent,
                             onTap: () async {
                               _model.quizoutp = await QuizTable().queryRows(
-                                queryFn: (q) => q.eq(
+                                queryFn: (q) => q.eqOrNull(
                                   'type',
                                   'MYINTEREST',
                                 ),
@@ -454,19 +459,23 @@ class _MyModieWidgetState extends State<MyModieWidget> {
                                 _model.optionsoutpu =
                                     await QuizResultsTable().queryRows(
                                   queryFn: (q) => q
-                                      .eq(
+                                      .eqOrNull(
                                         'user_id',
                                         currentUserUid,
                                       )
-                                      .eq(
+                                      .eqOrNull(
                                         'quiz_id',
-                                        _model.quizoutp?[FFAppState().i].id,
+                                        _model.quizoutp
+                                            ?.elementAtOrNull(FFAppState().i)
+                                            ?.id,
                                       ),
                                 );
-                                FFAppState().addToQuizids(
-                                    _model.quizoutp![FFAppState().i].id);
+                                FFAppState().addToQuizids(_model.quizoutp!
+                                    .elementAtOrNull(FFAppState().i)!
+                                    .id);
                                 FFAppState().addToQuiz(QuizoptionsStruct(
-                                  options: _model.optionsoutpu?.first.answers,
+                                  options:
+                                      _model.optionsoutpu?.firstOrNull?.answers,
                                 ));
                                 safeSetState(() {});
                                 FFAppState().i = FFAppState().i + 1;
@@ -627,34 +636,43 @@ class _MyModieWidgetState extends State<MyModieWidget> {
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 9.0, 16.0, 0.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                FFLocalizations.of(context).getText(
-                                  'tbxcpn5c' /* My Order Status */,
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context.pushNamed('MyOrderStatus');
+                            },
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  FFLocalizations.of(context).getText(
+                                    'tbxcpn5c' /* My Order Status */,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Montserrat',
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        fontSize: 12.0,
+                                        letterSpacing: 0.0,
+                                      ),
                                 ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Montserrat',
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
-                                      fontSize: 12.0,
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(0.0),
-                                child: Image.asset(
-                                  'assets/images/Backward.png',
-                                  width: 39.0,
-                                  height: 24.0,
-                                  fit: BoxFit.cover,
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(0.0),
+                                  child: Image.asset(
+                                    'assets/images/Backward.png',
+                                    width: 39.0,
+                                    height: 24.0,
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                         Padding(
@@ -672,34 +690,43 @@ class _MyModieWidgetState extends State<MyModieWidget> {
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 9.0, 16.0, 0.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                FFLocalizations.of(context).getText(
-                                  'fp99iaoi' /* My Payment Method */,
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context.pushNamed('MyPaymentsCards');
+                            },
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  FFLocalizations.of(context).getText(
+                                    'fp99iaoi' /* My Payment Method */,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Montserrat',
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        fontSize: 12.0,
+                                        letterSpacing: 0.0,
+                                      ),
                                 ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Montserrat',
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
-                                      fontSize: 12.0,
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(0.0),
-                                child: Image.asset(
-                                  'assets/images/Backward.png',
-                                  width: 39.0,
-                                  height: 24.0,
-                                  fit: BoxFit.cover,
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(0.0),
+                                  child: Image.asset(
+                                    'assets/images/Backward.png',
+                                    width: 39.0,
+                                    height: 24.0,
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                         Padding(

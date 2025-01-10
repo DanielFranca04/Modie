@@ -8,6 +8,10 @@ class FFIcons {
   static const String _iconssFamily = 'Iconss';
   static const String _manuvarFamily = 'Manuvar';
   static const String _trashFamily = 'Trash';
+  static const String _backFamily = 'Back';
+  static const String _shopIconsFamily = 'ShopIcons';
+  static const String _searchFamily = 'Search';
+  static const String _iconssdFamily = 'Iconssd';
 
   // IconsUserInteraction
   static const IconData kmenu =
@@ -44,4 +48,26 @@ class FFIcons {
 
   // Trash
   static const IconData ktrash = IconData(0xe801, fontFamily: _trashFamily);
+
+  // Back
+  static const IconData kvectorConverted =
+      IconData(0xe801, fontFamily: _backFamily);
+
+  // ShopIcons
+  static const IconData kframe48096407 =
+      IconData(0xe800, fontFamily: _shopIconsFamily);
+  static const IconData kframe48096519 =
+      IconData(0xe801, fontFamily: _shopIconsFamily);
+  static const IconData kshoppingCart1ShoppingCartCheckout =
+      IconData(0xe802, fontFamily: _shopIconsFamily);
+
+  // Search
+  static const IconData kframe480964071Converted =
+      IconData(0xe800, fontFamily: _searchFamily);
+
+  // Iconssd
+  static const IconData kshoppingCart1ShoppingCartCheckout01 =
+      IconData(0xe800, fontFamily: _iconssdFamily);
+  static const IconData kshoppingCart1ShoppingCartCheckout02 =
+      IconData(0xe802, fontFamily: _iconssdFamily);
 }

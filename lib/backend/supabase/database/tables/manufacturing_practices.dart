@@ -21,4 +21,7 @@ class ManufacturingPracticesRow extends SupabaseDataRow {
 
   String? get practice => getField<String>('practice');
   set practice(String? value) => setField<String>('practice', value);
+
+  String? get enumType => getField<String>('enum_type');
+  set enumType(String? value) => setField<String>('enum_type', value);
 }

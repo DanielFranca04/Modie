@@ -1,5 +1,7 @@
 import '/auth/supabase_auth/auth_util.dart';
+import '/backend/schema/structs/index.dart';
 import '/backend/supabase/supabase.dart';
+import '/components/delte_account_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -7,9 +9,9 @@ import '/flutter_flow/upload_data.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:easy_debounce/easy_debounce.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'my_modie_profile_model.dart';
 export 'my_modie_profile_model.dart';
@@ -35,13 +37,13 @@ class _MyModieProfileWidgetState extends State<MyModieProfileWidget> {
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (FFAppState().imgsetprofile == 0) {
         _model.useroutput = await ProfileTable().queryRows(
-          queryFn: (q) => q.eq(
+          queryFn: (q) => q.eqOrNull(
             'profile_id',
             currentUserUid,
           ),
         );
-        if (_model.useroutput?.first.profilePicture != null &&
-            _model.useroutput?.first.profilePicture != '') {
+        if (_model.useroutput?.firstOrNull?.profilePicture != null &&
+            _model.useroutput?.firstOrNull?.profilePicture != '') {
           FFAppState().imgsetprofile = 1;
           safeSetState(() {});
         } else {
@@ -75,7 +77,7 @@ class _MyModieProfileWidgetState extends State<MyModieProfileWidget> {
 
     return FutureBuilder<List<ProfileRow>>(
       future: ProfileTable().querySingleRow(
-        queryFn: (q) => q.eq(
+        queryFn: (q) => q.eqOrNull(
           'profile_id',
           currentUserUid,
         ),
@@ -87,8 +89,8 @@ class _MyModieProfileWidgetState extends State<MyModieProfileWidget> {
             backgroundColor: FlutterFlowTheme.of(context).m200,
             body: const Center(
               child: SizedBox(
-                width: 50.0,
-                height: 50.0,
+                width: 24.0,
+                height: 24.0,
                 child: CircularProgressIndicator(
                   valueColor: AlwaysStoppedAnimation<Color>(
                     Color(0xFFA20A05),
@@ -105,7 +107,10 @@ class _MyModieProfileWidgetState extends State<MyModieProfileWidget> {
             : null;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).m200,
@@ -115,76 +120,48 @@ class _MyModieProfileWidgetState extends State<MyModieProfileWidget> {
                 children: [
                   Container(
                     width: 100.0,
-                    height: 50.0,
+                    height: 48.0,
                     decoration: const BoxDecoration(),
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        FlutterFlowIconButton(
-                          borderColor: Colors.transparent,
-                          borderRadius: 8.0,
-                          buttonSize: 40.0,
-                          icon: FaIcon(
-                            FontAwesomeIcons.angleLeft,
-                            color: FlutterFlowTheme.of(context).n950,
-                            size: 18.0,
-                          ),
-                          onPressed: () async {
-                            context.pushNamed(
-                              'MyModie',
-                              extra: <String, dynamic>{
-                                kTransitionInfoKey: const TransitionInfo(
-                                  hasTransition: true,
-                                  transitionType: PageTransitionType.fade,
-                                  duration: Duration(milliseconds: 0),
-                                ),
-                              },
-                            );
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              1.0, 0.0, 0.0, 0.0),
+                          child: FlutterFlowIconButton(
+                            borderColor: Colors.transparent,
+                            borderRadius: 8.0,
+                            buttonSize: 40.0,
+                            icon: Icon(
+                              FFIcons.kvectorConverted,
+                              color: FlutterFlowTheme.of(context).n950,
+                              size: 14.0,
+                            ),
+                            onPressed: () async {
+                              context.pushNamed(
+                                'MyModie',
+                                extra: <String, dynamic>{
+                                  kTransitionInfoKey: const TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType: PageTransitionType.fade,
+                                    duration: Duration(milliseconds: 0),
+                                  ),
+                                },
+                              );
 
-                            safeSetState(() {
-                              _model.isDataUploading4 = false;
-                              _model.uploadedLocalFile4 =
-                                  FFUploadedFile(bytes: Uint8List.fromList([]));
-                              _model.uploadedFileUrl4 = '';
-                            });
-
-                            safeSetState(() {
-                              _model.isDataUploading1 = false;
-                              _model.uploadedLocalFile1 =
-                                  FFUploadedFile(bytes: Uint8List.fromList([]));
-                            });
-
-                            safeSetState(() {
-                              _model.isDataUploading4 = false;
-                              _model.uploadedLocalFile4 =
-                                  FFUploadedFile(bytes: Uint8List.fromList([]));
-                              _model.uploadedFileUrl4 = '';
-                            });
-
-                            safeSetState(() {
-                              _model.isDataUploading3 = false;
-                              _model.uploadedLocalFile3 =
-                                  FFUploadedFile(bytes: Uint8List.fromList([]));
-                            });
-
-                            FFAppState().isProfileChanged = false;
-                            FFAppState().validDay = true;
-                            FFAppState().validYear = true;
-                            FFAppState().validMonth = true;
-                            FFAppState().validUsername = true;
-                            FFAppState().imgsetprofile = 0;
-                            safeSetState(() {});
-                          },
-                        ),
-                        Expanded(
-                          child: Container(
-                            width: 20.0,
-                            height: 20.0,
-                            decoration: const BoxDecoration(),
+                              FFAppState().isProfileChanged = false;
+                              FFAppState().validDay = true;
+                              FFAppState().validYear = true;
+                              FFAppState().validMonth = true;
+                              FFAppState().validUsername = true;
+                              FFAppState().imgsetprofile = 0;
+                              safeSetState(() {});
+                            },
                           ),
                         ),
                         Text(
@@ -223,8 +200,8 @@ class _MyModieProfileWidgetState extends State<MyModieProfileWidget> {
                                 Container(
                                   width: 126.0,
                                   height: 126.0,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context).m500,
+                                  decoration: const BoxDecoration(
+                                    color: Color(0xFFA20A05),
                                     shape: BoxShape.circle,
                                   ),
                                   child: Column(
@@ -245,6 +222,11 @@ class _MyModieProfileWidgetState extends State<MyModieProfileWidget> {
                                                     await selectMediaWithSourceBottomSheet(
                                                   context: context,
                                                   allowPhoto: true,
+                                                  backgroundColor:
+                                                      const Color(0xFFD6E1E2),
+                                                  textColor: const Color(0xFF4F4F4F),
+                                                  pickerFontFamily:
+                                                      'Montserrat',
                                                 );
                                                 if (selectedMedia != null &&
                                                     selectedMedia.every((m) =>
@@ -336,6 +318,11 @@ class _MyModieProfileWidgetState extends State<MyModieProfileWidget> {
                                                     await selectMediaWithSourceBottomSheet(
                                                   context: context,
                                                   allowPhoto: true,
+                                                  backgroundColor:
+                                                      const Color(0xFFD6E1E2),
+                                                  textColor: const Color(0xFF4F4F4F),
+                                                  pickerFontFamily:
+                                                      'Montserrat',
                                                 );
                                                 if (selectedMedia != null &&
                                                     selectedMedia.every((m) =>
@@ -409,7 +396,7 @@ class _MyModieProfileWidgetState extends State<MyModieProfileWidget> {
                                                   image: DecorationImage(
                                                     fit: BoxFit.cover,
                                                     image: Image.asset(
-                                                      'assets/images/Frame_48096331.png',
+                                                      'assets/images/no_photo.png',
                                                     ).image,
                                                   ),
                                                   shape: BoxShape.circle,
@@ -430,6 +417,11 @@ class _MyModieProfileWidgetState extends State<MyModieProfileWidget> {
                                                     await selectMediaWithSourceBottomSheet(
                                                   context: context,
                                                   allowPhoto: true,
+                                                  backgroundColor:
+                                                      const Color(0xFFD6E1E2),
+                                                  textColor: const Color(0xFF4F4F4F),
+                                                  pickerFontFamily:
+                                                      'Montserrat',
                                                 );
                                                 if (selectedMedia != null &&
                                                     selectedMedia.every((m) =>
@@ -596,20 +588,6 @@ class _MyModieProfileWidgetState extends State<MyModieProfileWidget> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                FFLocalizations.of(context).getText(
-                                  'arbfjsfg' /* First Name */,
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'PP Hatton',
-                                      color: FlutterFlowTheme.of(context).n950,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w500,
-                                      useGoogleFonts: false,
-                                    ),
-                              ),
                               SizedBox(
                                 width: 200.0,
                                 child: TextFormField(
@@ -636,6 +614,10 @@ class _MyModieProfileWidgetState extends State<MyModieProfileWidget> {
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     isDense: true,
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      'hd5o26ia' /* First Name */,
+                                    ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
@@ -686,8 +668,6 @@ class _MyModieProfileWidgetState extends State<MyModieProfileWidget> {
                                       ),
                                       borderRadius: BorderRadius.circular(0.0),
                                     ),
-                                    filled: true,
-                                    fillColor: Colors.transparent,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -711,20 +691,6 @@ class _MyModieProfileWidgetState extends State<MyModieProfileWidget> {
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                FFLocalizations.of(context).getText(
-                                  '22cnghd3' /* Surname */,
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'PP Hatton',
-                                      color: FlutterFlowTheme.of(context).n950,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w500,
-                                      useGoogleFonts: false,
-                                    ),
-                              ),
                               SizedBox(
                                 width: 200.0,
                                 child: TextFormField(
@@ -751,6 +717,10 @@ class _MyModieProfileWidgetState extends State<MyModieProfileWidget> {
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     isDense: true,
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      'fchgwt8k' /* Surname */,
+                                    ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -801,8 +771,6 @@ class _MyModieProfileWidgetState extends State<MyModieProfileWidget> {
                                       ),
                                       borderRadius: BorderRadius.circular(0.0),
                                     ),
-                                    filled: true,
-                                    fillColor: Colors.transparent,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -841,20 +809,6 @@ class _MyModieProfileWidgetState extends State<MyModieProfileWidget> {
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                FFLocalizations.of(context).getText(
-                                  'vak0x190' /* Username */,
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'PP Hatton',
-                                      color: FlutterFlowTheme.of(context).n950,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w500,
-                                      useGoogleFonts: false,
-                                    ),
-                              ),
                               SizedBox(
                                 width: double.infinity,
                                 child: TextFormField(
@@ -883,6 +837,10 @@ class _MyModieProfileWidgetState extends State<MyModieProfileWidget> {
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     isDense: true,
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      '12rtcmgs' /* Username */,
+                                    ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
@@ -934,8 +892,6 @@ class _MyModieProfileWidgetState extends State<MyModieProfileWidget> {
                                       ),
                                       borderRadius: BorderRadius.circular(0.0),
                                     ),
-                                    filled: true,
-                                    fillColor: Colors.transparent,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -1007,20 +963,6 @@ class _MyModieProfileWidgetState extends State<MyModieProfileWidget> {
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                FFLocalizations.of(context).getText(
-                                  'ptxjm96j' /* Date of Birth */,
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'PP Hatton',
-                                      color: FlutterFlowTheme.of(context).n950,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w500,
-                                      useGoogleFonts: false,
-                                    ),
-                              ),
                               TextFormField(
                                 controller: _model.textController4 ??=
                                     TextEditingController(
@@ -1053,7 +995,7 @@ class _MyModieProfileWidgetState extends State<MyModieProfileWidget> {
                                   isDense: true,
                                   labelText:
                                       FFLocalizations.of(context).getText(
-                                    '6oaklsam' /* Birthday (dd/mm/yyyy) */,
+                                    '6oaklsam' /* Date (DD MM YYYY) */,
                                   ),
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
@@ -1308,8 +1250,6 @@ class _MyModieProfileWidgetState extends State<MyModieProfileWidget> {
                                   ),
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
-                                filled: true,
-                                fillColor: const Color(0x00FFFFFF),
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -1359,7 +1299,7 @@ class _MyModieProfileWidgetState extends State<MyModieProfileWidget> {
                                   myModieProfileProfileRow?.username) {
                                 _model.checkUsername =
                                     await ProfileTable().queryRows(
-                                  queryFn: (q) => q.eq(
+                                  queryFn: (q) => q.eqOrNull(
                                     'username',
                                     _model.textController3.text,
                                   ),
@@ -1504,7 +1444,7 @@ class _MyModieProfileWidgetState extends State<MyModieProfileWidget> {
                                           functions.stringToDate(
                                               _model.textController4.text)),
                                     },
-                                    matchingRows: (rows) => rows.eq(
+                                    matchingRows: (rows) => rows.eqOrNull(
                                       'profile_id',
                                       myModieProfileProfileRow?.profileId,
                                     ),
@@ -1573,33 +1513,87 @@ class _MyModieProfileWidgetState extends State<MyModieProfileWidget> {
                       Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              FFLocalizations.of(context).getText(
-                                'xqu0vs6v' /* My Style */,
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            _model.quizout = await QuizTable().queryRows(
+                              queryFn: (q) => q.eqOrNull(
+                                'type',
+                                'MYSTYLE',
                               ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Montserrat',
-                                    color: FlutterFlowTheme.of(context).n950,
-                                    fontSize: 12.0,
-                                    letterSpacing: 0.0,
-                                  ),
-                            ),
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(0.0),
-                              child: Image.asset(
-                                'assets/images/Backward-2.png',
-                                width: 39.0,
-                                height: 24.0,
-                                fit: BoxFit.cover,
+                            );
+                            while (FFAppState().i < _model.quizout!.length) {
+                              _model.optionsoutput =
+                                  await QuizResultsTable().queryRows(
+                                queryFn: (q) => q
+                                    .eqOrNull(
+                                      'user_id',
+                                      currentUserUid,
+                                    )
+                                    .eqOrNull(
+                                      'quiz_id',
+                                      _model.quizout
+                                          ?.elementAtOrNull(FFAppState().i)
+                                          ?.id,
+                                    ),
+                              );
+                              FFAppState().addToQuizids(_model.quizout!
+                                  .elementAtOrNull(FFAppState().i)!
+                                  .id);
+                              FFAppState().addToQuiz(QuizoptionsStruct(
+                                options:
+                                    _model.optionsoutput?.firstOrNull?.answers,
+                              ));
+                              safeSetState(() {});
+                              FFAppState().i = FFAppState().i + 1;
+                              safeSetState(() {});
+                            }
+                            FFAppState().i = 0;
+                            safeSetState(() {});
+
+                            context.pushNamed(
+                              'QuizProfile',
+                              queryParameters: {
+                                'type': serializeParam(
+                                  'MY STYLE',
+                                  ParamType.String,
+                                ),
+                              }.withoutNulls,
+                            );
+
+                            safeSetState(() {});
+                          },
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                FFLocalizations.of(context).getText(
+                                  'xqu0vs6v' /* My Style */,
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Montserrat',
+                                      color: FlutterFlowTheme.of(context).n950,
+                                      fontSize: 12.0,
+                                      letterSpacing: 0.0,
+                                    ),
                               ),
-                            ),
-                          ],
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(0.0),
+                                child: Image.asset(
+                                  'assets/images/Backward-2.png',
+                                  width: 39.0,
+                                  height: 24.0,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                       Padding(
@@ -1616,40 +1610,179 @@ class _MyModieProfileWidgetState extends State<MyModieProfileWidget> {
                       Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 9.0, 16.0, 0.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              FFLocalizations.of(context).getText(
-                                'vv2sac76' /* My Interests */,
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            _model.quizoutp = await QuizTable().queryRows(
+                              queryFn: (q) => q.eqOrNull(
+                                'type',
+                                'MYINTEREST',
                               ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Montserrat',
-                                    color: FlutterFlowTheme.of(context).n950,
-                                    fontSize: 12.0,
-                                    letterSpacing: 0.0,
-                                  ),
-                            ),
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(0.0),
-                              child: Image.asset(
-                                'assets/images/Backward-2.png',
-                                width: 39.0,
-                                height: 24.0,
-                                fit: BoxFit.cover,
+                            );
+                            while (FFAppState().i < _model.quizoutp!.length) {
+                              _model.optionsoutpu =
+                                  await QuizResultsTable().queryRows(
+                                queryFn: (q) => q
+                                    .eqOrNull(
+                                      'user_id',
+                                      currentUserUid,
+                                    )
+                                    .eqOrNull(
+                                      'quiz_id',
+                                      _model.quizoutp
+                                          ?.elementAtOrNull(FFAppState().i)
+                                          ?.id,
+                                    ),
+                              );
+                              FFAppState().addToQuizids(_model.quizoutp!
+                                  .elementAtOrNull(FFAppState().i)!
+                                  .id);
+                              FFAppState().addToQuiz(QuizoptionsStruct(
+                                options:
+                                    _model.optionsoutpu?.firstOrNull?.answers,
+                              ));
+                              safeSetState(() {});
+                              FFAppState().i = FFAppState().i + 1;
+                              safeSetState(() {});
+                            }
+                            FFAppState().i = 0;
+                            safeSetState(() {});
+
+                            context.pushNamed(
+                              'QuizProfile',
+                              queryParameters: {
+                                'type': serializeParam(
+                                  'MY INTEREST',
+                                  ParamType.String,
+                                ),
+                              }.withoutNulls,
+                            );
+
+                            context.pushNamed(
+                              'QuizProfileCopy',
+                              queryParameters: {
+                                'type': serializeParam(
+                                  'MY INTEREST',
+                                  ParamType.String,
+                                ),
+                              }.withoutNulls,
+                            );
+
+                            safeSetState(() {});
+                          },
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                FFLocalizations.of(context).getText(
+                                  'vv2sac76' /* My Interests */,
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Montserrat',
+                                      color: FlutterFlowTheme.of(context).n950,
+                                      fontSize: 12.0,
+                                      letterSpacing: 0.0,
+                                    ),
                               ),
-                            ),
-                          ],
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(0.0),
+                                child: Image.asset(
+                                  'assets/images/Backward-2.png',
+                                  width: 39.0,
+                                  height: 24.0,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ],
                   ),
                   Container(
-                    width: 100.0,
                     height: 40.0,
+                    decoration: const BoxDecoration(),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                    child: RichText(
+                      textScaler: MediaQuery.of(context).textScaler,
+                      text: TextSpan(
+                        children: [
+                          TextSpan(
+                            text: FFLocalizations.of(context).getText(
+                              'jaz9t7c6' /* Do you want to delete your acc... */,
+                            ),
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Montserrat',
+                                  color: FlutterFlowTheme.of(context).n700,
+                                  fontSize: 12.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                          ),
+                          TextSpan(
+                            text: FFLocalizations.of(context).getText(
+                              'ngne2im5' /* Click here */,
+                            ),
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Montserrat',
+                                  color: FlutterFlowTheme.of(context).m500,
+                                  fontSize: 12.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                            mouseCursor: SystemMouseCursors.click,
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () async {
+                                await showDialog(
+                                  context: context,
+                                  builder: (dialogContext) {
+                                    return Dialog(
+                                      elevation: 0,
+                                      insetPadding: EdgeInsets.zero,
+                                      backgroundColor: Colors.transparent,
+                                      alignment: const AlignmentDirectional(0.0, 0.0)
+                                          .resolve(Directionality.of(context)),
+                                      child: GestureDetector(
+                                        onTap: () {
+                                          FocusScope.of(dialogContext)
+                                              .unfocus();
+                                          FocusManager.instance.primaryFocus
+                                              ?.unfocus();
+                                        },
+                                        child: const SizedBox(
+                                          width: double.infinity,
+                                          child: DelteAccountWidget(),
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                );
+                              },
+                          )
+                        ],
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Readex Pro',
+                              letterSpacing: 0.0,
+                            ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: 100.0,
+                    height: 25.0,
                     decoration: const BoxDecoration(),
                   ),
                 ],

@@ -8,6 +8,8 @@ class LoadPageModel extends FlutterFlowModel<LoadPageWidget> {
 
   // Stores action output result for [Backend Call - Query Rows] action in LoadPage widget.
   List<ProfileRow>? outputEmail;
+  // Stores action output result for [Backend Call - Query Rows] action in LoadPage widget.
+  List<QuizResultsRow>? outputquiz;
 
   @override
   void initState(BuildContext context) {}

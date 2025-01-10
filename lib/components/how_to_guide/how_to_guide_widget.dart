@@ -57,8 +57,7 @@ class _HowToGuideWidgetState extends State<HowToGuideWidget> {
                   decoration: const BoxDecoration(),
                 ),
                 Padding(
-                  padding:
-                      const EdgeInsetsDirectional.fromSTEB(16.0, 10.0, 16.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -2952,7 +2951,7 @@ class _HowToGuideWidgetState extends State<HowToGuideWidget> {
                             FFAppState().guide = FFAppState().guide + 1;
                             FFAppState().navbarguide = false;
                             FFAppState().navbarstate = 1;
-                            _model.updatePage(() {});
+                            FFAppState().update(() {});
                           },
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(0.0),

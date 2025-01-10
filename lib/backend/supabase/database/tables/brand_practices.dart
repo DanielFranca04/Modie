@@ -23,4 +23,7 @@ class BrandPracticesRow extends SupabaseDataRow {
 
   String? get status => getField<String>('status');
   set status(String? value) => setField<String>('status', value);
+
+  int get id => getField<int>('id')!;
+  set id(int value) => setField<int>('id', value);
 }

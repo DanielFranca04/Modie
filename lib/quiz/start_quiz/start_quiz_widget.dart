@@ -4,13 +4,17 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'start_quiz_model.dart';
 export 'start_quiz_model.dart';
 
 class StartQuizWidget extends StatefulWidget {
-  const StartQuizWidget({super.key});
+  const StartQuizWidget({
+    super.key,
+    bool? navback,
+  }) : navback = navback ?? true;
+
+  final bool navback;
 
   @override
   State<StartQuizWidget> createState() => _StartQuizWidgetState();
@@ -39,7 +43,10 @@ class _StartQuizWidgetState extends State<StartQuizWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -63,32 +70,35 @@ class _StartQuizWidgetState extends State<StartQuizWidget> {
                   children: [
                     Container(
                       width: 100.0,
-                      height: 40.0,
+                      height: 48.0,
                       decoration: const BoxDecoration(),
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          FlutterFlowIconButton(
-                            borderRadius: 8.0,
-                            buttonSize: 40.0,
-                            icon: FaIcon(
-                              FontAwesomeIcons.angleLeft,
-                              color: FlutterFlowTheme.of(context).n950,
-                              size: 20.0,
-                            ),
-                            onPressed: () async {
-                              context.safePop();
-                            },
-                          ),
-                          Expanded(
-                            child: Container(
-                              width: 20.0,
-                              height: 20.0,
-                              decoration: const BoxDecoration(),
+                          Opacity(
+                            opacity: widget.navback ? 1.0 : 0.0,
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  1.0, 0.0, 0.0, 0.0),
+                              child: FlutterFlowIconButton(
+                                borderRadius: 8.0,
+                                buttonSize: 40.0,
+                                icon: Icon(
+                                  FFIcons.kvectorConverted,
+                                  color: FlutterFlowTheme.of(context).n950,
+                                  size: 14.0,
+                                ),
+                                onPressed: () async {
+                                  if (widget.navback) {
+                                    context.safePop();
+                                  }
+                                },
+                              ),
                             ),
                           ),
                           ClipRRect(
@@ -102,11 +112,6 @@ class _StartQuizWidgetState extends State<StartQuizWidget> {
                           ),
                         ],
                       ),
-                    ),
-                    Container(
-                      width: 100.0,
-                      height: 100.0,
-                      decoration: const BoxDecoration(),
                     ),
                     Expanded(
                       child: Padding(
@@ -183,21 +188,26 @@ class _StartQuizWidgetState extends State<StartQuizWidget> {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
-                                _model.quizoutput = await QuizTable().queryRows(
-                                  queryFn: (q) =>
-                                      q.order('Order', ascending: true),
-                                );
-                                while (FFAppState().i <
-                                    _model.quizoutput!.length) {
-                                  FFAppState().addToQuizids(
-                                      _model.quizoutput![FFAppState().i].id);
-                                  FFAppState().addToQuiz(QuizoptionsStruct());
-                                  safeSetState(() {});
-                                  FFAppState().i = FFAppState().i + 1;
+                                if (widget.navback != false) {
+                                  _model.quizoutput =
+                                      await QuizTable().queryRows(
+                                    queryFn: (q) => q
+                                        .or("type.eq.\"MYINTEREST\", type.eq.\"MYSTYLE\"")
+                                        .order('Order', ascending: true),
+                                  );
+                                  while (FFAppState().i <
+                                      _model.quizoutput!.length) {
+                                    FFAppState().addToQuizids(_model.quizoutput!
+                                        .elementAtOrNull(FFAppState().i)!
+                                        .id);
+                                    FFAppState().addToQuiz(QuizoptionsStruct());
+                                    safeSetState(() {});
+                                    FFAppState().i = FFAppState().i + 1;
+                                    safeSetState(() {});
+                                  }
+                                  FFAppState().i = 0;
                                   safeSetState(() {});
                                 }
-                                FFAppState().i = 0;
-                                safeSetState(() {});
 
                                 context.pushNamed('QuizPage');
 

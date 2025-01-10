@@ -29,4 +29,7 @@ class RewardTransactionsRow extends SupabaseDataRow {
 
   int? get rewardPointId => getField<int>('reward_point_id');
   set rewardPointId(int? value) => setField<int>('reward_point_id', value);
+
+  int? get pointsAdded => getField<int>('points_added');
+  set pointsAdded(int? value) => setField<int>('points_added', value);
 }

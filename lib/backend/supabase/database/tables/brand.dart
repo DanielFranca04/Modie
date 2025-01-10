@@ -40,4 +40,13 @@ class BrandRow extends SupabaseDataRow {
 
   String? get socialImpact => getField<String>('social_impact');
   set socialImpact(String? value) => setField<String>('social_impact', value);
+
+  String? get name => getField<String>('name');
+  set name(String? value) => setField<String>('name', value);
+
+  String? get imageBrand => getField<String>('ImageBrand');
+  set imageBrand(String? value) => setField<String>('ImageBrand', value);
+
+  String? get website => getField<String>('website');
+  set website(String? value) => setField<String>('website', value);
 }

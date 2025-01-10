@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'notifications_model.dart';
 export 'notifications_model.dart';
 
@@ -22,13 +23,13 @@ class _NotificationsWidgetState extends State<NotificationsWidget> {
     super.initState();
     _model = createModel(context, () => NotificationsModel());
 
-    _model.switchValue1 = true;
-    _model.switchValue2 = true;
-    _model.switchValue3 = true;
-    _model.switchValue4 = true;
-    _model.switchValue5 = true;
-    _model.switchValue6 = true;
-    _model.switchValue7 = true;
+    _model.switchValue1 = FFAppState().notification.orderupdate;
+    _model.switchValue2 = FFAppState().notification.promotionsales;
+    _model.switchValue3 = FFAppState().notification.newbrand;
+    _model.switchValue4 = FFAppState().notification.newprodguides;
+    _model.switchValue5 = FFAppState().notification.approvalreview;
+    _model.switchValue6 = FFAppState().notification.contentdownload;
+    _model.switchValue7 = FFAppState().notification.preorderalert;
   }
 
   @override
@@ -40,8 +41,13 @@ class _NotificationsWidgetState extends State<NotificationsWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).m200,
@@ -50,33 +56,35 @@ class _NotificationsWidgetState extends State<NotificationsWidget> {
           children: [
             Container(
               width: 100.0,
-              height: 40.0,
+              height: 48.0,
               decoration: const BoxDecoration(),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  FlutterFlowIconButton(
-                    borderColor: Colors.transparent,
-                    borderRadius: 8.0,
-                    buttonSize: 40.0,
-                    fillColor: const Color(0x00A20A05),
-                    icon: Icon(
-                      Icons.chevron_left,
-                      color: FlutterFlowTheme.of(context).n950,
-                      size: 20.0,
+                  Align(
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                    child: Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(1.0, 0.0, 0.0, 0.0),
+                      child: FlutterFlowIconButton(
+                        borderColor: Colors.transparent,
+                        borderRadius: 8.0,
+                        buttonSize: 40.0,
+                        fillColor: const Color(0x00A20A05),
+                        icon: Icon(
+                          FFIcons.kvectorConverted,
+                          color: FlutterFlowTheme.of(context).n950,
+                          size: 14.0,
+                        ),
+                        onPressed: () async {
+                          context.safePop();
+                        },
+                      ),
                     ),
-                    onPressed: () async {
-                      context.safePop();
-                    },
-                  ),
-                  Container(
-                    width: 100.0,
-                    height: 40.0,
-                    decoration: const BoxDecoration(),
                   ),
                   Text(
                     FFLocalizations.of(context).getText(
@@ -157,6 +165,17 @@ class _NotificationsWidgetState extends State<NotificationsWidget> {
                         value: _model.switchValue1!,
                         onChanged: (newValue) async {
                           safeSetState(() => _model.switchValue1 = newValue);
+                          if (newValue) {
+                            FFAppState().updateNotificationStruct(
+                              (e) => e..orderupdate = true,
+                            );
+                            safeSetState(() {});
+                          } else {
+                            FFAppState().updateNotificationStruct(
+                              (e) => e..orderupdate = false,
+                            );
+                            safeSetState(() {});
+                          }
                         },
                         activeColor: FlutterFlowTheme.of(context).m500,
                         activeTrackColor: const Color(0x7FA20A05),
@@ -208,6 +227,17 @@ class _NotificationsWidgetState extends State<NotificationsWidget> {
                         value: _model.switchValue2!,
                         onChanged: (newValue) async {
                           safeSetState(() => _model.switchValue2 = newValue);
+                          if (newValue) {
+                            FFAppState().updateNotificationStruct(
+                              (e) => e..promotionsales = true,
+                            );
+                            safeSetState(() {});
+                          } else {
+                            FFAppState().updateNotificationStruct(
+                              (e) => e..promotionsales = false,
+                            );
+                            safeSetState(() {});
+                          }
                         },
                         activeColor: FlutterFlowTheme.of(context).m500,
                         activeTrackColor: const Color(0x7FA20A05),
@@ -259,6 +289,17 @@ class _NotificationsWidgetState extends State<NotificationsWidget> {
                         value: _model.switchValue3!,
                         onChanged: (newValue) async {
                           safeSetState(() => _model.switchValue3 = newValue);
+                          if (newValue) {
+                            FFAppState().updateNotificationStruct(
+                              (e) => e..newbrand = true,
+                            );
+                            safeSetState(() {});
+                          } else {
+                            FFAppState().updateNotificationStruct(
+                              (e) => e..newbrand = false,
+                            );
+                            safeSetState(() {});
+                          }
                         },
                         activeColor: FlutterFlowTheme.of(context).m500,
                         activeTrackColor: const Color(0x7FA20A05),
@@ -310,6 +351,17 @@ class _NotificationsWidgetState extends State<NotificationsWidget> {
                         value: _model.switchValue4!,
                         onChanged: (newValue) async {
                           safeSetState(() => _model.switchValue4 = newValue);
+                          if (newValue) {
+                            FFAppState().updateNotificationStruct(
+                              (e) => e..newprodguides = true,
+                            );
+                            safeSetState(() {});
+                          } else {
+                            FFAppState().updateNotificationStruct(
+                              (e) => e..newprodguides = false,
+                            );
+                            safeSetState(() {});
+                          }
                         },
                         activeColor: FlutterFlowTheme.of(context).m500,
                         activeTrackColor: const Color(0x7FA20A05),
@@ -361,6 +413,17 @@ class _NotificationsWidgetState extends State<NotificationsWidget> {
                         value: _model.switchValue5!,
                         onChanged: (newValue) async {
                           safeSetState(() => _model.switchValue5 = newValue);
+                          if (newValue) {
+                            FFAppState().updateNotificationStruct(
+                              (e) => e..approvalreview = true,
+                            );
+                            safeSetState(() {});
+                          } else {
+                            FFAppState().updateNotificationStruct(
+                              (e) => e..approvalreview = false,
+                            );
+                            safeSetState(() {});
+                          }
                         },
                         activeColor: FlutterFlowTheme.of(context).m500,
                         activeTrackColor: const Color(0x7FA20A05),
@@ -412,6 +475,17 @@ class _NotificationsWidgetState extends State<NotificationsWidget> {
                         value: _model.switchValue6!,
                         onChanged: (newValue) async {
                           safeSetState(() => _model.switchValue6 = newValue);
+                          if (newValue) {
+                            FFAppState().updateNotificationStruct(
+                              (e) => e..contentdownload = true,
+                            );
+                            safeSetState(() {});
+                          } else {
+                            FFAppState().updateNotificationStruct(
+                              (e) => e..contentdownload = false,
+                            );
+                            safeSetState(() {});
+                          }
                         },
                         activeColor: FlutterFlowTheme.of(context).m500,
                         activeTrackColor: const Color(0x7FA20A05),
@@ -463,6 +537,17 @@ class _NotificationsWidgetState extends State<NotificationsWidget> {
                         value: _model.switchValue7!,
                         onChanged: (newValue) async {
                           safeSetState(() => _model.switchValue7 = newValue);
+                          if (newValue) {
+                            FFAppState().updateNotificationStruct(
+                              (e) => e..preorderalert = true,
+                            );
+                            safeSetState(() {});
+                          } else {
+                            FFAppState().updateNotificationStruct(
+                              (e) => e..preorderalert = false,
+                            );
+                            safeSetState(() {});
+                          }
                         },
                         activeColor: FlutterFlowTheme.of(context).m500,
                         activeTrackColor: const Color(0x7FA20A05),

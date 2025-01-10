@@ -20,8 +20,8 @@ class CartRow extends SupabaseDataRow {
   String? get profileId => getField<String>('profile_id');
   set profileId(String? value) => setField<String>('profile_id', value);
 
-  int? get productId => getField<int>('product_id');
-  set productId(int? value) => setField<int>('product_id', value);
+  String? get productId => getField<String>('product_id');
+  set productId(String? value) => setField<String>('product_id', value);
 
   int? get quantity => getField<int>('quantity');
   set quantity(int? value) => setField<int>('quantity', value);
